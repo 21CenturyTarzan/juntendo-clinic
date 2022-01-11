@@ -1,0 +1,6275 @@
+@charset "UTF-8";
+/* -------------------
+  RESET
+--------------------*/
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+address,
+img,
+u,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+menu,
+nav,
+output,
+section,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* make sure to set some focus styles for accessibility */
+:focus {
+  outline: 0;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-decoration,
+input[type=search]::-webkit-search-results-button,
+input[type=search]::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+input[type=search] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+textarea {
+  overflow: auto;
+  vertical-align: top;
+  resize: vertical;
+}
+
+/**
+ * Correct `inline-block` display not defined in IE 6/7/8/9 and Firefox 3.
+ */
+audio,
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  max-width: 100%;
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Address styling not present in IE 7/8/9, Firefox 3, and Safari 4.
+ * Known issue: no IE 6 support.
+ */
+[hidden] {
+  display: none;
+}
+
+/**
+ * 1. Correct text resizing oddly in IE 6/7 when body `font-size` is set using
+ *    `em` units.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+html {
+  font-size: 100%;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+a:focus {
+  outline: none;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/**
+ * 1. Remove border when inside `a` element in IE 6/7/8/9 and Firefox 3.
+ * 2. Improve image quality when scaled in IE 7.
+ */
+img {
+  border: 0;
+  /* 1 */
+  -ms-interpolation-mode: bicubic;
+  /* 2 */
+}
+
+/**
+ * Address margin not present in IE 6/7/8/9, Safari 5, and Opera 11.
+ */
+figure {
+  margin: 0;
+}
+
+/**
+ * Correct margin displayed oddly in IE 6/7.
+ */
+form {
+  margin: 0;
+}
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct color not being inherited in IE 6/7/8/9.
+ * 2. Correct text not wrapping in Firefox 3.
+ * 3. Correct alignment displayed oddly in IE 6/7.
+ */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  white-space: normal;
+  /* 2 */
+  *margin-left: -7px;
+  /* 3 */
+}
+
+/**
+ * 1. Correct font size not being inherited in all browsers.
+ * 2. Address margins set differently in IE 6/7, Firefox 3+, Safari 5,
+ *    and Chrome.
+ * 3. Improve appearance and consistency in all browsers.
+ */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+  vertical-align: baseline;
+  /* 3 */
+  *vertical-align: middle;
+  /* 3 */
+}
+
+/**
+ * Address Firefox 3+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+button,
+input {
+  line-height: normal;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 6+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+button,
+select {
+  text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ * 4. Remove inner spacing in IE 7 without affecting normal text inputs.
+ *    Known issue: inner spacing remains in IE 6.
+ */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */
+  *overflow: visible;
+  /* 4 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+/**
+ * 1. Address box sizing set to content-box in IE 8/9.
+ * 2. Remove excess padding in IE 8/9.
+ * 3. Remove excess padding in IE 7.
+ *    Known issue: excess padding remains in IE 6.
+ */
+input[type="checkbox"],
+input[type="radio"] {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+  *height: 13px;
+  /* 3 */
+  *width: 13px;
+  /* 3 */
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+input[type=search] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box;
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * Remove inner padding and border in Firefox 3+.
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/**
+ * 1. Remove default vertical scrollbar in IE 6/7/8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */
+}
+
+/**
+ * Remove most spacing between table cells.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+html,
+button,
+input,
+select,
+textarea {
+  color: #222;
+}
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.chromeframe {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* -------------------
+  NO - RESET
+--------------------*/
+.no-reset * {
+  line-height: normal;
+}
+
+.no-reset html {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+}
+
+.no-reset body {
+  margin: 8px;
+  line-height: normal;
+}
+
+.no-reset p {
+  margin: 1em 0;
+}
+
+.no-reset blockquote,
+.no-reset figure {
+  margin: 1em 40px;
+}
+
+.no-reset q {
+  quotes: "“" "”" "‘" "’";
+}
+
+.no-reset q:before {
+  content: open-quote;
+}
+
+.no-reset q:after {
+  content: close-quote;
+}
+
+.no-reset hr {
+  border: 1px inset;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0.5em auto;
+}
+
+.no-reset h1 {
+  font-size: 2em;
+  font-weight: bold;
+  margin: 0.67em 0;
+}
+
+.no-reset h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 0.83em 0;
+}
+
+.no-reset h3 {
+  font-size: 1.17em;
+  font-weight: bold;
+  margin: 1em 0;
+}
+
+.no-reset h4 {
+  font-size: 1.00em;
+  font-weight: bold;
+  margin: 1.33em 0;
+}
+
+.no-reset h5 {
+  font-size: 0.83em;
+  font-weight: bold;
+  margin: 1.67em 0;
+}
+
+.no-reset h6 {
+  font-size: 0.67em;
+  font-weight: bold;
+  margin: 2.33em 0;
+}
+
+.no-reset article h1,
+.no-reset aside h1,
+.no-reset nav h1,
+.no-reset section h1 {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 0.83em 0;
+}
+
+.no-reset article article h1,
+.no-reset article aside h1,
+.no-reset article nav h1,
+.no-reset article section h1,
+.no-reset aside article h1,
+.no-reset aside aside h1,
+.no-reset aside nav h1,
+.no-reset aside section h1,
+.no-reset nav article h1,
+.no-reset nav aside h1,
+.no-reset nav nav h1,
+.no-reset nav section h1,
+.no-reset section article h1,
+.no-reset section aside h1,
+.no-reset section nav h1,
+.no-reset section section h1 {
+  font-size: 1.17em;
+  font-weight: bold;
+  margin: 1em 0;
+}
+
+.no-reset article article article h1,
+.no-reset article article aside h1,
+.no-reset article article nav h1,
+.no-reset article article section h1,
+.no-reset article aside article h1,
+.no-reset article aside aside h1,
+.no-reset article aside nav h1,
+.no-reset article aside section h1,
+.no-reset article nav article h1,
+.no-reset article nav aside h1,
+.no-reset article nav nav h1,
+.no-reset article nav section h1,
+.no-reset article section article h1,
+.no-reset article section aside h1,
+.no-reset article section nav h1,
+.no-reset article section section h1,
+.no-reset aside article article h1,
+.no-reset aside article aside h1,
+.no-reset aside article nav h1,
+.no-reset aside article section h1,
+.no-reset aside aside article h1,
+.no-reset aside aside aside h1,
+.no-reset aside aside nav h1,
+.no-reset aside aside section h1,
+.no-reset aside nav article h1,
+.no-reset aside nav aside h1,
+.no-reset aside nav nav h1,
+.no-reset aside nav section h1,
+.no-reset aside section article h1,
+.no-reset aside section aside h1,
+.no-reset aside section nav h1,
+.no-reset aside section section h1,
+.no-reset nav article article h1,
+.no-reset nav article aside h1,
+.no-reset nav article nav h1,
+.no-reset nav article section h1,
+.no-reset nav aside article h1,
+.no-reset nav aside aside h1,
+.no-reset nav aside nav h1,
+.no-reset nav aside section h1,
+.no-reset nav nav article h1,
+.no-reset nav nav aside h1,
+.no-reset nav nav nav h1,
+.no-reset nav nav section h1,
+.no-reset nav section article h1,
+.no-reset nav section aside h1,
+.no-reset nav section nav h1,
+.no-reset nav section section h1,
+.no-reset section article article h1,
+.no-reset section article aside h1,
+.no-reset section article nav h1,
+.no-reset section article section h1,
+.no-reset section aside article h1,
+.no-reset section aside aside h1,
+.no-reset section aside nav h1,
+.no-reset section aside section h1,
+.no-reset section nav article h1,
+.no-reset section nav aside h1,
+.no-reset section nav nav h1,
+.no-reset section nav section h1,
+.no-reset section section article h1,
+.no-reset section section aside h1,
+.no-reset section section nav h1,
+.no-reset section section section h1 {
+  font-size: 1.00em;
+  font-weight: bold;
+  margin: 1.33em 0;
+}
+
+.no-reset article article article article h1,
+.no-reset article article article aside h1,
+.no-reset article article article nav h1,
+.no-reset article article article section h1,
+.no-reset article article aside article h1,
+.no-reset article article aside aside h1,
+.no-reset article article aside nav h1,
+.no-reset article article aside section h1,
+.no-reset article article nav article h1,
+.no-reset article article nav aside h1,
+.no-reset article article nav nav h1,
+.no-reset article article nav section h1,
+.no-reset article article section article h1,
+.no-reset article article section aside h1,
+.no-reset article article section nav h1,
+.no-reset article article section section h1,
+.no-reset article aside article article h1,
+.no-reset article aside article aside h1,
+.no-reset article aside article nav h1,
+.no-reset article aside article section h1,
+.no-reset article aside aside article h1,
+.no-reset article aside aside aside h1,
+.no-reset article aside aside nav h1,
+.no-reset article aside aside section h1,
+.no-reset article aside nav article h1,
+.no-reset article aside nav aside h1,
+.no-reset article aside nav nav h1,
+.no-reset article aside nav section h1,
+.no-reset article aside section article h1,
+.no-reset article aside section aside h1,
+.no-reset article aside section nav h1,
+.no-reset article aside section section h1,
+.no-reset article nav article article h1,
+.no-reset article nav article aside h1,
+.no-reset article nav article nav h1,
+.no-reset article nav article section h1,
+.no-reset article nav aside article h1,
+.no-reset article nav aside aside h1,
+.no-reset article nav aside nav h1,
+.no-reset article nav aside section h1,
+.no-reset article nav nav article h1,
+.no-reset article nav nav aside h1,
+.no-reset article nav nav nav h1,
+.no-reset article nav nav section h1,
+.no-reset article nav section article h1,
+.no-reset article nav section aside h1,
+.no-reset article nav section nav h1,
+.no-reset article nav section section h1,
+.no-reset article section article article h1,
+.no-reset article section article aside h1,
+.no-reset article section article nav h1,
+.no-reset article section article section h1,
+.no-reset article section aside article h1,
+.no-reset article section aside aside h1,
+.no-reset article section aside nav h1,
+.no-reset article section aside section h1,
+.no-reset article section nav article h1,
+.no-reset article section nav aside h1,
+.no-reset article section nav nav h1,
+.no-reset article section nav section h1,
+.no-reset article section section article h1,
+.no-reset article section section aside h1,
+.no-reset article section section nav h1,
+.no-reset article section section section h1,
+.no-reset aside article article article h1,
+.no-reset aside article article aside h1,
+.no-reset aside article article nav h1,
+.no-reset aside article article section h1,
+.no-reset aside article aside article h1,
+.no-reset aside article aside aside h1,
+.no-reset aside article aside nav h1,
+.no-reset aside article aside section h1,
+.no-reset aside article nav article h1,
+.no-reset aside article nav aside h1,
+.no-reset aside article nav nav h1,
+.no-reset aside article nav section h1,
+.no-reset aside article section article h1,
+.no-reset aside article section aside h1,
+.no-reset aside article section nav h1,
+.no-reset aside article section section h1,
+.no-reset aside aside article article h1,
+.no-reset aside aside article aside h1,
+.no-reset aside aside article nav h1,
+.no-reset aside aside article section h1,
+.no-reset aside aside aside article h1,
+.no-reset aside aside aside aside h1,
+.no-reset aside aside aside nav h1,
+.no-reset aside aside aside section h1,
+.no-reset aside aside nav article h1,
+.no-reset aside aside nav aside h1,
+.no-reset aside aside nav nav h1,
+.no-reset aside aside nav section h1,
+.no-reset aside aside section article h1,
+.no-reset aside aside section aside h1,
+.no-reset aside aside section nav h1,
+.no-reset aside aside section section h1,
+.no-reset aside nav article article h1,
+.no-reset aside nav article aside h1,
+.no-reset aside nav article nav h1,
+.no-reset aside nav article section h1,
+.no-reset aside nav aside article h1,
+.no-reset aside nav aside aside h1,
+.no-reset aside nav aside nav h1,
+.no-reset aside nav aside section h1,
+.no-reset aside nav nav article h1,
+.no-reset aside nav nav aside h1,
+.no-reset aside nav nav nav h1,
+.no-reset aside nav nav section h1,
+.no-reset aside nav section article h1,
+.no-reset aside nav section aside h1,
+.no-reset aside nav section nav h1,
+.no-reset aside nav section section h1,
+.no-reset aside section article article h1,
+.no-reset aside section article aside h1,
+.no-reset aside section article nav h1,
+.no-reset aside section article section h1,
+.no-reset aside section aside article h1,
+.no-reset aside section aside aside h1,
+.no-reset aside section aside nav h1,
+.no-reset aside section aside section h1,
+.no-reset aside section nav article h1,
+.no-reset aside section nav aside h1,
+.no-reset aside section nav nav h1,
+.no-reset aside section nav section h1,
+.no-reset aside section section article h1,
+.no-reset aside section section aside h1,
+.no-reset aside section section nav h1,
+.no-reset aside section section section h1,
+.no-reset nav article article article h1,
+.no-reset nav article article aside h1,
+.no-reset nav article article nav h1,
+.no-reset nav article article section h1,
+.no-reset nav article aside article h1,
+.no-reset nav article aside aside h1,
+.no-reset nav article aside nav h1,
+.no-reset nav article aside section h1,
+.no-reset nav article nav article h1,
+.no-reset nav article nav aside h1,
+.no-reset nav article nav nav h1,
+.no-reset nav article nav section h1,
+.no-reset nav article section article h1,
+.no-reset nav article section aside h1,
+.no-reset nav article section nav h1,
+.no-reset nav article section section h1,
+.no-reset nav aside article article h1,
+.no-reset nav aside article aside h1,
+.no-reset nav aside article nav h1,
+.no-reset nav aside article section h1,
+.no-reset nav aside aside article h1,
+.no-reset nav aside aside aside h1,
+.no-reset nav aside aside nav h1,
+.no-reset nav aside aside section h1,
+.no-reset nav aside nav article h1,
+.no-reset nav aside nav aside h1,
+.no-reset nav aside nav nav h1,
+.no-reset nav aside nav section h1,
+.no-reset nav aside section article h1,
+.no-reset nav aside section aside h1,
+.no-reset nav aside section nav h1,
+.no-reset nav aside section section h1,
+.no-reset nav nav article article h1,
+.no-reset nav nav article aside h1,
+.no-reset nav nav article nav h1,
+.no-reset nav nav article section h1,
+.no-reset nav nav aside article h1,
+.no-reset nav nav aside aside h1,
+.no-reset nav nav aside nav h1,
+.no-reset nav nav aside section h1,
+.no-reset nav nav nav article h1,
+.no-reset nav nav nav aside h1,
+.no-reset nav nav nav nav h1,
+.no-reset nav nav nav section h1,
+.no-reset nav nav section article h1,
+.no-reset nav nav section aside h1,
+.no-reset nav nav section nav h1,
+.no-reset nav nav section section h1,
+.no-reset nav section article article h1,
+.no-reset nav section article aside h1,
+.no-reset nav section article nav h1,
+.no-reset nav section article section h1,
+.no-reset nav section aside article h1,
+.no-reset nav section aside aside h1,
+.no-reset nav section aside nav h1,
+.no-reset nav section aside section h1,
+.no-reset nav section nav article h1,
+.no-reset nav section nav aside h1,
+.no-reset nav section nav nav h1,
+.no-reset nav section nav section h1,
+.no-reset nav section section article h1,
+.no-reset nav section section aside h1,
+.no-reset nav section section nav h1,
+.no-reset nav section section section h1,
+.no-reset section article article article h1,
+.no-reset section article article aside h1,
+.no-reset section article article nav h1,
+.no-reset section article article section h1,
+.no-reset section article aside article h1,
+.no-reset section article aside aside h1,
+.no-reset section article aside nav h1,
+.no-reset section article aside section h1,
+.no-reset section article nav article h1,
+.no-reset section article nav aside h1,
+.no-reset section article nav nav h1,
+.no-reset section article nav section h1,
+.no-reset section article section article h1,
+.no-reset section article section aside h1,
+.no-reset section article section nav h1,
+.no-reset section article section section h1,
+.no-reset section aside article article h1,
+.no-reset section aside article aside h1,
+.no-reset section aside article nav h1,
+.no-reset section aside article section h1,
+.no-reset section aside aside article h1,
+.no-reset section aside aside aside h1,
+.no-reset section aside aside nav h1,
+.no-reset section aside aside section h1,
+.no-reset section aside nav article h1,
+.no-reset section aside nav aside h1,
+.no-reset section aside nav nav h1,
+.no-reset section aside nav section h1,
+.no-reset section aside section article h1,
+.no-reset section aside section aside h1,
+.no-reset section aside section nav h1,
+.no-reset section aside section section h1,
+.no-reset section nav article article h1,
+.no-reset section nav article aside h1,
+.no-reset section nav article nav h1,
+.no-reset section nav article section h1,
+.no-reset section nav aside article h1,
+.no-reset section nav aside aside h1,
+.no-reset section nav aside nav h1,
+.no-reset section nav aside section h1,
+.no-reset section nav nav article h1,
+.no-reset section nav nav aside h1,
+.no-reset section nav nav nav h1,
+.no-reset section nav nav section h1,
+.no-reset section nav section article h1,
+.no-reset section nav section aside h1,
+.no-reset section nav section nav h1,
+.no-reset section nav section section h1,
+.no-reset section section article article h1,
+.no-reset section section article aside h1,
+.no-reset section section article nav h1,
+.no-reset section section article section h1,
+.no-reset section section aside article h1,
+.no-reset section section aside aside h1,
+.no-reset section section aside nav h1,
+.no-reset section section aside section h1,
+.no-reset section section nav article h1,
+.no-reset section section nav aside h1,
+.no-reset section section nav nav h1,
+.no-reset section section nav section h1,
+.no-reset section section section article h1,
+.no-reset section section section aside h1,
+.no-reset section section section nav h1,
+.no-reset section section section section h1 {
+  font-size: 0.83em;
+  font-weight: bold;
+  margin: 1.67em 0;
+}
+
+.no-reset article article article article article h1,
+.no-reset article article article article aside h1,
+.no-reset article article article article nav h1,
+.no-reset article article article article section h1,
+.no-reset article article article aside article h1,
+.no-reset article article article aside aside h1,
+.no-reset article article article aside nav h1,
+.no-reset article article article aside section h1,
+.no-reset article article article nav article h1,
+.no-reset article article article nav aside h1,
+.no-reset article article article nav nav h1,
+.no-reset article article article nav section h1,
+.no-reset article article article section article h1,
+.no-reset article article article section aside h1,
+.no-reset article article article section nav h1,
+.no-reset article article article section section h1,
+.no-reset article article aside article article h1,
+.no-reset article article aside article aside h1,
+.no-reset article article aside article nav h1,
+.no-reset article article aside article section h1,
+.no-reset article article aside aside article h1,
+.no-reset article article aside aside aside h1,
+.no-reset article article aside aside nav h1,
+.no-reset article article aside aside section h1,
+.no-reset article article aside nav article h1,
+.no-reset article article aside nav aside h1,
+.no-reset article article aside nav nav h1,
+.no-reset article article aside nav section h1,
+.no-reset article article aside section article h1,
+.no-reset article article aside section aside h1,
+.no-reset article article aside section nav h1,
+.no-reset article article aside section section h1,
+.no-reset article article nav article article h1,
+.no-reset article article nav article aside h1,
+.no-reset article article nav article nav h1,
+.no-reset article article nav article section h1,
+.no-reset article article nav aside article h1,
+.no-reset article article nav aside aside h1,
+.no-reset article article nav aside nav h1,
+.no-reset article article nav aside section h1,
+.no-reset article article nav nav article h1,
+.no-reset article article nav nav aside h1,
+.no-reset article article nav nav nav h1,
+.no-reset article article nav nav section h1,
+.no-reset article article nav section article h1,
+.no-reset article article nav section aside h1,
+.no-reset article article nav section nav h1,
+.no-reset article article nav section section h1,
+.no-reset article article section article article h1,
+.no-reset article article section article aside h1,
+.no-reset article article section article nav h1,
+.no-reset article article section article section h1,
+.no-reset article article section aside article h1,
+.no-reset article article section aside aside h1,
+.no-reset article article section aside nav h1,
+.no-reset article article section aside section h1,
+.no-reset article article section nav article h1,
+.no-reset article article section nav aside h1,
+.no-reset article article section nav nav h1,
+.no-reset article article section nav section h1,
+.no-reset article article section section article h1,
+.no-reset article article section section aside h1,
+.no-reset article article section section nav h1,
+.no-reset article article section section section h1,
+.no-reset article aside article article article h1,
+.no-reset article aside article article aside h1,
+.no-reset article aside article article nav h1,
+.no-reset article aside article article section h1,
+.no-reset article aside article aside article h1,
+.no-reset article aside article aside aside h1,
+.no-reset article aside article aside nav h1,
+.no-reset article aside article aside section h1,
+.no-reset article aside article nav article h1,
+.no-reset article aside article nav aside h1,
+.no-reset article aside article nav nav h1,
+.no-reset article aside article nav section h1,
+.no-reset article aside article section article h1,
+.no-reset article aside article section aside h1,
+.no-reset article aside article section nav h1,
+.no-reset article aside article section section h1,
+.no-reset article aside aside article article h1,
+.no-reset article aside aside article aside h1,
+.no-reset article aside aside article nav h1,
+.no-reset article aside aside article section h1,
+.no-reset article aside aside aside article h1,
+.no-reset article aside aside aside aside h1,
+.no-reset article aside aside aside nav h1,
+.no-reset article aside aside aside section h1,
+.no-reset article aside aside nav article h1,
+.no-reset article aside aside nav aside h1,
+.no-reset article aside aside nav nav h1,
+.no-reset article aside aside nav section h1,
+.no-reset article aside aside section article h1,
+.no-reset article aside aside section aside h1,
+.no-reset article aside aside section nav h1,
+.no-reset article aside aside section section h1,
+.no-reset article aside nav article article h1,
+.no-reset article aside nav article aside h1,
+.no-reset article aside nav article nav h1,
+.no-reset article aside nav article section h1,
+.no-reset article aside nav aside article h1,
+.no-reset article aside nav aside aside h1,
+.no-reset article aside nav aside nav h1,
+.no-reset article aside nav aside section h1,
+.no-reset article aside nav nav article h1,
+.no-reset article aside nav nav aside h1,
+.no-reset article aside nav nav nav h1,
+.no-reset article aside nav nav section h1,
+.no-reset article aside nav section article h1,
+.no-reset article aside nav section aside h1,
+.no-reset article aside nav section nav h1,
+.no-reset article aside nav section section h1,
+.no-reset article aside section article article h1,
+.no-reset article aside section article aside h1,
+.no-reset article aside section article nav h1,
+.no-reset article aside section article section h1,
+.no-reset article aside section aside article h1,
+.no-reset article aside section aside aside h1,
+.no-reset article aside section aside nav h1,
+.no-reset article aside section aside section h1,
+.no-reset article aside section nav article h1,
+.no-reset article aside section nav aside h1,
+.no-reset article aside section nav nav h1,
+.no-reset article aside section nav section h1,
+.no-reset article aside section section article h1,
+.no-reset article aside section section aside h1,
+.no-reset article aside section section nav h1,
+.no-reset article aside section section section h1,
+.no-reset article nav article article article h1,
+.no-reset article nav article article aside h1,
+.no-reset article nav article article nav h1,
+.no-reset article nav article article section h1,
+.no-reset article nav article aside article h1,
+.no-reset article nav article aside aside h1,
+.no-reset article nav article aside nav h1,
+.no-reset article nav article aside section h1,
+.no-reset article nav article nav article h1,
+.no-reset article nav article nav aside h1,
+.no-reset article nav article nav nav h1,
+.no-reset article nav article nav section h1,
+.no-reset article nav article section article h1,
+.no-reset article nav article section aside h1,
+.no-reset article nav article section nav h1,
+.no-reset article nav article section section h1,
+.no-reset article nav aside article article h1,
+.no-reset article nav aside article aside h1,
+.no-reset article nav aside article nav h1,
+.no-reset article nav aside article section h1,
+.no-reset article nav aside aside article h1,
+.no-reset article nav aside aside aside h1,
+.no-reset article nav aside aside nav h1,
+.no-reset article nav aside aside section h1,
+.no-reset article nav aside nav article h1,
+.no-reset article nav aside nav aside h1,
+.no-reset article nav aside nav nav h1,
+.no-reset article nav aside nav section h1,
+.no-reset article nav aside section article h1,
+.no-reset article nav aside section aside h1,
+.no-reset article nav aside section nav h1,
+.no-reset article nav aside section section h1,
+.no-reset article nav nav article article h1,
+.no-reset article nav nav article aside h1,
+.no-reset article nav nav article nav h1,
+.no-reset article nav nav article section h1,
+.no-reset article nav nav aside article h1,
+.no-reset article nav nav aside aside h1,
+.no-reset article nav nav aside nav h1,
+.no-reset article nav nav aside section h1,
+.no-reset article nav nav nav article h1,
+.no-reset article nav nav nav aside h1,
+.no-reset article nav nav nav nav h1,
+.no-reset article nav nav nav section h1,
+.no-reset article nav nav section article h1,
+.no-reset article nav nav section aside h1,
+.no-reset article nav nav section nav h1,
+.no-reset article nav nav section section h1,
+.no-reset article nav section article article h1,
+.no-reset article nav section article aside h1,
+.no-reset article nav section article nav h1,
+.no-reset article nav section article section h1,
+.no-reset article nav section aside article h1,
+.no-reset article nav section aside aside h1,
+.no-reset article nav section aside nav h1,
+.no-reset article nav section aside section h1,
+.no-reset article nav section nav article h1,
+.no-reset article nav section nav aside h1,
+.no-reset article nav section nav nav h1,
+.no-reset article nav section nav section h1,
+.no-reset article nav section section article h1,
+.no-reset article nav section section aside h1,
+.no-reset article nav section section nav h1,
+.no-reset article nav section section section h1,
+.no-reset article section article article article h1,
+.no-reset article section article article aside h1,
+.no-reset article section article article nav h1,
+.no-reset article section article article section h1,
+.no-reset article section article aside article h1,
+.no-reset article section article aside aside h1,
+.no-reset article section article aside nav h1,
+.no-reset article section article aside section h1,
+.no-reset article section article nav article h1,
+.no-reset article section article nav aside h1,
+.no-reset article section article nav nav h1,
+.no-reset article section article nav section h1,
+.no-reset article section article section article h1,
+.no-reset article section article section aside h1,
+.no-reset article section article section nav h1,
+.no-reset article section article section section h1,
+.no-reset article section aside article article h1,
+.no-reset article section aside article aside h1,
+.no-reset article section aside article nav h1,
+.no-reset article section aside article section h1,
+.no-reset article section aside aside article h1,
+.no-reset article section aside aside aside h1,
+.no-reset article section aside aside nav h1,
+.no-reset article section aside aside section h1,
+.no-reset article section aside nav article h1,
+.no-reset article section aside nav aside h1,
+.no-reset article section aside nav nav h1,
+.no-reset article section aside nav section h1,
+.no-reset article section aside section article h1,
+.no-reset article section aside section aside h1,
+.no-reset article section aside section nav h1,
+.no-reset article section aside section section h1,
+.no-reset article section nav article article h1,
+.no-reset article section nav article aside h1,
+.no-reset article section nav article nav h1,
+.no-reset article section nav article section h1,
+.no-reset article section nav aside article h1,
+.no-reset article section nav aside aside h1,
+.no-reset article section nav aside nav h1,
+.no-reset article section nav aside section h1,
+.no-reset article section nav nav article h1,
+.no-reset article section nav nav aside h1,
+.no-reset article section nav nav nav h1,
+.no-reset article section nav nav section h1,
+.no-reset article section nav section article h1,
+.no-reset article section nav section aside h1,
+.no-reset article section nav section nav h1,
+.no-reset article section nav section section h1,
+.no-reset article section section article article h1,
+.no-reset article section section article aside h1,
+.no-reset article section section article nav h1,
+.no-reset article section section article section h1,
+.no-reset article section section aside article h1,
+.no-reset article section section aside aside h1,
+.no-reset article section section aside nav h1,
+.no-reset article section section aside section h1,
+.no-reset article section section nav article h1,
+.no-reset article section section nav aside h1,
+.no-reset article section section nav nav h1,
+.no-reset article section section nav section h1,
+.no-reset article section section section article h1,
+.no-reset article section section section aside h1,
+.no-reset article section section section nav h1,
+.no-reset article section section section section h1,
+.no-reset aside article article article article h1,
+.no-reset aside article article article aside h1,
+.no-reset aside article article article nav h1,
+.no-reset aside article article article section h1,
+.no-reset aside article article aside article h1,
+.no-reset aside article article aside aside h1,
+.no-reset aside article article aside nav h1,
+.no-reset aside article article aside section h1,
+.no-reset aside article article nav article h1,
+.no-reset aside article article nav aside h1,
+.no-reset aside article article nav nav h1,
+.no-reset aside article article nav section h1,
+.no-reset aside article article section article h1,
+.no-reset aside article article section aside h1,
+.no-reset aside article article section nav h1,
+.no-reset aside article article section section h1,
+.no-reset aside article aside article article h1,
+.no-reset aside article aside article aside h1,
+.no-reset aside article aside article nav h1,
+.no-reset aside article aside article section h1,
+.no-reset aside article aside aside article h1,
+.no-reset aside article aside aside aside h1,
+.no-reset aside article aside aside nav h1,
+.no-reset aside article aside aside section h1,
+.no-reset aside article aside nav article h1,
+.no-reset aside article aside nav aside h1,
+.no-reset aside article aside nav nav h1,
+.no-reset aside article aside nav section h1,
+.no-reset aside article aside section article h1,
+.no-reset aside article aside section aside h1,
+.no-reset aside article aside section nav h1,
+.no-reset aside article aside section section h1,
+.no-reset aside article nav article article h1,
+.no-reset aside article nav article aside h1,
+.no-reset aside article nav article nav h1,
+.no-reset aside article nav article section h1,
+.no-reset aside article nav aside article h1,
+.no-reset aside article nav aside aside h1,
+.no-reset aside article nav aside nav h1,
+.no-reset aside article nav aside section h1,
+.no-reset aside article nav nav article h1,
+.no-reset aside article nav nav aside h1,
+.no-reset aside article nav nav nav h1,
+.no-reset aside article nav nav section h1,
+.no-reset aside article nav section article h1,
+.no-reset aside article nav section aside h1,
+.no-reset aside article nav section nav h1,
+.no-reset aside article nav section section h1,
+.no-reset aside article section article article h1,
+.no-reset aside article section article aside h1,
+.no-reset aside article section article nav h1,
+.no-reset aside article section article section h1,
+.no-reset aside article section aside article h1,
+.no-reset aside article section aside aside h1,
+.no-reset aside article section aside nav h1,
+.no-reset aside article section aside section h1,
+.no-reset aside article section nav article h1,
+.no-reset aside article section nav aside h1,
+.no-reset aside article section nav nav h1,
+.no-reset aside article section nav section h1,
+.no-reset aside article section section article h1,
+.no-reset aside article section section aside h1,
+.no-reset aside article section section nav h1,
+.no-reset aside article section section section h1,
+.no-reset aside aside article article article h1,
+.no-reset aside aside article article aside h1,
+.no-reset aside aside article article nav h1,
+.no-reset aside aside article article section h1,
+.no-reset aside aside article aside article h1,
+.no-reset aside aside article aside aside h1,
+.no-reset aside aside article aside nav h1,
+.no-reset aside aside article aside section h1,
+.no-reset aside aside article nav article h1,
+.no-reset aside aside article nav aside h1,
+.no-reset aside aside article nav nav h1,
+.no-reset aside aside article nav section h1,
+.no-reset aside aside article section article h1,
+.no-reset aside aside article section aside h1,
+.no-reset aside aside article section nav h1,
+.no-reset aside aside article section section h1,
+.no-reset aside aside aside article article h1,
+.no-reset aside aside aside article aside h1,
+.no-reset aside aside aside article nav h1,
+.no-reset aside aside aside article section h1,
+.no-reset aside aside aside aside article h1,
+.no-reset aside aside aside aside aside h1,
+.no-reset aside aside aside aside nav h1,
+.no-reset aside aside aside aside section h1,
+.no-reset aside aside aside nav article h1,
+.no-reset aside aside aside nav aside h1,
+.no-reset aside aside aside nav nav h1,
+.no-reset aside aside aside nav section h1,
+.no-reset aside aside aside section article h1,
+.no-reset aside aside aside section aside h1,
+.no-reset aside aside aside section nav h1,
+.no-reset aside aside aside section section h1,
+.no-reset aside aside nav article article h1,
+.no-reset aside aside nav article aside h1,
+.no-reset aside aside nav article nav h1,
+.no-reset aside aside nav article section h1,
+.no-reset aside aside nav aside article h1,
+.no-reset aside aside nav aside aside h1,
+.no-reset aside aside nav aside nav h1,
+.no-reset aside aside nav aside section h1,
+.no-reset aside aside nav nav article h1,
+.no-reset aside aside nav nav aside h1,
+.no-reset aside aside nav nav nav h1,
+.no-reset aside aside nav nav section h1,
+.no-reset aside aside nav section article h1,
+.no-reset aside aside nav section aside h1,
+.no-reset aside aside nav section nav h1,
+.no-reset aside aside nav section section h1,
+.no-reset aside aside section article article h1,
+.no-reset aside aside section article aside h1,
+.no-reset aside aside section article nav h1,
+.no-reset aside aside section article section h1,
+.no-reset aside aside section aside article h1,
+.no-reset aside aside section aside aside h1,
+.no-reset aside aside section aside nav h1,
+.no-reset aside aside section aside section h1,
+.no-reset aside aside section nav article h1,
+.no-reset aside aside section nav aside h1,
+.no-reset aside aside section nav nav h1,
+.no-reset aside aside section nav section h1,
+.no-reset aside aside section section article h1,
+.no-reset aside aside section section aside h1,
+.no-reset aside aside section section nav h1,
+.no-reset aside aside section section section h1,
+.no-reset aside nav article article article h1,
+.no-reset aside nav article article aside h1,
+.no-reset aside nav article article nav h1,
+.no-reset aside nav article article section h1,
+.no-reset aside nav article aside article h1,
+.no-reset aside nav article aside aside h1,
+.no-reset aside nav article aside nav h1,
+.no-reset aside nav article aside section h1,
+.no-reset aside nav article nav article h1,
+.no-reset aside nav article nav aside h1,
+.no-reset aside nav article nav nav h1,
+.no-reset aside nav article nav section h1,
+.no-reset aside nav article section article h1,
+.no-reset aside nav article section aside h1,
+.no-reset aside nav article section nav h1,
+.no-reset aside nav article section section h1,
+.no-reset aside nav aside article article h1,
+.no-reset aside nav aside article aside h1,
+.no-reset aside nav aside article nav h1,
+.no-reset aside nav aside article section h1,
+.no-reset aside nav aside aside article h1,
+.no-reset aside nav aside aside aside h1,
+.no-reset aside nav aside aside nav h1,
+.no-reset aside nav aside aside section h1,
+.no-reset aside nav aside nav article h1,
+.no-reset aside nav aside nav aside h1,
+.no-reset aside nav aside nav nav h1,
+.no-reset aside nav aside nav section h1,
+.no-reset aside nav aside section article h1,
+.no-reset aside nav aside section aside h1,
+.no-reset aside nav aside section nav h1,
+.no-reset aside nav aside section section h1,
+.no-reset aside nav nav article article h1,
+.no-reset aside nav nav article aside h1,
+.no-reset aside nav nav article nav h1,
+.no-reset aside nav nav article section h1,
+.no-reset aside nav nav aside article h1,
+.no-reset aside nav nav aside aside h1,
+.no-reset aside nav nav aside nav h1,
+.no-reset aside nav nav aside section h1,
+.no-reset aside nav nav nav article h1,
+.no-reset aside nav nav nav aside h1,
+.no-reset aside nav nav nav nav h1,
+.no-reset aside nav nav nav section h1,
+.no-reset aside nav nav section article h1,
+.no-reset aside nav nav section aside h1,
+.no-reset aside nav nav section nav h1,
+.no-reset aside nav nav section section h1,
+.no-reset aside nav section article article h1,
+.no-reset aside nav section article aside h1,
+.no-reset aside nav section article nav h1,
+.no-reset aside nav section article section h1,
+.no-reset aside nav section aside article h1,
+.no-reset aside nav section aside aside h1,
+.no-reset aside nav section aside nav h1,
+.no-reset aside nav section aside section h1,
+.no-reset aside nav section nav article h1,
+.no-reset aside nav section nav aside h1,
+.no-reset aside nav section nav nav h1,
+.no-reset aside nav section nav section h1,
+.no-reset aside nav section section article h1,
+.no-reset aside nav section section aside h1,
+.no-reset aside nav section section nav h1,
+.no-reset aside nav section section section h1,
+.no-reset aside section article article article h1,
+.no-reset aside section article article aside h1,
+.no-reset aside section article article nav h1,
+.no-reset aside section article article section h1,
+.no-reset aside section article aside article h1,
+.no-reset aside section article aside aside h1,
+.no-reset aside section article aside nav h1,
+.no-reset aside section article aside section h1,
+.no-reset aside section article nav article h1,
+.no-reset aside section article nav aside h1,
+.no-reset aside section article nav nav h1,
+.no-reset aside section article nav section h1,
+.no-reset aside section article section article h1,
+.no-reset aside section article section aside h1,
+.no-reset aside section article section nav h1,
+.no-reset aside section article section section h1,
+.no-reset aside section aside article article h1,
+.no-reset aside section aside article aside h1,
+.no-reset aside section aside article nav h1,
+.no-reset aside section aside article section h1,
+.no-reset aside section aside aside article h1,
+.no-reset aside section aside aside aside h1,
+.no-reset aside section aside aside nav h1,
+.no-reset aside section aside aside section h1,
+.no-reset aside section aside nav article h1,
+.no-reset aside section aside nav aside h1,
+.no-reset aside section aside nav nav h1,
+.no-reset aside section aside nav section h1,
+.no-reset aside section aside section article h1,
+.no-reset aside section aside section aside h1,
+.no-reset aside section aside section nav h1,
+.no-reset aside section aside section section h1,
+.no-reset aside section nav article article h1,
+.no-reset aside section nav article aside h1,
+.no-reset aside section nav article nav h1,
+.no-reset aside section nav article section h1,
+.no-reset aside section nav aside article h1,
+.no-reset aside section nav aside aside h1,
+.no-reset aside section nav aside nav h1,
+.no-reset aside section nav aside section h1,
+.no-reset aside section nav nav article h1,
+.no-reset aside section nav nav aside h1,
+.no-reset aside section nav nav nav h1,
+.no-reset aside section nav nav section h1,
+.no-reset aside section nav section article h1,
+.no-reset aside section nav section aside h1,
+.no-reset aside section nav section nav h1,
+.no-reset aside section nav section section h1,
+.no-reset aside section section article article h1,
+.no-reset aside section section article aside h1,
+.no-reset aside section section article nav h1,
+.no-reset aside section section article section h1,
+.no-reset aside section section aside article h1,
+.no-reset aside section section aside aside h1,
+.no-reset aside section section aside nav h1,
+.no-reset aside section section aside section h1,
+.no-reset aside section section nav article h1,
+.no-reset aside section section nav aside h1,
+.no-reset aside section section nav nav h1,
+.no-reset aside section section nav section h1,
+.no-reset aside section section section article h1,
+.no-reset aside section section section aside h1,
+.no-reset aside section section section nav h1,
+.no-reset aside section section section section h1,
+.no-reset nav article article article article h1,
+.no-reset nav article article article aside h1,
+.no-reset nav article article article nav h1,
+.no-reset nav article article article section h1,
+.no-reset nav article article aside article h1,
+.no-reset nav article article aside aside h1,
+.no-reset nav article article aside nav h1,
+.no-reset nav article article aside section h1,
+.no-reset nav article article nav article h1,
+.no-reset nav article article nav aside h1,
+.no-reset nav article article nav nav h1,
+.no-reset nav article article nav section h1,
+.no-reset nav article article section article h1,
+.no-reset nav article article section aside h1,
+.no-reset nav article article section nav h1,
+.no-reset nav article article section section h1,
+.no-reset nav article aside article article h1,
+.no-reset nav article aside article aside h1,
+.no-reset nav article aside article nav h1,
+.no-reset nav article aside article section h1,
+.no-reset nav article aside aside article h1,
+.no-reset nav article aside aside aside h1,
+.no-reset nav article aside aside nav h1,
+.no-reset nav article aside aside section h1,
+.no-reset nav article aside nav article h1,
+.no-reset nav article aside nav aside h1,
+.no-reset nav article aside nav nav h1,
+.no-reset nav article aside nav section h1,
+.no-reset nav article aside section article h1,
+.no-reset nav article aside section aside h1,
+.no-reset nav article aside section nav h1,
+.no-reset nav article aside section section h1,
+.no-reset nav article nav article article h1,
+.no-reset nav article nav article aside h1,
+.no-reset nav article nav article nav h1,
+.no-reset nav article nav article section h1,
+.no-reset nav article nav aside article h1,
+.no-reset nav article nav aside aside h1,
+.no-reset nav article nav aside nav h1,
+.no-reset nav article nav aside section h1,
+.no-reset nav article nav nav article h1,
+.no-reset nav article nav nav aside h1,
+.no-reset nav article nav nav nav h1,
+.no-reset nav article nav nav section h1,
+.no-reset nav article nav section article h1,
+.no-reset nav article nav section aside h1,
+.no-reset nav article nav section nav h1,
+.no-reset nav article nav section section h1,
+.no-reset nav article section article article h1,
+.no-reset nav article section article aside h1,
+.no-reset nav article section article nav h1,
+.no-reset nav article section article section h1,
+.no-reset nav article section aside article h1,
+.no-reset nav article section aside aside h1,
+.no-reset nav article section aside nav h1,
+.no-reset nav article section aside section h1,
+.no-reset nav article section nav article h1,
+.no-reset nav article section nav aside h1,
+.no-reset nav article section nav nav h1,
+.no-reset nav article section nav section h1,
+.no-reset nav article section section article h1,
+.no-reset nav article section section aside h1,
+.no-reset nav article section section nav h1,
+.no-reset nav article section section section h1,
+.no-reset nav aside article article article h1,
+.no-reset nav aside article article aside h1,
+.no-reset nav aside article article nav h1,
+.no-reset nav aside article article section h1,
+.no-reset nav aside article aside article h1,
+.no-reset nav aside article aside aside h1,
+.no-reset nav aside article aside nav h1,
+.no-reset nav aside article aside section h1,
+.no-reset nav aside article nav article h1,
+.no-reset nav aside article nav aside h1,
+.no-reset nav aside article nav nav h1,
+.no-reset nav aside article nav section h1,
+.no-reset nav aside article section article h1,
+.no-reset nav aside article section aside h1,
+.no-reset nav aside article section nav h1,
+.no-reset nav aside article section section h1,
+.no-reset nav aside aside article article h1,
+.no-reset nav aside aside article aside h1,
+.no-reset nav aside aside article nav h1,
+.no-reset nav aside aside article section h1,
+.no-reset nav aside aside aside article h1,
+.no-reset nav aside aside aside aside h1,
+.no-reset nav aside aside aside nav h1,
+.no-reset nav aside aside aside section h1,
+.no-reset nav aside aside nav article h1,
+.no-reset nav aside aside nav aside h1,
+.no-reset nav aside aside nav nav h1,
+.no-reset nav aside aside nav section h1,
+.no-reset nav aside aside section article h1,
+.no-reset nav aside aside section aside h1,
+.no-reset nav aside aside section nav h1,
+.no-reset nav aside aside section section h1,
+.no-reset nav aside nav article article h1,
+.no-reset nav aside nav article aside h1,
+.no-reset nav aside nav article nav h1,
+.no-reset nav aside nav article section h1,
+.no-reset nav aside nav aside article h1,
+.no-reset nav aside nav aside aside h1,
+.no-reset nav aside nav aside nav h1,
+.no-reset nav aside nav aside section h1,
+.no-reset nav aside nav nav article h1,
+.no-reset nav aside nav nav aside h1,
+.no-reset nav aside nav nav nav h1,
+.no-reset nav aside nav nav section h1,
+.no-reset nav aside nav section article h1,
+.no-reset nav aside nav section aside h1,
+.no-reset nav aside nav section nav h1,
+.no-reset nav aside nav section section h1,
+.no-reset nav aside section article article h1,
+.no-reset nav aside section article aside h1,
+.no-reset nav aside section article nav h1,
+.no-reset nav aside section article section h1,
+.no-reset nav aside section aside article h1,
+.no-reset nav aside section aside aside h1,
+.no-reset nav aside section aside nav h1,
+.no-reset nav aside section aside section h1,
+.no-reset nav aside section nav article h1,
+.no-reset nav aside section nav aside h1,
+.no-reset nav aside section nav nav h1,
+.no-reset nav aside section nav section h1,
+.no-reset nav aside section section article h1,
+.no-reset nav aside section section aside h1,
+.no-reset nav aside section section nav h1,
+.no-reset nav aside section section section h1,
+.no-reset nav nav article article article h1,
+.no-reset nav nav article article aside h1,
+.no-reset nav nav article article nav h1,
+.no-reset nav nav article article section h1,
+.no-reset nav nav article aside article h1,
+.no-reset nav nav article aside aside h1,
+.no-reset nav nav article aside nav h1,
+.no-reset nav nav article aside section h1,
+.no-reset nav nav article nav article h1,
+.no-reset nav nav article nav aside h1,
+.no-reset nav nav article nav nav h1,
+.no-reset nav nav article nav section h1,
+.no-reset nav nav article section article h1,
+.no-reset nav nav article section aside h1,
+.no-reset nav nav article section nav h1,
+.no-reset nav nav article section section h1,
+.no-reset nav nav aside article article h1,
+.no-reset nav nav aside article aside h1,
+.no-reset nav nav aside article nav h1,
+.no-reset nav nav aside article section h1,
+.no-reset nav nav aside aside article h1,
+.no-reset nav nav aside aside aside h1,
+.no-reset nav nav aside aside nav h1,
+.no-reset nav nav aside aside section h1,
+.no-reset nav nav aside nav article h1,
+.no-reset nav nav aside nav aside h1,
+.no-reset nav nav aside nav nav h1,
+.no-reset nav nav aside nav section h1,
+.no-reset nav nav aside section article h1,
+.no-reset nav nav aside section aside h1,
+.no-reset nav nav aside section nav h1,
+.no-reset nav nav aside section section h1,
+.no-reset nav nav nav article article h1,
+.no-reset nav nav nav article aside h1,
+.no-reset nav nav nav article nav h1,
+.no-reset nav nav nav article section h1,
+.no-reset nav nav nav aside article h1,
+.no-reset nav nav nav aside aside h1,
+.no-reset nav nav nav aside nav h1,
+.no-reset nav nav nav aside section h1,
+.no-reset nav nav nav nav article h1,
+.no-reset nav nav nav nav aside h1,
+.no-reset nav nav nav nav nav h1,
+.no-reset nav nav nav nav section h1,
+.no-reset nav nav nav section article h1,
+.no-reset nav nav nav section aside h1,
+.no-reset nav nav nav section nav h1,
+.no-reset nav nav nav section section h1,
+.no-reset nav nav section article article h1,
+.no-reset nav nav section article aside h1,
+.no-reset nav nav section article nav h1,
+.no-reset nav nav section article section h1,
+.no-reset nav nav section aside article h1,
+.no-reset nav nav section aside aside h1,
+.no-reset nav nav section aside nav h1,
+.no-reset nav nav section aside section h1,
+.no-reset nav nav section nav article h1,
+.no-reset nav nav section nav aside h1,
+.no-reset nav nav section nav nav h1,
+.no-reset nav nav section nav section h1,
+.no-reset nav nav section section article h1,
+.no-reset nav nav section section aside h1,
+.no-reset nav nav section section nav h1,
+.no-reset nav nav section section section h1,
+.no-reset nav section article article article h1,
+.no-reset nav section article article aside h1,
+.no-reset nav section article article nav h1,
+.no-reset nav section article article section h1,
+.no-reset nav section article aside article h1,
+.no-reset nav section article aside aside h1,
+.no-reset nav section article aside nav h1,
+.no-reset nav section article aside section h1,
+.no-reset nav section article nav article h1,
+.no-reset nav section article nav aside h1,
+.no-reset nav section article nav nav h1,
+.no-reset nav section article nav section h1,
+.no-reset nav section article section article h1,
+.no-reset nav section article section aside h1,
+.no-reset nav section article section nav h1,
+.no-reset nav section article section section h1,
+.no-reset nav section aside article article h1,
+.no-reset nav section aside article aside h1,
+.no-reset nav section aside article nav h1,
+.no-reset nav section aside article section h1,
+.no-reset nav section aside aside article h1,
+.no-reset nav section aside aside aside h1,
+.no-reset nav section aside aside nav h1,
+.no-reset nav section aside aside section h1,
+.no-reset nav section aside nav article h1,
+.no-reset nav section aside nav aside h1,
+.no-reset nav section aside nav nav h1,
+.no-reset nav section aside nav section h1,
+.no-reset nav section aside section article h1,
+.no-reset nav section aside section aside h1,
+.no-reset nav section aside section nav h1,
+.no-reset nav section aside section section h1,
+.no-reset nav section nav article article h1,
+.no-reset nav section nav article aside h1,
+.no-reset nav section nav article nav h1,
+.no-reset nav section nav article section h1,
+.no-reset nav section nav aside article h1,
+.no-reset nav section nav aside aside h1,
+.no-reset nav section nav aside nav h1,
+.no-reset nav section nav aside section h1,
+.no-reset nav section nav nav article h1,
+.no-reset nav section nav nav aside h1,
+.no-reset nav section nav nav nav h1,
+.no-reset nav section nav nav section h1,
+.no-reset nav section nav section article h1,
+.no-reset nav section nav section aside h1,
+.no-reset nav section nav section nav h1,
+.no-reset nav section nav section section h1,
+.no-reset nav section section article article h1,
+.no-reset nav section section article aside h1,
+.no-reset nav section section article nav h1,
+.no-reset nav section section article section h1,
+.no-reset nav section section aside article h1,
+.no-reset nav section section aside aside h1,
+.no-reset nav section section aside nav h1,
+.no-reset nav section section aside section h1,
+.no-reset nav section section nav article h1,
+.no-reset nav section section nav aside h1,
+.no-reset nav section section nav nav h1,
+.no-reset nav section section nav section h1,
+.no-reset nav section section section article h1,
+.no-reset nav section section section aside h1,
+.no-reset nav section section section nav h1,
+.no-reset nav section section section section h1,
+.no-reset section article article article article h1,
+.no-reset section article article article aside h1,
+.no-reset section article article article nav h1,
+.no-reset section article article article section h1,
+.no-reset section article article aside article h1,
+.no-reset section article article aside aside h1,
+.no-reset section article article aside nav h1,
+.no-reset section article article aside section h1,
+.no-reset section article article nav article h1,
+.no-reset section article article nav aside h1,
+.no-reset section article article nav nav h1,
+.no-reset section article article nav section h1,
+.no-reset section article article section article h1,
+.no-reset section article article section aside h1,
+.no-reset section article article section nav h1,
+.no-reset section article article section section h1,
+.no-reset section article aside article article h1,
+.no-reset section article aside article aside h1,
+.no-reset section article aside article nav h1,
+.no-reset section article aside article section h1,
+.no-reset section article aside aside article h1,
+.no-reset section article aside aside aside h1,
+.no-reset section article aside aside nav h1,
+.no-reset section article aside aside section h1,
+.no-reset section article aside nav article h1,
+.no-reset section article aside nav aside h1,
+.no-reset section article aside nav nav h1,
+.no-reset section article aside nav section h1,
+.no-reset section article aside section article h1,
+.no-reset section article aside section aside h1,
+.no-reset section article aside section nav h1,
+.no-reset section article aside section section h1,
+.no-reset section article nav article article h1,
+.no-reset section article nav article aside h1,
+.no-reset section article nav article nav h1,
+.no-reset section article nav article section h1,
+.no-reset section article nav aside article h1,
+.no-reset section article nav aside aside h1,
+.no-reset section article nav aside nav h1,
+.no-reset section article nav aside section h1,
+.no-reset section article nav nav article h1,
+.no-reset section article nav nav aside h1,
+.no-reset section article nav nav nav h1,
+.no-reset section article nav nav section h1,
+.no-reset section article nav section article h1,
+.no-reset section article nav section aside h1,
+.no-reset section article nav section nav h1,
+.no-reset section article nav section section h1,
+.no-reset section article section article article h1,
+.no-reset section article section article aside h1,
+.no-reset section article section article nav h1,
+.no-reset section article section article section h1,
+.no-reset section article section aside article h1,
+.no-reset section article section aside aside h1,
+.no-reset section article section aside nav h1,
+.no-reset section article section aside section h1,
+.no-reset section article section nav article h1,
+.no-reset section article section nav aside h1,
+.no-reset section article section nav nav h1,
+.no-reset section article section nav section h1,
+.no-reset section article section section article h1,
+.no-reset section article section section aside h1,
+.no-reset section article section section nav h1,
+.no-reset section article section section section h1,
+.no-reset section aside article article article h1,
+.no-reset section aside article article aside h1,
+.no-reset section aside article article nav h1,
+.no-reset section aside article article section h1,
+.no-reset section aside article aside article h1,
+.no-reset section aside article aside aside h1,
+.no-reset section aside article aside nav h1,
+.no-reset section aside article aside section h1,
+.no-reset section aside article nav article h1,
+.no-reset section aside article nav aside h1,
+.no-reset section aside article nav nav h1,
+.no-reset section aside article nav section h1,
+.no-reset section aside article section article h1,
+.no-reset section aside article section aside h1,
+.no-reset section aside article section nav h1,
+.no-reset section aside article section section h1,
+.no-reset section aside aside article article h1,
+.no-reset section aside aside article aside h1,
+.no-reset section aside aside article nav h1,
+.no-reset section aside aside article section h1,
+.no-reset section aside aside aside article h1,
+.no-reset section aside aside aside aside h1,
+.no-reset section aside aside aside nav h1,
+.no-reset section aside aside aside section h1,
+.no-reset section aside aside nav article h1,
+.no-reset section aside aside nav aside h1,
+.no-reset section aside aside nav nav h1,
+.no-reset section aside aside nav section h1,
+.no-reset section aside aside section article h1,
+.no-reset section aside aside section aside h1,
+.no-reset section aside aside section nav h1,
+.no-reset section aside aside section section h1,
+.no-reset section aside nav article article h1,
+.no-reset section aside nav article aside h1,
+.no-reset section aside nav article nav h1,
+.no-reset section aside nav article section h1,
+.no-reset section aside nav aside article h1,
+.no-reset section aside nav aside aside h1,
+.no-reset section aside nav aside nav h1,
+.no-reset section aside nav aside section h1,
+.no-reset section aside nav nav article h1,
+.no-reset section aside nav nav aside h1,
+.no-reset section aside nav nav nav h1,
+.no-reset section aside nav nav section h1,
+.no-reset section aside nav section article h1,
+.no-reset section aside nav section aside h1,
+.no-reset section aside nav section nav h1,
+.no-reset section aside nav section section h1,
+.no-reset section aside section article article h1,
+.no-reset section aside section article aside h1,
+.no-reset section aside section article nav h1,
+.no-reset section aside section article section h1,
+.no-reset section aside section aside article h1,
+.no-reset section aside section aside aside h1,
+.no-reset section aside section aside nav h1,
+.no-reset section aside section aside section h1,
+.no-reset section aside section nav article h1,
+.no-reset section aside section nav aside h1,
+.no-reset section aside section nav nav h1,
+.no-reset section aside section nav section h1,
+.no-reset section aside section section article h1,
+.no-reset section aside section section aside h1,
+.no-reset section aside section section nav h1,
+.no-reset section aside section section section h1,
+.no-reset section nav article article article h1,
+.no-reset section nav article article aside h1,
+.no-reset section nav article article nav h1,
+.no-reset section nav article article section h1,
+.no-reset section nav article aside article h1,
+.no-reset section nav article aside aside h1,
+.no-reset section nav article aside nav h1,
+.no-reset section nav article aside section h1,
+.no-reset section nav article nav article h1,
+.no-reset section nav article nav aside h1,
+.no-reset section nav article nav nav h1,
+.no-reset section nav article nav section h1,
+.no-reset section nav article section article h1,
+.no-reset section nav article section aside h1,
+.no-reset section nav article section nav h1,
+.no-reset section nav article section section h1,
+.no-reset section nav aside article article h1,
+.no-reset section nav aside article aside h1,
+.no-reset section nav aside article nav h1,
+.no-reset section nav aside article section h1,
+.no-reset section nav aside aside article h1,
+.no-reset section nav aside aside aside h1,
+.no-reset section nav aside aside nav h1,
+.no-reset section nav aside aside section h1,
+.no-reset section nav aside nav article h1,
+.no-reset section nav aside nav aside h1,
+.no-reset section nav aside nav nav h1,
+.no-reset section nav aside nav section h1,
+.no-reset section nav aside section article h1,
+.no-reset section nav aside section aside h1,
+.no-reset section nav aside section nav h1,
+.no-reset section nav aside section section h1,
+.no-reset section nav nav article article h1,
+.no-reset section nav nav article aside h1,
+.no-reset section nav nav article nav h1,
+.no-reset section nav nav article section h1,
+.no-reset section nav nav aside article h1,
+.no-reset section nav nav aside aside h1,
+.no-reset section nav nav aside nav h1,
+.no-reset section nav nav aside section h1,
+.no-reset section nav nav nav article h1,
+.no-reset section nav nav nav aside h1,
+.no-reset section nav nav nav nav h1,
+.no-reset section nav nav nav section h1,
+.no-reset section nav nav section article h1,
+.no-reset section nav nav section aside h1,
+.no-reset section nav nav section nav h1,
+.no-reset section nav nav section section h1,
+.no-reset section nav section article article h1,
+.no-reset section nav section article aside h1,
+.no-reset section nav section article nav h1,
+.no-reset section nav section article section h1,
+.no-reset section nav section aside article h1,
+.no-reset section nav section aside aside h1,
+.no-reset section nav section aside nav h1,
+.no-reset section nav section aside section h1,
+.no-reset section nav section nav article h1,
+.no-reset section nav section nav aside h1,
+.no-reset section nav section nav nav h1,
+.no-reset section nav section nav section h1,
+.no-reset section nav section section article h1,
+.no-reset section nav section section aside h1,
+.no-reset section nav section section nav h1,
+.no-reset section nav section section section h1,
+.no-reset section section article article article h1,
+.no-reset section section article article aside h1,
+.no-reset section section article article nav h1,
+.no-reset section section article article section h1,
+.no-reset section section article aside article h1,
+.no-reset section section article aside aside h1,
+.no-reset section section article aside nav h1,
+.no-reset section section article aside section h1,
+.no-reset section section article nav article h1,
+.no-reset section section article nav aside h1,
+.no-reset section section article nav nav h1,
+.no-reset section section article nav section h1,
+.no-reset section section article section article h1,
+.no-reset section section article section aside h1,
+.no-reset section section article section nav h1,
+.no-reset section section article section section h1,
+.no-reset section section aside article article h1,
+.no-reset section section aside article aside h1,
+.no-reset section section aside article nav h1,
+.no-reset section section aside article section h1,
+.no-reset section section aside aside article h1,
+.no-reset section section aside aside aside h1,
+.no-reset section section aside aside nav h1,
+.no-reset section section aside aside section h1,
+.no-reset section section aside nav article h1,
+.no-reset section section aside nav aside h1,
+.no-reset section section aside nav nav h1,
+.no-reset section section aside nav section h1,
+.no-reset section section aside section article h1,
+.no-reset section section aside section aside h1,
+.no-reset section section aside section nav h1,
+.no-reset section section aside section section h1,
+.no-reset section section nav article article h1,
+.no-reset section section nav article aside h1,
+.no-reset section section nav article nav h1,
+.no-reset section section nav article section h1,
+.no-reset section section nav aside article h1,
+.no-reset section section nav aside aside h1,
+.no-reset section section nav aside nav h1,
+.no-reset section section nav aside section h1,
+.no-reset section section nav nav article h1,
+.no-reset section section nav nav aside h1,
+.no-reset section section nav nav nav h1,
+.no-reset section section nav nav section h1,
+.no-reset section section nav section article h1,
+.no-reset section section nav section aside h1,
+.no-reset section section nav section nav h1,
+.no-reset section section nav section section h1,
+.no-reset section section section article article h1,
+.no-reset section section section article aside h1,
+.no-reset section section section article nav h1,
+.no-reset section section section article section h1,
+.no-reset section section section aside article h1,
+.no-reset section section section aside aside h1,
+.no-reset section section section aside nav h1,
+.no-reset section section section aside section h1,
+.no-reset section section section nav article h1,
+.no-reset section section section nav aside h1,
+.no-reset section section section nav nav h1,
+.no-reset section section section nav section h1,
+.no-reset section section section section article h1,
+.no-reset section section section section aside h1,
+.no-reset section section section section nav h1,
+.no-reset section section section section section h1 {
+  font-size: 0.67em;
+  font-weight: bold;
+  margin: 2.33em 0;
+}
+
+.no-reset table {
+  border-collapse: separate;
+  border-spacing: 2px;
+  border-color: gray;
+}
+
+.no-reset thead,
+.no-reset tbody,
+.no-reset tfoot,
+.no-reset tr {
+  border-color: inherit;
+  vertical-align: middle;
+}
+
+.no-reset td,
+.no-reset th {
+  padding: 1px;
+  vertical-align: inherit;
+}
+
+.no-reset th {
+  font-weight: bold;
+}
+
+.no-reset caption {
+  text-align: center;
+}
+
+.no-reset ul,
+.no-reset menu {
+  list-style-type: disc;
+  margin: 1em 0;
+  padding: 0 0 0 40px;
+}
+
+.no-reset ol {
+  list-style-type: decimal;
+  margin: 1em 0;
+  padding: 0 0 0 40px;
+}
+
+.no-reset ul ul,
+.no-reset ol ul {
+  list-style-type: circle;
+}
+
+.no-reset ul ul ul,
+.no-reset ul ol ul,
+.no-reset ol ul ul,
+.no-reset ol ol ul {
+  list-style-type: square;
+}
+
+.no-reset dd {
+  margin: 0 0 0 40px;
+}
+
+.no-reset dl {
+  margin: 1em 0;
+}
+
+.no-reset ul ul,
+.no-reset ul ol,
+.no-reset ul menu,
+.no-reset ul dl,
+.no-reset ol ul,
+.no-reset ol ol,
+.no-reset ol menu,
+.no-reset ol dl,
+.no-reset menu ul,
+.no-reset menu ol,
+.no-reset menu menu,
+.no-reset menu dl,
+.no-reset dl ul,
+.no-reset dl ol,
+.no-reset dl menu,
+.no-reset dl dl {
+  margin: 0;
+}
+
+.no-reset legend {
+  padding: 0 2px;
+}
+
+.no-reset fieldset {
+  border-style: groove;
+  border-width: 2px;
+  border: 2px groove ThreeDFace;
+  margin: 0 2px;
+  padding: 0 2px 3px;
+  -webkit-padding-before: 0.35em;
+  -webkit-padding-start: 0.75em;
+  -webkit-padding-end: 0.75em;
+  -webkit-padding-after: 0.625em;
+}
+
+.no-reset ins {
+  background-color: transparent;
+  font-weight: inherit;
+  text-decoration: underline;
+}
+
+.no-reset b,
+.no-reset strong {
+  font-weight: bold;
+}
+
+.no-reset i,
+.no-reset cite,
+.no-reset em,
+.no-reset var,
+.no-reset address,
+.no-reset dfn {
+  font-style: italic;
+  font-weight: inherit;
+}
+
+.no-reset abbr[title],
+.no-reset dfn[title] {
+  border-bottom: 0;
+  cursor: default;
+  font-weight: inherit;
+}
+
+.no-reset tt,
+.no-reset code,
+.no-reset kbd,
+.no-reset samp {
+  font-family: monospace;
+  font-weight: inherit;
+}
+
+.no-reset pre {
+  font-family: monospace;
+  margin: 1em 0;
+  white-space: pre;
+}
+
+.no-reset mark {
+  background-color: yellow;
+  color: black;
+  font-style: normal;
+  font-weight: inherit;
+}
+
+.no-reset big {
+  font-size: larger;
+  font-weight: inherit;
+}
+
+.no-reset small {
+  font-size: smaller;
+  font-weight: inherit;
+}
+
+.no-reset sub,
+.no-reset sup {
+  font-weight: inherit;
+  line-height: inherit;
+  position: static;
+}
+
+.no-reset sub {
+  font-size: smaller;
+  bottom: 0;
+  vertical-align: sub;
+}
+
+.no-reset sup {
+  font-size: smaller;
+  top: 0;
+  vertical-align: super;
+}
+
+.no-reset ruby > rt {
+  font-size: 50%;
+}
+
+.no-reset iframe {
+  border: 2px inset;
+}
+
+.no-reset img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* -------------------
+  VARIABLES
+--------------------*/
+/* -------------------
+  MIXIN
+--------------------*/
+/* 
+.example {
+  font-size: fs(12); <- 12px quite
+}
+*/
+/* 
+.example {
+  @include mq() {
+	  width: 100%;
+	}
+}
+*/
+/* -------------------
+  COMMON
+--------------------*/
+body {
+  font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif, Roboto Condensed;
+  font-weight: 500;
+}
+
+body.fixed {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.pc-only {
+  display: block;
+}
+
+@media screen and (max-width: 1050px) {
+  .pc-only {
+    display: none !important;
+  }
+}
+
+.pc-only2 {
+  display: block;
+}
+
+@media screen and (max-width: 767px) {
+  .pc-only2 {
+    display: none !important;
+  }
+}
+
+.pc-onlyt {
+  display: block;
+}
+
+@media screen and (max-width: 576px) {
+  .pc-onlyt {
+    display: none !important;
+  }
+}
+
+.pc-only3 {
+  display: inline-block;
+}
+
+@media screen and (max-width: 1050px) {
+  .pc-only3 {
+    display: none !important;
+  }
+}
+
+.sp-only {
+  display: none !important;
+}
+
+@media screen and (max-width: 1050px) {
+  .sp-only {
+    display: block !important;
+  }
+}
+
+.sp-only2 {
+  display: none !important;
+}
+
+@media screen and (max-width: 767px) {
+  .sp-only2 {
+    display: block !important;
+  }
+}
+
+.sp-onlyt {
+  display: none !important;
+}
+
+@media screen and (max-width: 576px) {
+  .sp-onlyt {
+    display: block !important;
+  }
+}
+
+.en {
+  font-family: "Rubik", sans-serif;
+}
+
+.wrapper {
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  width: 1040px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1050px) {
+  .container {
+    width: 100%;
+    padding: 0 15px;
+  }
+}
+
+.container2 {
+  position: relative;
+  width: 900px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1050px) {
+  .container2 {
+    width: 100%;
+    padding: 0 15px;
+  }
+}
+
+.d-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.delay-1 {
+  -webkit-transition-delay: .1s;
+          transition-delay: .1s;
+}
+
+.delay-2 {
+  -webkit-transition-delay: .2s;
+          transition-delay: .2s;
+}
+
+.delay-3 {
+  -webkit-transition-delay: .3s;
+          transition-delay: .3s;
+}
+
+.delay-4 {
+  -webkit-transition-delay: .4s;
+          transition-delay: .4s;
+}
+
+.delay-5 {
+  -webkit-transition-delay: .5s;
+          transition-delay: .5s;
+}
+
+.delay-6 {
+  -webkit-transition-delay: .6s;
+          transition-delay: .6s;
+}
+
+.delay-7 {
+  -webkit-transition-delay: .7s;
+          transition-delay: .7s;
+}
+
+.delay-8 {
+  -webkit-transition-delay: .8s;
+          transition-delay: .8s;
+}
+
+.delay-9 {
+  -webkit-transition-delay: .9s;
+          transition-delay: .9s;
+}
+
+.delay-10 {
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
+}
+
+.delay-11 {
+  -webkit-transition-delay: 1.1s;
+          transition-delay: 1.1s;
+}
+
+.delay-12 {
+  -webkit-transition-delay: 1.2s;
+          transition-delay: 1.2s;
+}
+
+.delay-13 {
+  -webkit-transition-delay: 1.3s;
+          transition-delay: 1.3s;
+}
+
+.delay-14 {
+  -webkit-transition-delay: 1.4s;
+          transition-delay: 1.4s;
+}
+
+.delay-15 {
+  -webkit-transition-delay: 1.5s;
+          transition-delay: 1.5s;
+}
+
+.delay-16 {
+  -webkit-transition-delay: 1.6s;
+          transition-delay: 1.6s;
+}
+
+.delay-17 {
+  -webkit-transition-delay: 1.7s;
+          transition-delay: 1.7s;
+}
+
+.delay-18 {
+  -webkit-transition-delay: 1.8s;
+          transition-delay: 1.8s;
+}
+
+.delay-19 {
+  -webkit-transition-delay: 1.9s;
+          transition-delay: 1.9s;
+}
+
+.delay-20 {
+  -webkit-transition-delay: 2.0s;
+          transition-delay: 2.0s;
+}
+
+.delay-21 {
+  -webkit-transition-delay: 2.1s;
+          transition-delay: 2.1s;
+}
+
+.delay-22 {
+  -webkit-transition-delay: 2.2s;
+          transition-delay: 2.2s;
+}
+
+.delay-23 {
+  -webkit-transition-delay: 2.3s;
+          transition-delay: 2.3s;
+}
+
+.delay-24 {
+  -webkit-transition-delay: 2.4s;
+          transition-delay: 2.4s;
+}
+
+.ani-delay-1 {
+  -webkit-animation-delay: .1s;
+          animation-delay: .1s;
+}
+
+.ani-delay-2 {
+  -webkit-animation-delay: .2s;
+          animation-delay: .2s;
+}
+
+.ani-delay-3 {
+  -webkit-animation-delay: .3s;
+          animation-delay: .3s;
+}
+
+.ani-delay-4 {
+  -webkit-animation-delay: .4s;
+          animation-delay: .4s;
+}
+
+.ani-delay-5 {
+  -webkit-animation-delay: .5s;
+          animation-delay: .5s;
+}
+
+.ani-delay-6 {
+  -webkit-animation-delay: .6s;
+          animation-delay: .6s;
+}
+
+.ani-delay-7 {
+  -webkit-animation-delay: .7s;
+          animation-delay: .7s;
+}
+
+.ani-delay-8 {
+  -webkit-animation-delay: .8s;
+          animation-delay: .8s;
+}
+
+.ani-delay-9 {
+  -webkit-animation-delay: .9s;
+          animation-delay: .9s;
+}
+
+.ani-delay-10 {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+.ani-delay-11 {
+  -webkit-animation-delay: 1.1s;
+          animation-delay: 1.1s;
+}
+
+.ani-delay-12 {
+  -webkit-animation-delay: 1.2s;
+          animation-delay: 1.2s;
+}
+
+.ani-delay-13 {
+  -webkit-animation-delay: 1.3s;
+          animation-delay: 1.3s;
+}
+
+.ani-delay-14 {
+  -webkit-animation-delay: 1.4s;
+          animation-delay: 1.4s;
+}
+
+.ani-delay-15 {
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+}
+
+.ani-delay-16 {
+  -webkit-animation-delay: 1.6s;
+          animation-delay: 1.6s;
+}
+
+.ani-delay-17 {
+  -webkit-animation-delay: 1.7s;
+          animation-delay: 1.7s;
+}
+
+.ani-delay-18 {
+  -webkit-animation-delay: 1.8s;
+          animation-delay: 1.8s;
+}
+
+.ani-delay-19 {
+  -webkit-animation-delay: 1.9s;
+          animation-delay: 1.9s;
+}
+
+.ani-delay-20 {
+  -webkit-animation-delay: 2.0s;
+          animation-delay: 2.0s;
+}
+
+.ani-delay-21 {
+  -webkit-animation-delay: 2.1s;
+          animation-delay: 2.1s;
+}
+
+.ani-delay-22 {
+  -webkit-animation-delay: 2.2s;
+          animation-delay: 2.2s;
+}
+
+.ani-delay-23 {
+  -webkit-animation-delay: 2.3s;
+          animation-delay: 2.3s;
+}
+
+.ani-delay-24 {
+  -webkit-animation-delay: 2.4s;
+          animation-delay: 2.4s;
+}
+
+/* Fade in */
+.fadein {
+  opacity: 0;
+  -webkit-transition: opacity 2s cubic-bezier(0.165, 0.84, 0.44, 1) 0s;
+  transition: opacity 2s cubic-bezier(0.165, 0.84, 0.44, 1) 0s;
+}
+
+.fadein.in {
+  opacity: 1;
+}
+
+@keyframes animatedBackground {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -300px 0;
+  }
+}
+
+@-webkit-keyframes animatedBackground {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -300px 0;
+  }
+}
+
+/* Fade up */
+.fadeup {
+  opacity: 0;
+  -webkit-transform: translate(0, 80px);
+          transform: translate(0, 80px);
+  -webkit-transition: opacity 2s cubic-bezier(0.165, 0.84, 0.44, 1) 0s, -webkit-transform 2s cubic-bezier(0.165, 0.84, 0.44, 1) 0s;
+  transition: opacity 2s cubic-bezier(0.165, 0.84, 0.44, 1) 0s, -webkit-transform 2s cubic-bezier(0.165, 0.84, 0.44, 1) 0s;
+  transition: opacity 2s cubic-bezier(0.165, 0.84, 0.44, 1) 0s, transform 2s cubic-bezier(0.165, 0.84, 0.44, 1) 0s;
+  transition: opacity 2s cubic-bezier(0.165, 0.84, 0.44, 1) 0s, transform 2s cubic-bezier(0.165, 0.84, 0.44, 1) 0s, -webkit-transform 2s cubic-bezier(0.165, 0.84, 0.44, 1) 0s;
+}
+
+.fadeup.in {
+  opacity: 1;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+}
+
+@-webkit-keyframes ani-pulse {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes ani-pulse {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.ani-pulse {
+  opacity: 1;
+  -webkit-transform: scale3d(1, 1, 1);
+          transform: scale3d(1, 1, 1);
+  -webkit-animation: ani-pulse 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+          animation: ani-pulse 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.delay-1 {
+  -webkit-transition-delay: .1s;
+          transition-delay: .1s;
+}
+
+.delay-2 {
+  -webkit-transition-delay: .2s;
+          transition-delay: .2s;
+}
+
+.delay-3 {
+  -webkit-transition-delay: .3s;
+          transition-delay: .3s;
+}
+
+.delay-4 {
+  -webkit-transition-delay: .4s;
+          transition-delay: .4s;
+}
+
+.delay-5 {
+  -webkit-transition-delay: .5s;
+          transition-delay: .5s;
+}
+
+.delay-6 {
+  -webkit-transition-delay: .6s;
+          transition-delay: .6s;
+}
+
+.delay-7 {
+  -webkit-transition-delay: .7s;
+          transition-delay: .7s;
+}
+
+.delay-8 {
+  -webkit-transition-delay: .8s;
+          transition-delay: .8s;
+}
+
+.delay-9 {
+  -webkit-transition-delay: .9s;
+          transition-delay: .9s;
+}
+
+.delay-10 {
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
+}
+
+.delay-11 {
+  -webkit-transition-delay: 1.1s;
+          transition-delay: 1.1s;
+}
+
+.delay-12 {
+  -webkit-transition-delay: 1.2s;
+          transition-delay: 1.2s;
+}
+
+.delay-13 {
+  -webkit-transition-delay: 1.3s;
+          transition-delay: 1.3s;
+}
+
+.delay-14 {
+  -webkit-transition-delay: 1.4s;
+          transition-delay: 1.4s;
+}
+
+.delay-15 {
+  -webkit-transition-delay: 1.5s;
+          transition-delay: 1.5s;
+}
+
+.delay-16 {
+  -webkit-transition-delay: 1.6s;
+          transition-delay: 1.6s;
+}
+
+.delay-17 {
+  -webkit-transition-delay: 1.7s;
+          transition-delay: 1.7s;
+}
+
+.delay-18 {
+  -webkit-transition-delay: 1.8s;
+          transition-delay: 1.8s;
+}
+
+.delay-19 {
+  -webkit-transition-delay: 1.9s;
+          transition-delay: 1.9s;
+}
+
+.delay-20 {
+  -webkit-transition-delay: 2.0s;
+          transition-delay: 2.0s;
+}
+
+.delay-21 {
+  -webkit-transition-delay: 2.1s;
+          transition-delay: 2.1s;
+}
+
+.delay-22 {
+  -webkit-transition-delay: 2.2s;
+          transition-delay: 2.2s;
+}
+
+.delay-23 {
+  -webkit-transition-delay: 2.3s;
+          transition-delay: 2.3s;
+}
+
+.delay-24 {
+  -webkit-transition-delay: 2.4s;
+          transition-delay: 2.4s;
+}
+
+.ani-delay-1 {
+  -webkit-animation-delay: .1s;
+          animation-delay: .1s;
+}
+
+.ani-delay-2 {
+  -webkit-animation-delay: .2s;
+          animation-delay: .2s;
+}
+
+.ani-delay-3 {
+  -webkit-animation-delay: .3s;
+          animation-delay: .3s;
+}
+
+.ani-delay-4 {
+  -webkit-animation-delay: .4s;
+          animation-delay: .4s;
+}
+
+.ani-delay-5 {
+  -webkit-animation-delay: .5s;
+          animation-delay: .5s;
+}
+
+.ani-delay-6 {
+  -webkit-animation-delay: .6s;
+          animation-delay: .6s;
+}
+
+.ani-delay-7 {
+  -webkit-animation-delay: .7s;
+          animation-delay: .7s;
+}
+
+.ani-delay-8 {
+  -webkit-animation-delay: .8s;
+          animation-delay: .8s;
+}
+
+.ani-delay-9 {
+  -webkit-animation-delay: .9s;
+          animation-delay: .9s;
+}
+
+.ani-delay-10 {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+.ani-delay-11 {
+  -webkit-animation-delay: 1.1s;
+          animation-delay: 1.1s;
+}
+
+.ani-delay-12 {
+  -webkit-animation-delay: 1.2s;
+          animation-delay: 1.2s;
+}
+
+.ani-delay-13 {
+  -webkit-animation-delay: 1.3s;
+          animation-delay: 1.3s;
+}
+
+.ani-delay-14 {
+  -webkit-animation-delay: 1.4s;
+          animation-delay: 1.4s;
+}
+
+.ani-delay-15 {
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+}
+
+.ani-delay-16 {
+  -webkit-animation-delay: 1.6s;
+          animation-delay: 1.6s;
+}
+
+.ani-delay-17 {
+  -webkit-animation-delay: 1.7s;
+          animation-delay: 1.7s;
+}
+
+.ani-delay-18 {
+  -webkit-animation-delay: 1.8s;
+          animation-delay: 1.8s;
+}
+
+.ani-delay-19 {
+  -webkit-animation-delay: 1.9s;
+          animation-delay: 1.9s;
+}
+
+.ani-delay-20 {
+  -webkit-animation-delay: 2.0s;
+          animation-delay: 2.0s;
+}
+
+.ani-delay-21 {
+  -webkit-animation-delay: 2.1s;
+          animation-delay: 2.1s;
+}
+
+.ani-delay-22 {
+  -webkit-animation-delay: 2.2s;
+          animation-delay: 2.2s;
+}
+
+.ani-delay-23 {
+  -webkit-animation-delay: 2.3s;
+          animation-delay: 2.3s;
+}
+
+.ani-delay-24 {
+  -webkit-animation-delay: 2.4s;
+          animation-delay: 2.4s;
+}
+
+/* -------------------
+  PARTS
+--------------------*/
+.mg-auto {
+  margin: 0 auto;
+}
+
+.mgt-0 {
+  margin-top: 0;
+}
+
+.mgt-5 {
+  margin-top: 5px;
+}
+
+.mgt-10 {
+  margin-top: 10px;
+}
+
+.mgt-15 {
+  margin-top: 15px;
+}
+
+.mgt-20 {
+  margin-top: 20px;
+}
+
+.mgt-25 {
+  margin-top: 25px;
+}
+
+.mgt-30 {
+  margin-top: 30px;
+}
+
+.mgt-35 {
+  margin-top: 35px;
+}
+
+.mgt-40 {
+  margin-top: 40px;
+}
+
+.mgt-45 {
+  margin-top: 45px;
+}
+
+.mgt-50 {
+  margin-top: 50px;
+}
+
+.mgt-55 {
+  margin-top: 55px;
+}
+
+.mgt-60 {
+  margin-top: 60px;
+}
+
+.mgt-65 {
+  margin-top: 65px;
+}
+
+.mgt-70 {
+  margin-top: 70px;
+}
+
+.mgt-75 {
+  margin-top: 75px;
+}
+
+.mgt-80 {
+  margin-top: 80px;
+}
+
+.mgt-85 {
+  margin-top: 85px;
+}
+
+.mgt-90 {
+  margin-top: 90px;
+}
+
+.mgt-95 {
+  margin-top: 95px;
+}
+
+.mgt-100 {
+  margin-top: 100px;
+}
+
+.mgr-0 {
+  margin-right: 0;
+}
+
+.mgr-5 {
+  margin-right: 5px;
+}
+
+.mgr-10 {
+  margin-right: 10px;
+}
+
+.mgr-15 {
+  margin-right: 15px;
+}
+
+.mgr-20 {
+  margin-right: 20px;
+}
+
+.mgr-25 {
+  margin-right: 25px;
+}
+
+.mgr-30 {
+  margin-right: 30px;
+}
+
+.mgr-35 {
+  margin-right: 35px;
+}
+
+.mgr-40 {
+  margin-right: 40px;
+}
+
+.mgr-45 {
+  margin-right: 45px;
+}
+
+.mgr-50 {
+  margin-right: 50px;
+}
+
+.mgr-55 {
+  margin-right: 55px;
+}
+
+.mgr-60 {
+  margin-right: 60px;
+}
+
+.mgr-70 {
+  margin-right: 70px;
+}
+
+.mgr-75 {
+  margin-right: 75px;
+}
+
+.mgr-80 {
+  margin-right: 80px;
+}
+
+.mgr-85 {
+  margin-right: 85px;
+}
+
+.mgr-90 {
+  margin-right: 90px;
+}
+
+.mgr-95 {
+  margin-right: 95px;
+}
+
+.mgr-100 {
+  margin-right: 100px;
+}
+
+.pt-10 {
+  padding-top: 10px;
+}
+
+.no-reset h2 {
+  position: relative;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif, Roboto Condensed;
+}
+
+@media screen and (max-width: 1050px) {
+  .no-reset h2 {
+    font-size: 1.125rem;
+  }
+}
+
+.no-reset h3 {
+  position: relative;
+  font-size: 1.125rem;
+  font-weight: bold;
+  font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif, Roboto Condensed;
+}
+
+@media screen and (max-width: 1050px) {
+  .no-reset h3 {
+    font-size: 1rem;
+  }
+}
+
+.no-reset h4 {
+  position: relative;
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif, Roboto Condensed;
+}
+
+@media screen and (max-width: 1050px) {
+  .no-reset h4 {
+    font-size: 0.9375rem;
+  }
+}
+
+.no-reset h5 {
+  position: relative;
+  font-size: 0.875rem;
+  line-height: 1.3125rem;
+  font-weight: bold;
+  font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif, Roboto Condensed;
+}
+
+@media screen and (max-width: 1050px) {
+  .no-reset h5 {
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+  }
+}
+
+.no-reset p {
+  position: relative;
+  font-size: 0.9375rem;
+  letter-spacing: .38px;
+  line-height: 1.6;
+}
+
+@media screen and (max-width: 1050px) {
+  .no-reset p {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+  }
+}
+
+/* -------------------
+  Title by level
+--------------------*/
+.title-lv2 {
+  position: relative;
+  font-size: 1.25rem;
+  line-height: 1.875rem;
+  font-weight: bold;
+  font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif, Roboto Condensed;
+}
+
+@media screen and (max-width: 1050px) {
+  .title-lv2 {
+    font-size: 1.125rem;
+    line-height: 1.6875rem;
+  }
+}
+
+.title-lv3 {
+  position: relative;
+  font-size: 1.25rem;
+  line-height: 1.875rem;
+  font-weight: bold;
+  font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif, Roboto Condensed;
+}
+
+@media screen and (max-width: 1050px) {
+  .title-lv3 {
+    font-size: 1.125rem;
+    line-height: 1.6875rem;
+  }
+}
+
+.title-lv4 {
+  position: relative;
+  font-size: 1.125rem;
+  line-height: 1.6875rem;
+  font-weight: bold;
+  font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif, Roboto Condensed;
+}
+
+@media screen and (max-width: 1050px) {
+  .title-lv4 {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
+
+.title-lv5 {
+  position: relative;
+  font-size: 0.875rem;
+  line-height: 1.3125rem;
+  font-weight: bold;
+  font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif, Roboto Condensed;
+}
+
+@media screen and (max-width: 1050px) {
+  .title-lv5 {
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+  }
+}
+
+/* -------------------
+  Description
+--------------------*/
+.desc {
+  font-size: 0.875rem;
+  line-height: 1.8;
+  letter-spacing: .38px;
+}
+
+.desc2 {
+  font-size: 0.875rem;
+  line-height: 1.8;
+  letter-spacing: .35px;
+}
+
+.desc3 {
+  font-size: 1rem;
+  line-height: 1.8;
+  letter-spacing: .4px;
+}
+
+@media screen and (max-width: 1050px) {
+  .desc3 {
+    font-size: 0.875rem;
+  }
+}
+
+.desc4 {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  letter-spacing: 3.12px;
+}
+
+@media screen and (max-width: 1050px) {
+  .desc4 {
+    font-size: 0.875rem;
+  }
+}
+
+/* -------------------
+  Section Title
+--------------------*/
+.section-ttl {
+  display: block;
+  position: relative;
+  font-size: 2.875rem;
+  line-height: 2.875rem;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+.section-ttl span {
+  display: block;
+}
+
+@media screen and (max-width: 767px) {
+  .section-ttl {
+    font-size: 2.25rem;
+  }
+}
+
+.section-ttl2 span {
+  display: block;
+}
+
+.section-ttl2 .en {
+  font-size: 0.75rem;
+  letter-spacing: .6px;
+  font-family: "Rubik", sans-serif;
+  color: #91C8FF;
+}
+
+@media screen and (max-width: 767px) {
+  .section-ttl2 .en {
+    font-size: 0.5625rem;
+    letter-spacing: .5px;
+  }
+}
+
+.section-ttl2 .en.white {
+  color: #fff;
+}
+
+.section-ttl2 .jp {
+  font-size: 1.75rem;
+  font-weight: bold;
+  letter-spacing: 3.3px;
+  line-height: 1.8;
+}
+
+@media screen and (max-width: 767px) {
+  .section-ttl2 .jp {
+    font-size: 1.375rem;
+    letter-spacing: 2.5px;
+  }
+}
+
+.section-ttl2 .jp.white {
+  color: #fff;
+}
+
+/* -------------------
+  List
+--------------------*/
+.list-dot li {
+  position: relative;
+  padding-left: 12px;
+}
+
+.list-dot li:before {
+  position: absolute;
+  left: 0;
+  top: 11px;
+  display: block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #052D9F;
+  content: "";
+}
+
+/* -------------------
+  Date, time
+--------------------*/
+.date {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 0.875rem;
+  letter-spacing: .3px;
+  color: #908E95;
+}
+
+@media screen and (max-width: 1050px) {
+  .date {
+    font-size: 0.75rem;
+  }
+}
+
+.date2 {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: .3px;
+  margin-right: 7px;
+  color: #908E95;
+}
+
+@media screen and (max-width: 1050px) {
+  .date2 {
+    font-size: 0.75rem;
+  }
+}
+
+/* -------------------
+  Tags, Label
+--------------------*/
+.tag {
+  display: inline-block;
+  min-width: 90px;
+  margin-right: 2px;
+  padding: 2px 3px;
+  background-color: #4F157F;
+  color: #fff;
+  font-size: 0.75rem;
+  letter-spacing: .5px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  text-align: center;
+}
+
+.tag:last-child {
+  margin-right: 0;
+}
+
+.tag:hover {
+  opacity: .7;
+}
+
+.tag.type2 {
+  padding: 2px 8px 1px;
+  background-color: #7B7B6C;
+  color: #fff;
+}
+
+.tag.type3 {
+  min-width: 60px;
+  font-size: 0.625rem;
+}
+
+.label {
+  margin-right: 10px;
+  padding: 2px 5px;
+  font-family: "Rubik", sans-serif;
+  font-size: 0.625rem;
+  line-height: 0.9375rem;
+  border: solid 1px #000;
+  background-color: #fff;
+}
+
+@media screen and (max-width: 1050px) {
+  .label {
+    padding: 1px 3px;
+  }
+}
+
+.label:last-child {
+  margin-right: 0;
+}
+
+/* -------------------
+  Link, Button, Tab
+--------------------*/
+.txt-blue {
+  color: #1F8CFA;
+}
+
+.link-blue {
+  color: #1F8CFA;
+  -webkit-transition: all .25s;
+  transition: all .25s;
+}
+
+.link-blue:hover {
+  opacity: .8;
+}
+
+.link {
+  display: block;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.link:hover {
+  opacity: .7;
+}
+
+.link.underline {
+  display: inline-block;
+  text-decoration: underline;
+  font-size: 0.875rem;
+  line-height: 1;
+  color: #7B7B6C;
+}
+
+.link.underline:hover {
+  text-decoration: none;
+}
+
+.link-icon {
+  position: relative;
+  padding-right: 16px;
+  font-size: 0.875rem;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.link-icon:hover {
+  opacity: .7;
+}
+
+.link-icon.blank {
+  background: url(../images/common/icon-blank.svg) right center/12px 12px no-repeat;
+}
+
+.link-icon.pdf {
+  background: url(../images/common/icon-pdf.svg) right center/11px 13px no-repeat;
+}
+
+.link-icon.excel {
+  background: url(../images/common/icon-excel.svg) right center/11px 13px no-repeat;
+}
+
+.link-icon.under {
+  text-decoration: underline;
+}
+
+.link-icon.under:hover {
+  text-decoration: none;
+}
+
+.btn-blue {
+  display: block;
+  width: 270px;
+  height: 60px;
+  line-height: 60px;
+  font-size: 0.9375rem;
+  font-weight: bold;
+  letter-spacing: .75px;
+  color: #fff;
+  background: transparent -webkit-gradient(linear, right top, left top, from(#1F8CFA), to(#0566EF)) 0% 0%;
+  background: transparent linear-gradient(270deg, #1F8CFA 0%, #0566EF 100%) 0% 0%;
+  border-radius: 60px;
+  text-align: center;
+  -webkit-transition: all .25s;
+  transition: all .25s;
+}
+
+@media screen and (max-width: 767px) {
+  .btn-blue {
+    height: 50px;
+    line-height: 50px;
+    font-size: 0.875rem;
+  }
+}
+
+.btn-blue:hover {
+  color: #0566EF;
+  background: #fff;
+  border: solid 1px #1F8CFA;
+}
+
+.btn-white {
+  display: block;
+  width: 270px;
+  height: 60px;
+  line-height: 60px;
+  font-size: 0.9375rem;
+  font-weight: bold;
+  letter-spacing: .75px;
+  color: #1F8CFA;
+  background: #fff;
+  border: solid 1px #1F8CFA;
+  border-radius: 60px;
+  text-align: center;
+  -webkit-transition: all .25s;
+  transition: all .25s;
+}
+
+@media screen and (max-width: 767px) {
+  .btn-white {
+    height: 50px;
+    line-height: 50px;
+    font-size: 0.875rem;
+  }
+}
+
+.btn-white:hover {
+  color: #fff;
+  background: #1F8CFA;
+  border: solid 1px #1F8CFA;
+}
+
+.view-more {
+  display: inline-block;
+  color: #0566EF;
+  font-family: "Rubik", sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: .8px;
+  padding-right: 12px;
+  background: url(../images/common/icon-arrow-right.svg) right center no-repeat;
+  -webkit-transition: all .25s;
+  transition: all .25s;
+}
+
+.view-more:hover {
+  opacity: .8;
+}
+
+.view-more.white {
+  color: #fff;
+  background-image: url(../images/common/icon-arrow-right-white.svg);
+}
+
+.view-more2 {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 0.9375rem;
+  font-weight: bold;
+  letter-spacing: .75px;
+  padding-left: 22px;
+  background: url(../images/common/icon-viewmore.png) left center no-repeat;
+  -webkit-transition: all .25s;
+  transition: all .25s;
+}
+
+.view-more2:hover {
+  opacity: .8;
+}
+
+.btn-back {
+  display: block;
+  width: 270px;
+  height: 54px;
+  line-height: 54px;
+  font-size: 0.9375rem;
+  letter-spacing: .38px;
+  color: #0566EF;
+  background: #fff url(../images/common/icon-arrow-left.svg) left 20px center no-repeat;
+  border: solid 1px #E3EBF2;
+  border-radius: 60px;
+  text-align: center;
+  -webkit-transition: all .25s;
+  transition: all .25s;
+}
+
+@media screen and (max-width: 767px) {
+  .btn-back {
+    height: 50px;
+    line-height: 50px;
+    font-size: 0.875rem;
+  }
+}
+
+.btn-back:hover {
+  color: #fff;
+  background: #0566EF url(../images/common/icon-arrow-left-white.svg) left 20px center no-repeat;
+  border-color: #0566EF;
+}
+
+.border-radius-10 {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.border-radius-5 {
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+/* -------------------
+  Group button
+--------------------*/
+.post-ctrl {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 40px;
+  padding: 20px 0;
+}
+
+.post-ctrl--link {
+  position: relative;
+  display: inline-block;
+  padding: 0 20px 0 0px;
+  font-size: 0.875rem;
+  line-height: 1;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  color: #7B7B6C;
+  background: url(../images/common/icon-arrow-right-gray.svg) right center/10px 10px no-repeat;
+}
+
+.post-ctrl--link:hover:after {
+  display: block;
+}
+
+.post-ctrl--link:after {
+  display: none;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: calc(100% - 20px);
+  height: 1px;
+  background-color: #7B7B6C;
+  content: "";
+}
+
+.post-ctrl .back {
+  margin-right: auto;
+  padding: 0 0 0 20px;
+  background: url(../images/common/icon-arrow-left-gray.svg) left center/10px 10px no-repeat;
+}
+
+.post-ctrl .back:after {
+  left: 20px;
+}
+
+.post-ctrl .next {
+  margin-left: auto;
+}
+
+.post-ctrl--menu {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  padding-top: 24px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  color: #7B7B6C;
+  background: url(../images/common/icon-all.svg) no-repeat top center;
+  background-size: 18px 18px;
+}
+
+.post-direct {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 15px 20px 11px;
+  border-top: 1px solid #C7C7C7;
+  border-bottom: 1px solid #C7C7C7;
+}
+
+@media screen and (max-width: 1050px) {
+  .post-direct {
+    padding: 30px 20px 20px;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .post-direct-tag {
+    width: 100%;
+  }
+}
+
+.post-direct-sns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+@media screen and (max-width: 1050px) {
+  .post-direct-sns {
+    width: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-top: 20px;
+  }
+}
+
+.post-direct-sns a {
+  margin-right: 20px;
+}
+
+@media screen and (max-width: 1050px) {
+  .post-direct-sns a {
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border: solid 1px #7B7B6C;
+    border-radius: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .post-direct-sns a img {
+    width: auto;
+  }
+}
+
+.post-direct-sns a.facebook {
+  padding-bottom: 2px;
+}
+
+.post-direct-sns a:last-child {
+  margin-right: 0;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.col2-75 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media screen and (max-width: 767px) {
+  .col2-75 {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .col2-75--left {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+.col2-75--right {
+  width: 25%;
+  margin-left: 40px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .col2-75--right {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+.col2-7 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media screen and (max-width: 767px) {
+  .col2-7 {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .col2-7--left {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+.col2-7--right {
+  width: 30.8%;
+  margin-left: 40px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .col2-7--right {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+.col2-25 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media screen and (max-width: 767px) {
+  .col2-25 {
+    display: block;
+  }
+}
+
+.col2-25--left {
+  width: 25%;
+  margin-right: 20px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .col2-25--left {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .col2-25--right {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+.col2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0 -20px;
+}
+
+@media screen and (max-width: 767px) {
+  .col2 {
+    display: block;
+    margin: 0;
+  }
+}
+
+.col2-item {
+  width: 50%;
+  padding: 0 20px;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 767px) {
+  .col2-item {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+.col2-item--inner {
+  display: block;
+}
+
+.col2-2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0 -10px;
+}
+
+@media screen and (max-width: 767px) {
+  .col2-2 {
+    display: block;
+    margin: 0;
+  }
+}
+
+.col2-2-item {
+  width: 50%;
+  padding: 0 10px;
+  margin-bottom: 30px;
+}
+
+@media screen and (max-width: 767px) {
+  .col2-2-item {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+.col2-2-item--inner {
+  display: block;
+}
+
+.col3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0 -10px;
+}
+
+@media screen and (max-width: 767px) {
+  .col3 {
+    display: block;
+    margin: 0;
+  }
+}
+
+.col3-item {
+  width: 33.33%;
+  padding: 0 10px;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 767px) {
+  .col3-item {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+.col3-item--inner {
+  display: block;
+}
+
+.col4 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0 -10px;
+}
+
+@media screen and (max-width: 767px) {
+  .col4 {
+    display: block;
+    margin: 0;
+  }
+}
+
+.col4-item {
+  width: 25%;
+  padding: 0 10px;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 767px) {
+  .col4-item {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+.col4-item--inner {
+  display: block;
+}
+
+.col5 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0 -10px;
+}
+
+@media screen and (max-width: 767px) {
+  .col5 {
+    display: block;
+    margin: 0;
+  }
+}
+
+.col5-item {
+  width: 20%;
+  padding: 0 10px;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 767px) {
+  .col5-item {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+.col5-item--inner {
+  display: block;
+}
+
+/* -------------------
+	PAGINATION
+--------------------*/
+.pagination {
+  margin: 70px auto 20px;
+}
+
+@media screen and (max-width: 1050px) {
+  .pagination {
+    margin: 50px auto;
+  }
+}
+
+.pagination-label {
+  margin-bottom: 7px;
+  font-size: 0.625rem;
+  color: #000;
+  text-align: center;
+}
+
+.pagination-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -ms-flex-flow: wrap;
+      flex-flow: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.pagination-list a {
+  width: 1.875rem;
+  height: 1.875rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 0.125rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 50%;
+  background-color: #F8F9FA;
+  color: #1F8CFA;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0;
+  line-height: 1.4;
+  -webkit-transition: all .25s;
+  transition: all .25s;
+}
+
+@media screen and (max-width: 1050px) {
+  .pagination-list a {
+    margin-bottom: 5px;
+  }
+}
+
+.pagination-list a:hover {
+  background: -webkit-gradient(linear, right top, left top, from(#1F8CFA), to(#0566EF)) 0% 0%;
+  background: linear-gradient(270deg, #1F8CFA 0%, #0566EF 100%) 0% 0%;
+  color: #fff;
+}
+
+.pagination-list a.active {
+  background: -webkit-gradient(linear, right top, left top, from(#1F8CFA), to(#0566EF)) 0% 0%;
+  background: linear-gradient(270deg, #1F8CFA 0%, #0566EF 100%) 0% 0%;
+  color: #fff;
+  pointer-events: none;
+}
+
+.pagination-list a.ctrl {
+  padding: 0 11px;
+}
+
+.pagination-list a.ctrl:hover svg path {
+  fill: #fff;
+}
+
+.pagination-list a.ctrl.prev {
+  margin-right: 8px;
+}
+
+.pagination-list a.ctrl.next {
+  margin-left: 8px;
+}
+
+.pagination-spacer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: .875rem;
+  color: #919191;
+  margin: .125rem .0625rem;
+  height: 100%;
+}
+
+/* -------------------
+	BREADCRUMB
+--------------------*/
+.breadcrumb {
+  position: relative;
+  z-index: 1;
+}
+
+@media screen and (max-width: 1050px) {
+  .breadcrumb {
+    white-space: nowrap;
+    overflow-x: auto;
+  }
+}
+
+.breadcrumbWrap {
+  margin-top: -70px;
+}
+
+@media screen and (max-width: 1050px) {
+  .breadcrumbWrap {
+    margin-top: 10px;
+  }
+  .breadcrumbWrap.type2 {
+    margin-top: 0;
+    margin-bottom: -50px;
+    padding-top: 10px;
+    background-color: #DFE0E0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .breadcrumbWrap {
+    margin-top: 0;
+  }
+}
+
+.breadcrumb ul li {
+  display: inline-block;
+  font-size: 0.75rem;
+  position: relative;
+  padding-right: 20px;
+  color: #858585;
+}
+
+.breadcrumb ul li a {
+  display: inline-block;
+  color: #1F8CFA;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.breadcrumb ul li a:hover {
+  opacity: .8;
+}
+
+.breadcrumb ul li:last-child {
+  padding-right: 0;
+}
+
+.breadcrumb ul li:last-child:before {
+  display: none;
+}
+
+.breadcrumb ul li:before {
+  display: inline-block;
+  position: absolute;
+  top: 7px;
+  right: 4px;
+  width: 4px;
+  height: 6px;
+  background: url(../images/common/icon-arrow-right-gray.svg) center center/100% 100% no-repeat;
+  content: "";
+}
+
+@media screen and (max-width: 1050px) {
+  .breadcrumb ul li {
+    margin-bottom: 8px;
+  }
+}
+
+.breadcrumb ul li a {
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.breadcrumb ul li a:hover {
+  opacity: .7;
+}
+
+/* -------------------
+  PAGE TOP
+--------------------*/
+.pagetop {
+  cursor: pointer;
+  position: absolute;
+  top: -40px;
+  left: calc(50% - 520px - 40px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  font-family: Yu Gothic;
+  border: 1px solid #DBDADD;
+  font-size: 0.75rem;
+  background-color: white;
+  color: #6B6B6B;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.pagetop span::before {
+  display: block;
+  content: '';
+  width: 10px;
+  height: 6px;
+  background-image: url(../images/common/icon-arrow-top.svg);
+  margin: auto;
+  margin-bottom: 6px;
+}
+
+@media screen and (max-width: 1050px) {
+  .pagetop {
+    left: 15px;
+  }
+}
+
+.pagetop.fixed {
+  top: auto;
+  position: fixed;
+  bottom: 40px;
+}
+
+@media screen and (max-width: 1050px) {
+  .pagetop.fixed {
+    bottom: 15px;
+  }
+}
+
+/**********************/
+/* custom scroll code */
+/**********************/
+.thin-scroll::-webkit-scrollbar-track {
+  background: -webkit-gradient(linear, left top, right top, from(var(--scroll-track-color)), color-stop(30%, var(--scroll-track-color)), color-stop(60%, var(--scroll-color)), color-stop(61%, var(--body-bg-color)), to(var(--body-bg-color)));
+  background: linear-gradient(to right, var(--scroll-track-color) 0%, var(--scroll-track-color) 30%, var(--scroll-color) 60%, var(--body-bg-color) 61%, var(--body-bg-color) 100%);
+}
+
+.thin-scroll::-webkit-scrollbar {
+  width: 10px;
+  height: 60px;
+}
+
+.thin-scroll::-webkit-scrollbar-thumb {
+  background-color: var(--scroll-color);
+  border-radius: 0;
+}
+
+/**********************/
+/* custom scroll code */
+/**********************/
+:root {
+  --body-bg-color: #F5F5F5;
+  --scroll-color: #1F8CFA;
+  --scroll--hover-color: #666;
+}
+
+* {
+  -webkit-overflow-scrolling: touch;
+}
+
+.scrollbar {
+  overflow-y: scroll;
+  background: #c3bebe;
+  scrollbar-color: #F5F5F5;
+  scrollbar-width: thin;
+}
+
+/* -------------------
+  BUTTON
+--------------------*/
+.btn-detail {
+  margin: 25px auto;
+  padding: 10px 20px;
+  border: 1px solid #818181;
+  max-width: 200px;
+  width: 100%;
+  height: 50px;
+  text-align: left;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 0.9375rem;
+  cursor: pointer;
+}
+
+.btn-detail::after {
+  display: inline-block;
+  position: absolute;
+  content: '';
+  width: 6px;
+  height: 10px;
+  right: 19px;
+  background-image: url(../images/common/icon-arrow-right.svg);
+}
+
+/* -------------------
+  ARROWS
+--------------------*/
+.button-up,
+.button-down {
+  position: relative;
+  padding: 5px;
+  margin: 30px auto;
+  background: #000;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+.button-down:hover {
+  -webkit-transform: translate3d(0, 10px, 0);
+          transform: translate3d(0, 10px, 0);
+}
+
+.button-up:hover {
+  -webkit-transform: translate3d(0, -10px, 0);
+          transform: translate3d(0, -10px, 0);
+}
+
+.button-up::after,
+.button-down::after {
+  content: "";
+  position: absolute;
+  left: 17px;
+  z-index: 11;
+  display: block;
+  width: 25px;
+  height: 25px;
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+}
+
+.button-up::after {
+  top: 20px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.button-down::after {
+  top: 10px;
+  -webkit-transform: rotate(225deg);
+          transform: rotate(225deg);
+}
+
+.arrow-right,
+.arrow-left,
+.long-arrow-right,
+.long-arrow-left {
+  display: block;
+  margin: 30px auto;
+  width: 25px;
+  height: 25px;
+  border-top: 2px solid #000;
+  border-left: 2px solid #000;
+}
+
+.arrow-right,
+.long-arrow-right {
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
+
+.arrow-left,
+.long-arrow-left {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.long-arrow-right::after,
+.long-arrow-left::after {
+  content: "";
+  display: block;
+  width: 2px;
+  height: 45px;
+  background-color: black;
+  -webkit-transform: rotate(-45deg) translate(15px, 4px);
+          transform: rotate(-45deg) translate(15px, 4px);
+  left: 0;
+  top: 0;
+}
+
+.triangle-left,
+.triangle-right,
+.triangle-top,
+.triangle-bottom {
+  width: 0;
+  height: 0;
+  margin: 30px auto;
+}
+
+.triangle-left,
+.triangle-right {
+  border-top: 18px solid transparent;
+  border-bottom: 18px solid transparent;
+}
+
+.triangle-top,
+.triangle-bottom {
+  border-left: 18px solid transparent;
+  border-right: 18px solid transparent;
+}
+
+.triangle-right {
+  border-left: 30px solid black;
+}
+
+.triangle-left {
+  border-right: 30px solid black;
+}
+
+.triangle-top {
+  border-bottom: 30px solid black;
+}
+
+.triangle-bottom {
+  border-top: 30px solid black;
+}
+
+/*--------------
+
+<div class="button-up"></div>
+<div class="button-down"></div>
+
+<div class="arrow-right"></div>
+<div class="arrow-left"></div>
+
+<div class="long-arrow-right"></div>
+<div class="long-arrow-left"></div>
+
+<div class="triangle-bottom"></div>
+<div class="triangle-top"></div>
+<div class="triangle-right"></div>
+<div class="triangle-left"></div>
+
+
+
+  --------------*/
+/* -------------------
+  Hover
+--------------------*/
+.hover:hover, .p-bottom .p-btn:hover {
+  -webkit-transition: all 1.3s;
+  transition: all 1.3s;
+}
+
+.hover:hover::before, .p-bottom .p-btn:hover::before {
+  display: block;
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.2) !important;
+  opacity: 1;
+}
+
+.hover-bg-flow-left-right, .patients-menu__left a, .top .p-top-mv--item .btn-detail, .news .btn-detail {
+  background: -webkit-gradient(linear, right top, left top, color-stop(50%, white), color-stop(50%, #ded4e6)) right;
+  background: linear-gradient(to left, white 50%, #ded4e6 50%) right;
+  background-size: 200%;
+  -webkit-transition: .3s ease-out;
+  transition: .3s ease-out;
+}
+
+.hover-bg-flow-left-right:hover, .patients-menu__left a:hover, .top .p-top-mv--item .btn-detail:hover, .news .btn-detail:hover {
+  background-position: left;
+}
+
+.hover-bg-flow-bottom-top, .pagetop {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, white), color-stop(50%, #ded4e6));
+  background: linear-gradient(to bottom, white 50%, #ded4e6 50%);
+  background-size: 100% 200%;
+  -webkit-transition: .3s ease-out;
+  transition: .3s ease-out;
+}
+
+.hover-bg-flow-bottom-top:hover, .pagetop:hover {
+  background-position: 0 100%;
+}
+
+/* -------------------
+  HEADER
+--------------------*/
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100px;
+  padding: 0 0 0 2.14286vw;
+  z-index: 9999;
+  -webkit-transition: all .25s;
+  transition: all .25s;
+  border-bottom: 1px solid rgba(181, 181, 181, 0.2);
+  background: white;
+}
+
+.header.active {
+  position: fixed;
+  height: 70px;
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.header.active .header-logo {
+  width: 250px;
+}
+
+@media screen and (max-width: 1050px) {
+  .header {
+    position: fixed;
+    height: 70px;
+    padding: 0 15px;
+    border-bottom: solid 1px transparent;
+  }
+  .header.active {
+    background-color: #fff;
+    border-bottom: solid 1px #EFEFEF;
+  }
+  .header.active .header-logo {
+    width: 200px;
+  }
+  .header.active2 {
+    background-color: #fff;
+  }
+}
+
+.header-logo {
+  width: 300px;
+  z-index: 9999;
+}
+
+.header-logo .h-logo-sp {
+  display: none;
+}
+
+.header-logo .h-logo-sp.active {
+  display: block;
+}
+
+.header-logo .h-logo-pc.active {
+  display: none;
+}
+
+.header-logo a {
+  display: block;
+}
+
+.header-logo img {
+  width: 100%;
+}
+
+@media screen and (max-width: 1050px) {
+  .header-logo {
+    width: 200px;
+  }
+}
+
+/* -------------------
+  menu
+--------------------*/
+.menu {
+  height: 100%;
+  text-align: right;
+  font-size: 1.07143vw;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 1050px) {
+  .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding-top: 100px;
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    font-weight: bold;
+    background: white;
+    z-index: 9998;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    -webkit-transition: all .3s;
+    transition: all .3s;
+  }
+  .menu.active {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+.menu-inner {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: auto;
+}
+
+@media screen and (max-width: 1050px) {
+  .menu-inner {
+    display: block;
+  }
+}
+
+.menu-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  padding: 0 0 0 2.14286vw;
+}
+
+@media screen and (max-width: 1050px) {
+  .menu-list {
+    display: block;
+    padding: 0 0 50px;
+    height: auto;
+  }
+}
+
+.menu-item {
+  margin-right: 2.85714vw;
+  text-align: left;
+  position: relative;
+}
+
+@media screen and (min-width: 1051px) {
+  .menu-item {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .menu-item {
+    margin-right: 0 !important;
+  }
+  .menu-item.trans-en {
+    margin-right: 0;
+    margin-top: 25px;
+  }
+  .menu-item.trans-en a span {
+    font-size: 12px;
+    color: #908E95;
+  }
+}
+
+.menu-item:last-child {
+  margin-right: 0;
+}
+
+.menu-item.trans-en {
+  font-size: 0.75rem;
+  font-family: Roboto Condensed;
+  font-weight: normal;
+  color: #908E95;
+  margin-right: 30px;
+}
+
+.menu-item.se-img {
+  min-width: 20px;
+}
+
+.menu-item.se-img .inline-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.menu-item.se-img .inline-input input {
+  width: 100%;
+  height: 50px;
+  border: 1px solid #B5B5B5;
+  padding: 0 20px;
+  font-size: 0.875rem;
+}
+
+.menu-item.se-img .inline-input .btn-submit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 60px;
+  height: 50px;
+  background-color: #4F157F;
+}
+
+.menu-item.se-img .inline-input .btn-submit img {
+  width: 15px;
+}
+
+@media screen and (max-width: 1050px) {
+  .menu-item.se-img {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    padding: 0 40px;
+  }
+}
+
+.menu-item__link {
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  word-break: keep-all;
+  font-size: 0.875rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.menu-item__link.contact {
+  height: 100%;
+  padding-left: 1.78571vw;
+  padding-right: 1.78571vw;
+  background-color: #4F157F;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: white;
+}
+
+.menu-item__link.contact:hover {
+  opacity: 0.8;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.menu-item__link::after {
+  display: block;
+  content: '';
+  border-bottom: solid 4px #4F157F;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  width: 60px;
+  position: absolute;
+  left: 50%;
+  bottom: -2px;
+  -webkit-transform: translate(-50%, -50%) scaleX(0);
+          transform: translate(-50%, -50%) scaleX(0);
+  -webkit-transition: -webkit-transform 250ms ease-in-out;
+  transition: -webkit-transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out, -webkit-transform 250ms ease-in-out;
+}
+
+@media screen and (max-width: 1050px) {
+  .menu-item__link {
+    padding: 15px 40px;
+    width: 100%;
+    color: #000;
+  }
+  .menu-item__link.contact {
+    margin: 0 40px;
+    width: auto;
+  }
+  .menu-item__link::after {
+    left: 40px;
+    bottom: 0;
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+}
+
+.menu-item:hover .menu-item__link::after {
+  -webkit-transform: translate(-50%, -50%) scaleX(1);
+          transform: translate(-50%, -50%) scaleX(1);
+}
+
+@media screen and (max-width: 1050px) {
+  .menu-item:hover .menu-item__link::after {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+}
+
+.menu-item:nth-child(5) a::after, .menu-item:nth-child(6) a::after, .menu-item:nth-child(7) a::after {
+  display: none;
+}
+
+.sp-navBtn {
+  position: fixed;
+  top: 12px;
+  right: 15px;
+  width: 45px;
+  height: 45px;
+  z-index: 9999;
+  border-radius: 50%;
+}
+
+.sp-navBtn.active {
+  background-color: #fff;
+}
+
+.sp-navBtn.active span:nth-of-type(1) {
+  -webkit-transform: translate3d(-12px, 7px, 0) rotate(45deg);
+          transform: translate3d(-12px, 7px, 0) rotate(45deg);
+}
+
+.sp-navBtn.active span:nth-of-type(2) {
+  opacity: 0;
+}
+
+.sp-navBtn.active span:nth-of-type(3) {
+  -webkit-transform: translate3d(-12px, -7px, 0) rotate(-45deg);
+          transform: translate3d(-12px, -7px, 0) rotate(-45deg);
+}
+
+.sp-navBtn span {
+  display: block;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  width: 50%;
+  height: 2px;
+  background-color: #000;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.sp-navBtn span:first-child {
+  top: calc(50% - 8px);
+}
+
+.sp-navBtn span:nth-child(2) {
+  top: calc(50% - 1px);
+}
+
+.sp-navBtn span:nth-child(3) {
+  top: calc(50% + 6px);
+}
+
+.patients-menu {
+  background-color: #F2F2F2;
+  position: fixed;
+  width: 100%;
+  top: 100px;
+  left: 0;
+  z-index: 500;
+  display: none;
+}
+
+.patients-menu__wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.patients-menu__left {
+  padding: 90px 95px;
+  width: 330px;
+  background-color: #4F157F;
+  padding-left: 40px;
+  padding-right: 40px;
+  color: white;
+}
+
+.patients-menu__left h1 {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.patients-menu__left p {
+  margin-top: 20px;
+  font-size: 0.9375rem;
+}
+
+.patients-menu__left a {
+  display: block;
+  margin-top: 25px;
+  padding: 10px;
+  font-size: 0.9375rem;
+  background-color: white;
+  color: #3D3D3D;
+  font-weight: bold;
+  text-align: center;
+}
+
+.patients-menu__right {
+  padding: 50px 80px;
+  width: calc(100% - 330px);
+}
+
+.patients-menu__right li:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.patients-menu__right a {
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.patients-menu__right a:hover {
+  color: #4F157F;
+}
+
+.patients-menu.active {
+  top: 70px;
+}
+
+@media screen and (max-width: 1050px) {
+  .patients-menu {
+    position: relative;
+    top: 0;
+  }
+  .patients-menu.active {
+    top: 0;
+  }
+  .patients-menu__wrap {
+    display: block;
+  }
+  .patients-menu__left {
+    width: 100%;
+    padding: 27px 40px 30px;
+  }
+  .patients-menu__left h1 {
+    font-size: 0.9375rem;
+  }
+  .patients-menu__left p {
+    font-size: 0.75rem;
+    margin-top: 18px;
+    font-weight: 500;
+  }
+  .patients-menu__left a {
+    font-size: 0.9375rem;
+    margin-top: 25px;
+    max-width: 250px;
+  }
+  .patients-menu__right {
+    padding: 20px 40px;
+    width: 100%;
+  }
+}
+
+/* -------------------
+  FOOTER
+--------------------*/
+.footer {
+  position: relative;
+  border-top: 1px solid #DBDADD;
+}
+
+.footer-top {
+  padding: 50px 10px 28px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #220F31;
+}
+
+.footer-top .addr {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 0.75rem;
+  line-height: 16px;
+}
+
+.footer-top ul {
+  margin-top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.footer-top ul li {
+  font-size: 12px;
+}
+
+.footer-top ul li:not(:last-child) {
+  margin-right: 40px;
+}
+
+.footer-top ul li .link {
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.footer-top ul li .link:hover {
+  opacity: 0.7;
+}
+
+.footer-top ul li .link::after {
+  display: inline-block;
+  margin-left: 5px;
+  content: '';
+  width: 13px;
+  height: 11px;
+  background: url(../images/common/link-icon.svg);
+}
+
+@media screen and (max-width: 1050px) {
+  .footer-top {
+    padding-bottom: 40px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .footer-top ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .footer-top ul li:not(:last-child) {
+    margin-right: 0px;
+    margin-bottom: 16px;
+  }
+}
+
+.footer-bottom {
+  padding: 24px 0;
+  background-color: #F4F4F4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.75rem;
+  color: #6B6B6B;
+}
+
+.footer-bottom .inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.footer-bottom .inner ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.footer-bottom .inner ul li {
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.footer-bottom .inner ul li:not(:last-child) {
+  margin-right: 30px;
+}
+
+.footer-bottom .inner ul li:hover {
+  opacity: 0.7;
+}
+
+@media screen and (max-width: 1050px) {
+  .footer-bottom .inner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .footer-bottom .inner p {
+    margin-top: 40px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .footer-bottom .inner ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .footer-bottom .inner ul li:not(:last-child) {
+    margin-right: 0px;
+    margin-bottom: 16px;
+  }
+  .footer-bottom .inner ul li:nth-child(3) {
+    margin-bottom: 36px;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .footer-bottom {
+    padding: 30px 0;
+  }
+}
+
+/* -------------------
+    GUIDE
+--------------------*/
+.guide-btn__link {
+  font-size: 15px;
+  position: relative;
+  display: inline-block;
+  padding-right: 20px;
+}
+
+.guide-btn__link::before {
+  display: block;
+  content: '';
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #F2879B;
+  position: absolute;
+  right: 0px;
+  top: 4px;
+}
+
+.guide-btn__link::after {
+  display: block;
+  content: '';
+  border-top: 1px solid #fff;
+  border-left: 1px solid #fff;
+  width: 5px;
+  height: 5px;
+  -webkit-transform: rotate(-225deg);
+          transform: rotate(-225deg);
+  position: absolute;
+  right: 6px;
+  top: 9px;
+}
+
+.guide-btn__link:hover {
+  color: #4F157F;
+}
+
+.arrow-right-link {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #F2879B;
+  display: block;
+  position: relative;
+  margin-left: auto;
+  background: -webkit-gradient(linear, right top, left top, color-stop(50%, #F2879B), color-stop(50%, #ec748a)) right;
+  background: linear-gradient(to left, #F2879B 50%, #ec748a 50%) right;
+  background-size: 200%;
+  -webkit-transition: .3s ease-out;
+  transition: .3s ease-out;
+}
+
+.arrow-right-link::after {
+  display: block;
+  content: '';
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+  width: 10px;
+  height: 10px;
+  -webkit-transform: rotate(-225deg);
+          transform: rotate(-225deg);
+  position: absolute;
+  right: 12px;
+  top: 10px;
+}
+
+.arrow-right-link:hover {
+  background-position: left;
+}
+
+.guide-section__heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  color: #6B6B6B;
+}
+
+.guide-section__heading span {
+  background-image: url(../images/common/dashline.png);
+  background-repeat-y: no-repeat;
+  background-position: bottom;
+}
+
+@media screen and (max-width: 576px) {
+  .guide-section__heading {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .guide-section__heading {
+    font-size: 8.53333vw;
+  }
+}
+
+/*-----------------------------
+
+         Main Guide
+
+-----------------------------*/
+.guide-top {
+  min-height: 820px;
+  background-image: url(../images/guide/p-top__mv.png);
+  background-size: cover;
+  background-position-X: 20%;
+  position: relative;
+}
+
+.guide-top__title-wrap {
+  position: absolute;
+  max-width: 435px;
+  top: 6.61429vw;
+  left: 10.71429vw;
+}
+
+.guide-top__title-wrap img {
+  width: 100%;
+}
+
+.guide-top__title-wrap p {
+  margin-top: 40px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+
+.guide-top__title-wrap .guide-btn__link {
+  margin-top: 18px;
+}
+
+.guide-top__faq-link {
+  position: absolute;
+  right: 2.14286vw;
+  bottom: 160px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  font-size: 1.375rem;
+  font-weight: bold;
+  -webkit-filter: drop-shadow(5px 5px 0px rgba(175, 57, 79, 0.8));
+          filter: drop-shadow(5px 5px 0px rgba(175, 57, 79, 0.8));
+  background: -webkit-gradient(linear, right top, left top, color-stop(50%, #F2879B), color-stop(50%, #ec748a)) right;
+  background: linear-gradient(to left, #F2879B 50%, #ec748a 50%) right;
+  background-size: 200%;
+  -webkit-transition: .3s ease-out;
+  transition: .3s ease-out;
+}
+
+.guide-top__faq-link::after {
+  display: block;
+  content: '';
+  width: 13px;
+  height: 13px;
+  border-top: 2px solid #000;
+  border-left: 2px solid #000;
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+  position: absolute;
+  bottom: 35px;
+}
+
+.guide-top__faq-link:hover {
+  background-position: left;
+}
+
+@media screen and (max-width: 1050px) {
+  .guide-top__title-wrap {
+    left: 3.57143vw;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .guide-top {
+    background-position-X: 26%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .guide-top {
+    background-image: url(../images/guide/p-top__mv-sp.png);
+  }
+  .guide-top__title-wrap {
+    left: 15px;
+    right: 15px;
+  }
+  .guide-top__title-wrap p {
+    margin-top: 30px;
+  }
+  .guide-top__faq-link {
+    font-size: 0.75rem;
+    width: 100px;
+    height: 100px;
+    bottom: 120px;
+    -webkit-filter: drop-shadow(3px 3px 0px rgba(175, 57, 79, 0.8));
+            filter: drop-shadow(3px 3px 0px rgba(175, 57, 79, 0.8));
+  }
+  .guide-top__faq-link::after {
+    width: 9px;
+    height: 9px;
+    position: absolute;
+    bottom: 15px;
+  }
+}
+
+.guide-research {
+  margin-top: -330px !important;
+  padding-top: 450px;
+  padding-bottom: 100px;
+  background-color: #E9EBF7;
+}
+
+.guide-research__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 75px;
+}
+
+.guide-research__list--item {
+  max-width: 320px;
+  width: 100%;
+  background-color: white;
+  border-radius: 30px;
+  -webkit-filter: drop-shadow(6px 6px 0px rgba(152, 157, 168, 0.5));
+          filter: drop-shadow(6px 6px 0px rgba(152, 157, 168, 0.5));
+}
+
+.guide-research__list--item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.guide-research__list--item .img-wrap {
+  text-align: center;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  background-color: #A074C4;
+}
+
+.guide-research__list--item .img-wrap img {
+  margin-top: -30px;
+}
+
+.guide-research__list--item .desc-wrap {
+  padding: 27px 30px 70px;
+  font-size: 0.9375rem;
+}
+
+.guide-research__list--item .title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.guide-research__list--item .title span {
+  padding: 0 5px;
+  background-color: #FFEBF1;
+}
+
+.guide-research__list--item .arrow-right-link {
+  margin-top: 10px;
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+}
+
+.guide-research .virus__img-wrap {
+  margin-top: 100px;
+  height: 150px;
+  background: url(../images/guide/p-virus__mv.png);
+  background-size: cover;
+  background-position: 50%;
+}
+
+.guide-research .text1 {
+  margin-top: 15px;
+  font-size: 0.75rem;
+}
+
+@media screen and (max-width: 767px) {
+  .guide-research__list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .guide-research__list--item {
+    max-width: 450px;
+  }
+  .guide-research__list--item:not(:last-child) {
+    margin-right: 0px;
+    margin-bottom: 60px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .guide-research {
+    padding-top: 400px;
+    padding-bottom: 60px;
+  }
+  .guide-research__list {
+    margin-top: 60px;
+  }
+  .guide-research .virus__img-wrap {
+    height: 48vw;
+    margin-top: 60px;
+    background: url(../images/guide/p-virus__mv-sp.png);
+    background-size: 100% 100%;
+  }
+}
+
+.guide-news {
+  margin-bottom: 145px;
+}
+
+.guide-news__content {
+  margin: 45px auto 0 auto;
+  max-width: 800px;
+}
+
+.guide-news__content .news-list {
+  margin-bottom: 25px;
+}
+
+.guide-news__content .news-list .news-item .tag {
+  color: #3D3D3D;
+  background-color: #F2879B;
+  border-radius: 20px;
+}
+
+.guide-news .guide-btn__link {
+  float: right;
+}
+
+@media screen and (max-width: 576px) {
+  .guide-news {
+    margin-top: 60px !important;
+    margin-bottom: 120px;
+  }
+  .guide-news__content {
+    margin-top: 20px;
+  }
+}
+
+.guide-center {
+  padding-top: 95px;
+  padding-bottom: 100px;
+  background-color: #E9EBF7;
+}
+
+.guide-center__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 40px;
+}
+
+.guide-center__list--item {
+  max-width: 320px;
+  width: 100%;
+  background-color: white;
+  border-radius: 30px;
+  -webkit-filter: drop-shadow(6px 6px 0px rgba(152, 157, 168, 0.5));
+          filter: drop-shadow(6px 6px 0px rgba(152, 157, 168, 0.5));
+}
+
+.guide-center__list--item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.guide-center__list--item .img-wrap {
+  text-align: center;
+  margin-top: 30px;
+  height: 60px;
+}
+
+.guide-center__list--item:last-child .img-wrap {
+  padding-top: 14px;
+}
+
+.guide-center__list--item .desc-wrap {
+  margin-top: 18px;
+  margin-bottom: 70px;
+  padding: 0 30px;
+  font-size: 0.9375rem;
+}
+
+.guide-center__list--item .title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.guide-center__list--item .title span {
+  padding: 0 5px;
+  background-color: #FFEBF1;
+}
+
+.guide-center__list--item .arrow-right-link {
+  margin-top: 10px;
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+}
+
+@media screen and (max-width: 767px) {
+  .guide-center__list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .guide-center__list--item {
+    max-width: 450px;
+  }
+  .guide-center__list--item:not(:last-child) {
+    margin-right: 0px;
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .guide-center {
+    padding: 60px 0;
+  }
+}
+
+.guide-banner {
+  margin-top: 60px;
+  margin-bottom: 100px;
+}
+
+.guide-banner__content {
+  max-width: 956px;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.guide-banner__wrap:first-child {
+  margin-right: 20px;
+}
+
+@media screen and (max-width: 767px) {
+  .guide-banner__content {
+    display: block;
+  }
+  .guide-banner__wrap {
+    text-align: center;
+  }
+  .guide-banner__wrap:first-child {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .guide-banner {
+    margin: 60px 0;
+  }
+}
+
+/* -------------------
+  TOP PAGE
+--------------------*/
+.section {
+  margin-top: 100px;
+}
+
+@media screen and (max-width: 767px) {
+  .section {
+    margin-top: 80px;
+  }
+}
+
+#main {
+  color: #230F33;
+}
+
+@media screen and (max-width: 1050px) {
+  .top {
+    margin-top: 70px;
+  }
+}
+
+.top .breadcrumb {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 12px;
+  margin-left: 20px;
+  padding-top: 18px;
+  padding-bottom: 16px;
+}
+
+.top .breadcrumb li:first-child {
+  padding-right: 20px;
+  margin-right: 20px;
+  border-right: 1px solid #B5B5B5;
+}
+
+.top .breadcrumb .bread-news-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.top .breadcrumb .bread-news-item .section-news--item-dateWrap {
+  margin-right: 10px;
+}
+
+.top .breadcrumb .bread-news-item .desc {
+  font-size: 12px;
+  line-height: initial;
+}
+
+.top .breadcrumb .bread-news-item:hover {
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  opacity: .7;
+}
+
+@media screen and (max-width: 767px) {
+  .top .breadcrumb {
+    display: none;
+  }
+}
+
+.top .p-top-mv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.top .p-top-mv--item {
+  width: 33.33%;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  position: relative;
+}
+
+.top .p-top-mv--item img {
+  width: 100%;
+}
+
+.top .p-top-mv--item p {
+  font-size: 1.125rem;
+}
+
+@media screen and (max-width: 1050px) {
+  .top .p-top-mv--item p {
+    font-size: 0.9375rem;
+  }
+  .top .p-top-mv--item p br {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .top .p-top-mv--item p {
+    font-size: 0.75rem;
+  }
+  .top .p-top-mv--item p br {
+    display: block !important;
+  }
+}
+
+.top .p-top-mv--item h2 {
+  margin-top: 10px;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 1050px) {
+  .top .p-top-mv--item h2 {
+    font-size: 1.375rem;
+  }
+  .top .p-top-mv--item h2 br {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .top .p-top-mv--item h2 {
+    font-size: 1.25rem;
+  }
+  .top .p-top-mv--item h2 br {
+    display: block !important;
+  }
+}
+
+.top .p-top-mv--item .txt-box {
+  padding-top: 80px;
+  padding-bottom: 70px;
+  background-color: white;
+  text-align: center;
+  -webkit-transition: -webkit-transform .7s;
+  transition: -webkit-transform .7s;
+  transition: transform .7s;
+  transition: transform .7s, -webkit-transform .7s;
+}
+
+.top .p-top-mv--item:nth-child(1) .txt-box {
+  border-top: 4px solid #F2879B;
+}
+
+.top .p-top-mv--item:nth-child(2) .txt-box {
+  border-top: 4px solid #3C50A0;
+}
+
+.top .p-top-mv--item:nth-child(3) .txt-box {
+  border-top: 4px solid #3C965A;
+}
+
+.top .p-top-mv--item .btn-detail {
+  display: none;
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.top .p-top-mv--item:hover .btn-detail {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.top .p-top-mv--item:hover .txt-box {
+  -webkit-transform: translateY(-100px);
+          transform: translateY(-100px);
+}
+
+@media screen and (max-width: 767px) {
+  .top .p-top-mv {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .top .p-top-mv--item {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border-bottom: 2px solid;
+  }
+  .top .p-top-mv--item .img-wrap {
+    width: 50%;
+  }
+  .top .p-top-mv--item .img-wrap img {
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .top .p-top-mv--item .txt-box {
+    width: 50%;
+    border-top: none !important;
+    padding: 30px 15px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .top .p-top-mv--item .txt-box div {
+    width: 100%;
+  }
+  .top .p-top-mv--item .btn-detail {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    left: initial;
+    -webkit-transform: initial;
+            transform: initial;
+    bottom: initial;
+    margin-top: 17px;
+    margin-bottom: 0;
+    max-width: 150px;
+    font-size: 13px;
+    height: 40px;
+  }
+  .top .p-top-mv--item:hover .txt-box {
+    -webkit-transform: none;
+            transform: none;
+  }
+  .top .p-top-mv--item:nth-child(1) {
+    border-bottom-color: #F2879B;
+  }
+  .top .p-top-mv--item:nth-child(2) {
+    border-bottom-color: #3C50A0;
+  }
+  .top .p-top-mv--item:nth-child(3) {
+    border-bottom-color: #3C965A;
+  }
+}
+
+.topic {
+  margin-bottom: 100px;
+  position: relative;
+}
+
+.topic .section-ttl {
+  margin-bottom: 40px;
+}
+
+.topic-item {
+  background-color: white;
+  max-width: 400px;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+
+.topic-item img {
+  border-top: 4px solid #4F157F;
+  width: 100%;
+}
+
+.topic-item .topic-info {
+  padding: 30px 30px 25px 30px;
+  font-size: 14px;
+}
+
+.topic-item .topic-info .topic-date {
+  color: #7D6195;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+.topic-item .topic-info .topic-desc {
+  margin-top: 10px;
+}
+
+.topic-item:hover img {
+  opacity: 0.7;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.topic .p-bg-pane {
+  background-color: #4F157F;
+  position: absolute;
+  width: 100%;
+  top: 185px;
+  bottom: -80px;
+  z-index: -1;
+}
+
+.topic .p-bg-pane .line-list {
+  position: absolute;
+  top: -45px;
+  width: 100%;
+}
+
+.topic .p-bg-pane .line-list .line {
+  border-top: 3px solid;
+  height: 15px;
+}
+
+.topic .p-bg-pane .line-list .line:nth-child(1) {
+  border-top-color: #F2879B;
+}
+
+.topic .p-bg-pane .line-list .line:nth-child(2) {
+  border-top-color: #3C965A;
+}
+
+.topic .p-bg-pane .line-list .line:nth-child(3) {
+  border-top-color: #215498;
+}
+
+@media screen and (min-width: 1200px) {
+  .topic .p-bg-pane {
+    width: calc(100% - 80px);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .topic .p-bg-pane {
+    top: 240px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .topic .col3-item {
+    margin-bottom: 40px;
+  }
+}
+
+.news {
+  margin-top: 200px;
+}
+
+.news-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.news-inner .l-content {
+  min-width: 20px;
+  margin-right: 10px;
+  margin-left: 0;
+  border-top: 1px solid #3C965A;
+  border-left: 1px solid #3C965A;
+}
+
+@media screen and (max-width: 576px) {
+  .news-inner .l-content {
+    margin-left: -5px;
+    margin-right: 5px;
+  }
+}
+
+.news-inner .r-content {
+  padding-bottom: 20px;
+  padding-right: 30px;
+  margin-left: 0;
+  border-top: 1px solid #215498;
+}
+
+.news-inner .r-content .section-ttl {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: -35px;
+}
+
+.news-inner .r-content .section-ttl span {
+  background-color: white;
+}
+
+@media screen and (max-width: 576px) {
+  .news-inner .r-content {
+    padding-right: 5px;
+    margin-left: -15px;
+    margin-right: -5px;
+  }
+  .news-inner .r-content .section-ttl span {
+    padding-left: 10px;
+  }
+}
+
+.news .category {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin: 13px 0;
+}
+
+.news .category-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.news .category-list li {
+  padding: 8px;
+  color: #4F157F;
+  background-color: #EFEFEF;
+  text-align: center;
+}
+
+.news .category-list li:not(:last-child) {
+  margin-right: 1px;
+}
+
+.news .category-list li:hover {
+  background-color: #e5e2e2;
+}
+
+.news .category-list li.active {
+  background-color: #4F157F;
+  color: white;
+}
+
+.news .category-list li a {
+  font-size: 14px;
+}
+
+@media screen and (max-width: 576px) {
+  .news .category-list li {
+    padding: 5px 8px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .news .category {
+    margin-top: 42px;
+    margin-bottom: 10px;
+  }
+}
+
+.news-item {
+  background-color: #fff;
+  -webkit-transition: all .25s;
+  transition: all .25s;
+}
+
+.news-item:hover {
+  background-color: #f2f2f2;
+}
+
+.news-item--inner {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 576px) {
+  .news-item--inner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+  }
+}
+
+.news-item--dateWrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 30px;
+}
+
+.news-item--dateWrap .date {
+  margin-right: 25px;
+}
+
+@media screen and (max-width: 576px) {
+  .news-item--dateWrap {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+}
+
+.news-item::after {
+  display: block;
+  content: '';
+  width: 30px;
+  height: 1px;
+  background-color: #4F157F;
+  margin-top: -1px;
+}
+
+.news-item .desc {
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+}
+
+@media screen and (max-width: 576px) {
+  .news-item .desc {
+    -webkit-line-clamp: 2;
+  }
+}
+
+.news .btn-detail {
+  margin-top: 33px;
+  margin-bottom: 0;
+  padding-left: 50px;
+  max-width: 350px;
+  height: 60px;
+  border: 1px solid #4F157F;
+  border-bottom-width: 4px;
+}
+
+.news .btn-detail::after {
+  width: 9px;
+  height: 15px;
+  background-image: url(../images/common/icon-arrow-right-main.svg);
+}
+
+.p-bottom {
+  margin-bottom: 240px;
+  position: relative;
+}
+
+.p-bottom .p-btn {
+  width: 100%;
+  padding-top: 24px;
+  padding-bottom: 20px;
+  color: white;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.p-bottom .p-btn::after {
+  display: inline-block;
+  content: '';
+  width: 9px;
+  height: 15px;
+  position: absolute;
+  right: 20px;
+  background-image: url(../images/common/icon-arrow-right-white.svg);
+}
+
+.p-bottom .p-btn p {
+  font-size: 0.875rem;
+}
+
+.p-bottom .p-btn h2 {
+  font-size: 1.4375rem;
+  margin-top: 5px;
+}
+
+.p-bottom .col2-item {
+  margin-bottom: 0;
+}
+
+.p-bottom .col2-item:nth-child(1) .p-btn {
+  background-color: #3C50A0;
+}
+
+.p-bottom .col2-item:nth-child(2) .p-btn {
+  background-color: #3C965A;
+}
+
+@media screen and (max-width: 767px) {
+  .p-bottom .col2-item:first-child {
+    margin-bottom: 30px;
+  }
+}
+
+.p-bottom .p-bg-pane {
+  background-color: #4F157F;
+  position: absolute;
+  top: 60px;
+  bottom: -90px;
+  width: 100%;
+  z-index: -1;
+}
+
+@media screen and (min-width: 1200px) {
+  .p-bottom .p-bg-pane {
+    width: calc(100% - 160px);
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+}
+
+.p-bottom .p-bg-pane .line-list {
+  position: absolute;
+  bottom: 0;
+}
+
+.p-bottom .p-bg-pane .line-list .line {
+  height: 15px;
+  border-top: 3px solid;
+}
+
+.p-bottom .p-bg-pane .line-list .line:nth-child(1) {
+  width: 21.42857vw;
+  border-top-color: #215498;
+}
+
+.p-bottom .p-bg-pane .line-list .line:nth-child(2) {
+  width: 28.57143vw;
+  border-top-color: #3C965A;
+}
+
+.p-bottom .p-bg-pane .line-list .line:nth-child(3) {
+  width: 35.71429vw;
+  border-top-color: #F2879B;
+}
+
+.p-bottom .p-bg-pane .container {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  top: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .p-bottom {
+    margin-bottom: 200px;
+  }
+  .p-bottom .p-btn {
+    padding-top: 20px;
+    padding-bottom: 17px;
+  }
+  .p-bottom .p-btn p {
+    font-size: 0.8125rem;
+  }
+  .p-bottom .p-btn h2 {
+    font-size: 1.125rem;
+  }
+  .p-bottom .p-bg-pane {
+    bottom: -75px;
+  }
+  .p-bottom .p-bg-pane .line-list .line:nth-child(1) {
+    width: 40vw;
+  }
+  .p-bottom .p-bg-pane .line-list .line:nth-child(2) {
+    width: 69.33333vw;
+  }
+  .p-bottom .p-bg-pane .line-list .line:nth-child(3) {
+    width: 96vw;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

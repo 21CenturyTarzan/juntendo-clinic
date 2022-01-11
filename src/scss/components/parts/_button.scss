@@ -1,0 +1,28 @@
+@charset "UTF-8";
+/* -------------------
+  BUTTON
+--------------------*/
+
+.btn-detail{
+    margin: 25px auto;
+    padding: 10px 20px;
+    border: 1px solid #818181;
+    max-width: 200px;
+    width: 100%;
+    height: 50px;
+    text-align: left;
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-size: fs(15);
+    cursor: pointer;
+    &::after{
+      display: inline-block;
+      position: absolute;
+      content: '';
+      width: 6px;
+      height: 10px;
+      right: 19px;
+      background-image: url(../images/common/icon-arrow-right.svg);
+    }
+  }

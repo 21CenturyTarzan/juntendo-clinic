@@ -1,0 +1,429 @@
+@charset "UTF-8";
+
+/* -------------------
+    GUIDE
+--------------------*/
+
+.guide-btn__link{
+    font-size: 15px;
+    position: relative;
+    display: inline-block;
+    padding-right: 20px;
+    &::before{
+        display: block;
+        content: '';
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: #F2879B;
+        position: absolute;
+        right: 0px;
+        top: 4px;
+    }
+    &::after{
+        display: block;
+        content: '';
+        border-top: 1px solid #fff;
+        border-left: 1px solid #fff;
+        width: 5px;
+        height: 5px;
+        transform: rotate(-225deg);
+        position: absolute;
+        right: 6px;
+        top: 9px;
+    }
+    &:hover{
+        color: $color-main;
+    }
+}
+
+
+.arrow-right-link{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #F2879B;
+    display: block;
+    position: relative;
+    margin-left: auto;
+
+    &::after{
+        display: block;
+        content: '';
+        border-top: 2px solid #fff;
+        border-left: 2px solid #fff;
+        width: 10px;
+        height: 10px;
+        transform: rotate(-225deg);
+        position: absolute;
+        right: 12px;
+        top: 10px;
+    }
+
+    background: linear-gradient(to left, #F2879B 50%, #ec748a 50%) right;
+    background-size: 200%;
+    transition: .3s ease-out;
+    
+    &:hover{
+      background-position: left;
+    }
+}
+
+
+.guide-section__heading{
+    font-size: fs(40);
+    font-weight: bold;
+    text-align: center;
+    color: #6B6B6B;
+    span{
+        background-image: url(../images/common/dashline.png);
+        background-repeat-y: no-repeat;
+        background-position: bottom;
+    }
+
+
+    @include mq(smt){
+        font-size: fs(32);
+    }
+
+    @include mq(sm3){
+        font-size: vw2(32);
+    }
+
+}
+
+
+/*-----------------------------
+
+         Main Guide
+
+-----------------------------*/
+.guide-top{
+    min-height: 820px;
+    background-image: url(../images/guide/p-top__mv.png);
+    background-size: cover;
+    background-position-X: 20%;
+    position: relative;
+    &__title-wrap{
+        position: absolute;
+        max-width: 435px;
+        top: vw(92.6);
+        left: vw(150);
+        img{width: 100%;}
+        p{
+            margin-top: 40px;
+            font-size: fs(15);
+            font-weight: 500;
+        }
+        .guide-btn__link{
+            margin-top: 18px;
+        }
+    }
+    &__faq-link{
+        position: absolute;
+        right: vw(30);
+        bottom: 160px;
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-size: fs(22);
+        font-weight: bold;
+
+        &::after{
+            display: block;
+            content: '';
+            width: 13px;
+            height: 13px;
+            border-top: 2px solid #000;
+            border-left: 2px solid #000;
+            transform: rotate(135deg);
+            position: absolute;
+            bottom: 35px;
+        }
+
+        filter: drop-shadow(5px 5px 0px rgba(175, 57, 79, 0.8));
+        background: linear-gradient(to left, #F2879B 50%, #ec748a 50%) right;
+        background-size: 200%;
+        transition: .3s ease-out;
+        
+        &:hover{
+          background-position: left;
+        }
+    }
+
+    @include mq(){
+        &__title-wrap{
+            left: vw(50);
+        }
+    }
+
+    @include mq(sm2){
+        background-position-X: 26%;
+    }
+
+    @include mq(smt){
+        background-image: url(../images/guide/p-top__mv-sp.png);
+        &__title-wrap{
+            left: 15px;
+            right: 15px;
+            p{
+                margin-top: 30px;
+            }
+        }
+        &__faq-link{
+            font-size: fs(12);
+            width: 100px;
+            height: 100px;
+            bottom: 120px;
+            filter: drop-shadow(3px 3px 0px rgba(175, 57, 79, 0.8));
+            &::after{
+                width: 9px;
+                height: 9px;
+                position: absolute;
+                bottom: 15px;
+            }
+        }
+
+    }
+}
+
+
+.guide-research{
+    margin-top: -330px !important;
+    padding-top: 450px;
+    padding-bottom: 100px;
+    background-color: #E9EBF7;
+
+    &__list{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 75px;
+
+        &--item{
+            max-width: 320px;
+            width: 100%;
+            background-color: white;
+            border-radius: 30px;
+            filter: drop-shadow(6px 6px 0px rgba(152, 157, 168, 0.5));
+            &:not(:last-child){
+                margin-right: 30px;
+            }
+            .img-wrap{
+                text-align: center;
+                border-top-left-radius: 30px;
+                border-top-right-radius: 30px;
+                background-color: #A074C4;
+                img{
+                    margin-top: -30px;
+                }
+            }
+            .desc-wrap{
+                padding: 27px 30px 70px;
+                font-size: fs(15);
+            }
+
+            .title{
+                font-size: fs(20);
+                font-weight: bold;
+                text-align: center;
+                margin-bottom: 25px;
+                span{
+                    padding: 0 5px;
+                    background-color: #FFEBF1;
+                }
+            }
+
+            .arrow-right-link{
+                margin-top: 10px;
+                position: absolute;
+                bottom: 30px;
+                right: 30px;
+            }
+        }
+    }
+
+    .virus__img-wrap{
+        margin-top: 100px;
+        height: 150px;
+        background: url(../images/guide/p-virus__mv.png);
+        background-size: cover;
+        background-position: 50%;
+    }
+
+    .text1{
+        margin-top: 15px;
+        font-size: fs(12);
+    }
+
+    @include mq(sm2){
+        &__list{
+            flex-direction: column;
+            align-items: center;
+            &--item{
+                max-width: 450px;
+                &:not(:last-child){
+                    margin-right: 0px;
+                    margin-bottom: 60px;
+                }
+            }
+        }
+    }
+    
+    @include mq(smt){
+        padding-top: 400px;
+        padding-bottom: 60px;
+        &__list{
+            margin-top: 60px;
+        }
+        .virus__img-wrap{
+            height: vw2(180);
+            margin-top: 60px;
+            background: url(../images/guide/p-virus__mv-sp.png);
+            background-size: 100% 100%;
+        }
+    }
+}
+
+
+.guide-news{
+    margin-bottom: 145px;
+    &__content{
+        margin: 45px auto 0 auto;
+        max-width: 800px;
+        .news-list{
+            margin-bottom: 25px;
+            .news-item{
+                .tag{
+                    color: $color-black;
+                    background-color: #F2879B;
+                    border-radius: 20px;
+                }
+            }
+        }
+    }
+    .guide-btn__link{
+        float: right
+    }
+
+    @include mq(smt){
+        margin-top: 60px !important;
+        margin-bottom: 120px;
+        &__content{
+            margin-top: 20px;
+        }
+    }
+}
+
+
+.guide-center{
+    padding-top: 95px;
+    padding-bottom: 100px;
+    background-color: #E9EBF7;
+
+    &__list{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 40px;
+
+        &--item{
+            max-width: 320px;
+            width: 100%;
+            background-color: white;
+            border-radius: 30px;
+            filter: drop-shadow(6px 6px 0px rgba(152, 157, 168, 0.5));
+            &:not(:last-child){
+                margin-right: 30px;
+            }
+            .img-wrap{
+                text-align: center;
+                margin-top: 30px;
+                height: 60px;
+            }
+            &:last-child .img-wrap{
+                padding-top: 14px;
+            }
+            
+            .desc-wrap{
+                margin-top: 18px;
+                margin-bottom: 70px;
+                padding: 0 30px;
+                font-size: fs(15);
+            }
+
+            .title{
+                font-size: fs(20);
+                font-weight: bold;
+                text-align: center;
+                margin-bottom: 25px;
+                span{
+                    padding: 0 5px;
+                    background-color: #FFEBF1;
+                }
+            }
+
+            .arrow-right-link{
+                margin-top: 10px;
+                position: absolute;
+                bottom: 30px;
+                right: 30px;
+            }
+        }
+    }
+
+    @include mq(sm2){
+        &__list{
+            flex-direction: column;
+            align-items: center;
+            &--item{
+                max-width: 450px;
+                &:not(:last-child){
+                    margin-right: 0px;
+                    margin-bottom: 30px;
+                }
+            }
+        }
+    }
+
+    @include mq(smt){
+        padding: 60px 0;
+    }
+}
+
+
+.guide-banner{
+    margin-top: 60px;
+    margin-bottom: 100px;
+    
+    &__content{
+        max-width: 956px;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+    }
+    &__wrap{
+        &:first-child{
+            margin-right: 20px;
+        }
+    }
+
+    @include mq(sm2){
+        &__content{
+            display: block;
+        }
+        &__wrap{
+            text-align: center;
+            &:first-child{
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+    }
+    
+    @include mq(smt){
+        margin: 60px 0;
+    }
+}

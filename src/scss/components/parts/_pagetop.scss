@@ -1,0 +1,48 @@
+@charset "UTF-8";
+/* -------------------
+  PAGE TOP
+--------------------*/
+
+.pagetop {
+	cursor: pointer;
+	position: absolute;
+	top: -40px;
+	left: calc(50% - 520px - 40px);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	font-family: Yu Gothic;
+	border: 1px solid #DBDADD;
+	font-size: fs(12);
+	background-color: white;
+	color: #6B6B6B;
+	transition: all .3s;
+	span{
+		&::before{
+			display: block;
+			content: '';
+			width: 10px;
+			height: 6px;
+			background-image: url(../images/common/icon-arrow-top.svg);
+			margin: auto;
+			margin-bottom: 6px;
+		}
+	}
+	@include mq(){
+		left: 15px;
+	}
+
+	&.fixed{
+		top: auto;
+		position: fixed;
+		bottom: 40px;
+		@include mq(){
+			bottom: 15px;
+		}
+	}
+
+	@extend .hover-bg-flow-bottom-top;
+}

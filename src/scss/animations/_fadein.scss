@@ -1,0 +1,30 @@
+/* Fade in */
+.fadein {
+  opacity: 0;
+  transition: opacity 2s cubic-bezier(0.165, 0.84, 0.44, 1) 0s;
+  &.in {
+    opacity: 1;
+  }
+}
+
+
+@keyframes animatedBackground {
+  0% { background-position: 0 0; }
+  100% { background-position: -300px 0; }
+}
+@-moz-keyframes animatedBackground {
+  0% { background-position: 0 0; }
+  100% { background-position: -300px 0; }
+}
+@-webkit-keyframes animatedBackground {
+  0% { background-position: 0 0; }
+  100% { background-position: -300px 0; }
+}
+@-ms-keyframes animatedBackground {
+  0% { background-position: 0 0; }
+  100% { background-position: -300px 0; }
+}
+@-o-keyframes animatedBackground {
+  0% { background-position: 0 0; }
+  100% { background-position: -300px 0; }
+}

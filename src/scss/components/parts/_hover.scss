@@ -1,0 +1,41 @@
+@charset "UTF-8";
+/* -------------------
+  Hover
+--------------------*/
+
+
+.hover{      
+    &:hover{
+        transition: all 1.3s;
+        &::before{
+          display: block;
+          content: '';
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          background-color: rgba(0,0,0,0.2) !important;
+          opacity: 1;
+        }
+    }
+}
+
+.hover-bg-flow-left-right{
+  background: linear-gradient(to left, white 50%, #ded4e6 50%) right;
+  background-size: 200%;
+  transition: .3s ease-out;
+  
+  &:hover{
+    background-position: left;
+  }
+}
+
+
+.hover-bg-flow-bottom-top{
+  background: linear-gradient(to bottom, white 50%, #ded4e6 50%);
+  background-size: 100% 200%;
+  transition: .3s ease-out;
+  
+  &:hover{
+    background-position: 0 100%;
+  }
+}
