@@ -1,0 +1,73 @@
+.center {
+    background: #e9ebf7;
+    padding-top: vw(75);
+    padding-bottom: vw(75);
+    @include mq(smt) {
+        padding-top: 55px;
+        padding-bottom: 55px;
+    }
+    &-title {
+        .h5 {
+            margin-top: 35px;
+            font-weight: bold;
+            line-height: 27px;
+            text-align: center;
+            color: #6b6b6b;
+        }
+    }
+    .section-image {
+        max-width: 1240px;
+        margin: auto;
+        position: unset;
+    }
+    .btn-group {
+        display: flex;
+        justify-content: space-between;
+        @include mq(smt) {
+            flex-direction: column;
+        }
+        div {
+            width: 30%;
+            border-radius: 10px;
+            background: #ffedf2;
+            border: 2px solid #f2879b;
+            text-align: center;
+            @include mq(smt) {
+                width: 95%;
+                margin: 15px auto;
+            }
+            a {
+                font-family: "Yu Gothic";
+                font-weight: bold;
+                font-size: 18px;
+                letter-spacing: 0.05em;
+                line-height: 32px;
+                text-align: center;
+                color: #3d3d3d;
+            }
+            &::before {
+                display: block;
+                content: '';
+                width: 15px;
+                height: 15px;
+                border-radius: 50%;
+                background-color: #F2879B;
+                position: absolute;
+                right: 0px;
+                top: 4px;
+            }
+            &::after {
+                display: block;
+                content: '';
+                border-top: 1px solid #fff;
+                border-left: 1px solid #fff;
+                width: 5px;
+                height: 5px;
+                transform: rotate(-225deg);
+                position: absolute;
+                right: 6px;
+                top: 9px;
+            }
+        }
+    }
+}

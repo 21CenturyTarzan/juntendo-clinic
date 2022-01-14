@@ -5110,6 +5110,420 @@ body.fixed {
   }
 }
 
+.center {
+  background: #e9ebf7;
+  padding-top: 5.35714vw;
+  padding-bottom: 5.35714vw;
+}
+
+@media screen and (max-width: 576px) {
+  .center {
+    padding-top: 55px;
+    padding-bottom: 55px;
+  }
+}
+
+.center-title .h5 {
+  margin-top: 35px;
+  font-weight: bold;
+  line-height: 27px;
+  text-align: center;
+  color: #6b6b6b;
+}
+
+.center .section-image {
+  max-width: 1240px;
+  margin: auto;
+  position: unset;
+}
+
+.center .btn-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media screen and (max-width: 576px) {
+  .center .btn-group {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.center .btn-group div {
+  width: 30%;
+  border-radius: 10px;
+  background: #ffedf2;
+  border: 2px solid #f2879b;
+  text-align: center;
+}
+
+@media screen and (max-width: 576px) {
+  .center .btn-group div {
+    width: 95%;
+    margin: 15px auto;
+  }
+}
+
+.center .btn-group div a {
+  font-family: "Yu Gothic";
+  font-weight: bold;
+  font-size: 18px;
+  letter-spacing: 0.05em;
+  line-height: 32px;
+  text-align: center;
+  color: #3d3d3d;
+}
+
+.center .btn-group div::before {
+  display: block;
+  content: '';
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #F2879B;
+  position: absolute;
+  right: 0px;
+  top: 4px;
+}
+
+.center .btn-group div::after {
+  display: block;
+  content: '';
+  border-top: 1px solid #fff;
+  border-left: 1px solid #fff;
+  width: 5px;
+  height: 5px;
+  -webkit-transform: rotate(-225deg);
+          transform: rotate(-225deg);
+  position: absolute;
+  right: 6px;
+  top: 9px;
+}
+
+.number {
+  font-family: Roboto;
+  font-weight: bold;
+  font-size: 0.9375rem;
+  letter-spacing: 0.05em;
+  line-height: 27px;
+  text-align: left;
+  color: #775592;
+}
+
+.h1 {
+  font-family: "Yu Gothic";
+  font-weight: bold;
+  font-size: 2.5rem;
+  text-align: center;
+  color: #6b6b6b;
+}
+
+.h2 {
+  margin: 20px auto;
+  font-family: "Yu Gothic";
+  font-weight: bold;
+  font-size: 2rem;
+  text-align: left;
+  color: #6b6b6b;
+}
+
+.h4 {
+  margin: 20px auto;
+  font-family: "Yu Gothic";
+  font-size: 20px;
+  color: #3d3d3d;
+}
+
+.h5 {
+  margin: 20px auto;
+  font-family: "Yu Gothic";
+  font-size: 0.9375rem;
+  text-align: left;
+}
+
+.h6 {
+  margin-top: 15px;
+  font-family: "Yu Gothic";
+  font-weight: 500;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  line-height: 21.6px;
+  text-align: center;
+  color: #6b6b6b;
+}
+
+.faq {
+  background: #e9ebf7;
+  padding-top: 5.35714vw;
+  padding-bottom: 5.35714vw;
+}
+
+@media screen and (max-width: 576px) {
+  .faq {
+    padding-top: 55px;
+    padding-bottom: 55px;
+  }
+}
+
+.faq-title .h1 {
+  margin-bottom: 2.14286vw;
+}
+
+.faq-title .h5 {
+  font-weight: bold;
+  text-align: center;
+  color: #6b6b6b;
+}
+
+@media screen and (max-width: 767px) {
+  .faq-title .h5 {
+    z-index: 1;
+  }
+}
+
+.faq-title .guide-section__heading span {
+  font-family: "Yu Gothic";
+  font-weight: bold;
+  color: #6b6b6b;
+}
+
+.faq-item {
+  width: 71.42857vw;
+  max-width: 1000px;
+  margin: 10px auto;
+  position: relative;
+}
+
+@media screen and (max-width: 576px) {
+  .faq-item {
+    width: 95%;
+  }
+}
+
+.faq-item span {
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 2.125rem;
+  text-align: left;
+  color: #f2879b;
+}
+
+.faq .question {
+  font-weight: bold;
+  color: #6b6b6b;
+}
+
+.faq .answers {
+  font-weight: 500;
+  color: #3d3d3d;
+}
+
+.faq-content {
+  max-width: 1240px;
+  width: 88.57143vw;
+  margin: auto;
+  padding-top: 2.85714vw;
+  padding-bottom: 2.85714vw;
+  border-radius: 30px;
+  background-color: white;
+  position: relative;
+}
+
+@media screen and (max-width: 767px) {
+  .faq-content {
+    width: 100%;
+    margin-top: 120px !important;
+    border-radius: unset;
+  }
+}
+
+.section-image {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: absolute;
+  top: -150px;
+  left: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .section-image {
+    top: -120px;
+  }
+}
+
+.section-image div {
+  width: 30%;
+  text-align: center;
+}
+
+.section-image img {
+  height: 150px;
+  width: auto;
+}
+
+@media screen and (max-width: 767px) {
+  .section-image img {
+    height: 120px;
+  }
+}
+
+/*Question*/
+.question {
+  position: relative;
+  margin: 0;
+  padding: 10px 20px;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 30px;
+  background: #ffedf2;
+  border: 2px solid #f2879b;
+  line-height: 30px;
+}
+
+/*Answer*/
+.answers {
+  padding: 0px 5vw 0px 7.14286vw;
+  margin: 5px 0;
+  width: 100% !important;
+  height: 0;
+  overflow: hidden;
+  position: relative;
+  opacity: 0;
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
+}
+
+.questions:checked ~ .answers {
+  padding: 10px 5vw 10px 7.14286vw;
+  height: auto;
+  opacity: 1;
+}
+
+/*FAQ Toggle*/
+.plus {
+  position: absolute;
+  top: 12px;
+  right: 20px;
+  z-index: 5;
+  font-size: 2em;
+  line-height: 100%;
+  color: #F2879B;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
+}
+
+@media screen and (max-width: 576px) {
+  .plus {
+    top: 27px;
+    right: 10px;
+  }
+}
+
+.questions:checked ~ .plus {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.questions {
+  display: none;
+}
+
+.bottom-assist .h5 {
+  text-align: center;
+}
+
+.bottom-assist .h5 span {
+  margin-bottom: 2.5vw;
+  font-size: 1.25rem;
+  font-weight: bold;
+  line-height: 30px;
+  color: #3d3d3d;
+  background-image: url(../images/common/dashline-1.png);
+  background-repeat-y: no-repeat;
+}
+
+.inquiry {
+  border-radius: 40px;
+  padding: 20px 110px;
+  font-family: "Yu Gothic";
+  font-weight: bold;
+  font-size: 0.9375rem;
+  text-align: center;
+  color: #3d3d3d;
+  background: #ffedf2;
+  border: 2px solid #f2879b;
+  -webkit-filter: drop-shadow(3px 3px 0px rgba(242, 135, 155, 0.8));
+          filter: drop-shadow(3px 3px 0px rgba(242, 135, 155, 0.8));
+}
+
+@media screen and (max-width: 576px) {
+  .inquiry {
+    padding: 10px 40px;
+  }
+}
+
+section .guide-btn__link {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-right: 110px;
+}
+
+@media screen and (max-width: 576px) {
+  section .guide-btn__link {
+    padding-right: 40px;
+  }
+  section .guide-btn__link::before {
+    right: 24px !important;
+    top: 14px !important;
+  }
+  section .guide-btn__link::after {
+    right: 30px !important;
+    top: 19px !important;
+  }
+}
+
+section .guide-btn__link::before {
+  right: 24px;
+  top: 22px;
+}
+
+section .guide-btn__link::after {
+  right: 30px;
+  top: 27px;
+}
+
+@media screen and (max-width: 576px) {
+  section .guide-btn__link.long {
+    padding: 10px 20px;
+  }
+  section .guide-btn__link.long::before {
+    right: 6px !important;
+  }
+  section .guide-btn__link.long::after {
+    right: 12px !important;
+  }
+}
+
 /* -------------------
     GUIDE
 --------------------*/
@@ -5599,6 +6013,102 @@ body.fixed {
   .guide-banner {
     margin: 60px 0;
   }
+}
+
+.ppi {
+  background: #e9ebf7;
+  padding-top: 5.35714vw;
+  padding-bottom: 5.35714vw;
+}
+
+@media screen and (max-width: 576px) {
+  .ppi {
+    padding-top: 55px;
+    padding-bottom: 55px;
+  }
+}
+
+.ppi-title .h5 {
+  margin-top: 35px;
+  font-weight: bold;
+  line-height: 27px;
+  text-align: center;
+  color: #6b6b6b;
+}
+
+.block {
+  width: 100%;
+  max-width: 1240px;
+  margin: auto;
+  margin-bottom: 20px;
+  border-radius: 40px;
+  padding: 3.57143vw 7.14286vw;
+  background-color: white;
+}
+
+@media screen and (max-width: 576px) {
+  .block {
+    border-radius: 15px;
+  }
+}
+
+.hr {
+  width: 100%;
+  height: 4px;
+  margin: 20px auto;
+  background-color: #FFEDF2;
+}
+
+.hr div {
+  width: 50px;
+  height: 4px;
+  background-color: #F2879B;
+}
+
+.note {
+  background-color: #FFEDF2;
+  padding: 20px;
+}
+
+.note .title {
+  font-family: "Yu Gothic";
+  font-weight: bold;
+  font-size: 0.9375rem;
+  letter-spacing: 0.05em;
+  line-height: 27px;
+  text-align: left;
+  color: #3d3d3d;
+}
+
+.note .h6 {
+  text-align: left;
+}
+
+table {
+  width: 100%;
+  margin: 20px auto;
+}
+
+table p {
+  margin: 5px auto !important;
+}
+
+table tr td {
+  border: 1px solid #dbdadd;
+}
+
+td {
+  padding: 15px;
+}
+
+@media screen and (max-width: 576px) {
+  td {
+    padding: 8px;
+  }
+}
+
+td:nth-child(1) {
+  background: #f5f6f8;
 }
 
 /* -------------------
