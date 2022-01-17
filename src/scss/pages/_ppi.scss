@@ -44,7 +44,8 @@
 
 .note {
     background-color: #FFEDF2;
-    padding: 20px;
+    border-radius: 15px;
+    padding: 30px;
     .title {
         font-family: "Yu Gothic";
         font-weight: bold;
@@ -56,6 +57,9 @@
     }
     .h6 {
         text-align: left;
+    }
+    @include mq(smt) {
+        padding: 15px;
     }
 }
 
@@ -78,5 +82,17 @@ td {
     }
     &:nth-child(1) {
         background: #f5f6f8;
+    }
+}
+
+.p-link {
+    font-weight: bold;
+    &::after {
+        display: inline-block;
+        margin-left: 5px;
+        content: '';
+        width: 13px;
+        height: 11px;
+        background: url(../images/faq/brank.svg);
     }
 }

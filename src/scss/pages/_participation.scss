@@ -1,0 +1,132 @@
+.participation {
+    background: #e9ebf7;
+    padding-top: vw(75);
+    padding-bottom: vw(75);
+    @include mq(smt) {
+        padding-top: 55px;
+        padding-bottom: 55px;
+    }
+    &-title {
+        position: relative;
+        .h5 {
+            margin-top: 35px;
+            font-weight: bold;
+            line-height: 27px;
+            text-align: center;
+            color: #6b6b6b;
+        }
+    }
+    section {
+        margin-top: 60px;
+    }
+    .section-image {
+        max-width: 1240px;
+        margin: auto;
+        position: unset;
+        img {
+            height: auto;
+        }
+    }
+    .note {
+        .title {
+            display: flex;
+            align-items: center;
+            span {
+                font-family: "Yu Gothic";
+                font-weight: bold;
+                font-size: fs(24);
+                text-align: left;
+                line-height: 30px;
+                color: #f2879b;
+            }
+            img {
+                width: 64px;
+                height: 56px;
+                margin-right: 10px;
+            }
+        }
+        .n-card {
+            margin-top: 15px;
+            border-radius: 10px;
+            .n-title {
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                font-family: "Yu Gothic";
+                font-weight: bold;
+                font-size: fs(15);
+                text-align: center;
+                line-height: 35px;
+                color: #3d3d3d;
+                background: #dbdadd;
+                @include mq(smt) {
+                    padding: 5px;
+                }
+            }
+            >div {
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+                padding: 20px;
+                display: flex;
+                background-color: white;
+                @include mq(sm2) {
+                    padding: 10px;
+                }
+                @include mq(smt) {
+                    flex-direction: column;
+                }
+                div:first-child {
+                    width: 130px;
+                    margin-right: 50px;
+                    @include mq(smt) {
+                        width: 100%;
+                        margin: 20px auto;
+                        text-align: center;
+                    }
+                }
+                div:last-child {
+                    @include mq(sm2) {
+                        width: 500px;
+                    }
+                    @include mq(smt) {
+                        width: 100%;
+                    }
+                }
+                img {
+                    max-width: 120%;
+                    height: auto;
+                }
+                .h6 {
+                    margin-top: 5px;
+                }
+            }
+        }
+        .d-flex {
+            justify-content: space-between;
+            >div:nth-child(1) {
+                width: 65%;
+            }
+            >div:nth-child(2) {
+                width: 25%;
+            }
+            @include mq(sm2) {
+                flex-direction: column;
+                >div:nth-child(1) {
+                    order: 2;
+                    width: 100%;
+                }
+                >div:nth-child(2) {
+                    order: 1;
+                    width: 100%;
+                    margin: 30px auto;
+                }
+            }
+        }
+    }
+    ul {
+        list-style-type: initial;
+        padding-left: 30px;
+        li::marker {
+            color: #A074C4;
+        }
+    }
+}

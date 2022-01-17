@@ -1,0 +1,94 @@
+.clinic {
+    background: #e9ebf7;
+    padding-top: vw(75);
+    padding-bottom: vw(75);
+    @include mq(smt) {
+        padding-top: 55px;
+        padding-bottom: 55px;
+    }
+    &-title {
+        position: relative;
+        .h5 {
+            margin-top: 35px;
+            font-weight: bold;
+            line-height: 27px;
+            text-align: center;
+            color: #6b6b6b;
+        }
+    }
+    section {
+        margin-top: 60px;
+    }
+    .section-image {
+        max-width: 1240px;
+        margin: auto;
+        position: unset;
+        img {
+            height: auto;
+        }
+    }
+    .note {
+        background-color: #F5F6F8;
+        .title {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            span {
+                font-family: "Yu Gothic";
+                font-weight: bold;
+                font-size: fs(24);
+                text-align: left;
+                line-height: 30px;
+                color: #f2879b;
+            }
+            img {
+                width: 64px;
+                height: 56px;
+                margin-right: 10px;
+            }
+        }
+        .d-flex {
+            justify-content: space-between;
+            >div {
+                width: 46%;
+            }
+            .inquiry.long {
+                padding: 10px 80px;
+            }
+            .h5.b-f {
+                width: 100%;
+                display: flex;
+                align-items: baseline;
+                >div {
+                    width: 40%;
+                    display: flex;
+                    align-items: center;
+                    div {
+                        margin-left: 4px;
+                        margin-right: 4px;
+                        flex: 1;
+                        height: 1px;
+                        border-top: 3px dotted #A074C4;
+                    }
+                }
+                >span {
+                    width: 60%;
+                }
+            }
+            .badge {
+                padding: 4px 10px;
+                border-radius: 20px;
+                color: white;
+                background-color: #A074C4;
+                text-align: center;
+            }
+            @include mq(sm2) {
+                flex-direction: column;
+                div {
+                    width: 100%;
+                    margin: 15px auto;
+                }
+            }
+        }
+    }
+}
