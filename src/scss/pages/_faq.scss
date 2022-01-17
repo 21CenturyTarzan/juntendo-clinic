@@ -15,10 +15,19 @@
     color: #6b6b6b;
 }
 
+.h3 {
+    margin: 20px auto;
+    font-family: "Yu Gothic";
+    font-weight: bold;
+    font-size: fs(24);
+    text-align: left;
+    color: #6b6b6b;
+}
+
 .h4 {
     margin: 20px auto;
     font-family: "Yu Gothic";
-    font-size: 20px;
+    font-size: fs(20);
     color: #3d3d3d;
 }
 
@@ -118,8 +127,11 @@
     @include mq(sm2) {
         top: -120px;
     }
+    @include mq(smt) {
+        top: -70px;
+    }
     div {
-        width: 30%;
+        width: 35%;
         text-align: center;
     }
     img {
@@ -127,6 +139,9 @@
         width: auto;
         @include mq(sm2) {
             height: 120px;
+        }
+        @include mq(smt) {
+            height: 70px;
         }
     }
 }
@@ -233,9 +248,16 @@
     font-size: fs(15);
     text-align: center;
     color: #3d3d3d;
-    background: #ffedf2;
+    background: -webkit-gradient(linear, right top, left top, color-stop(50%, #ffedf2), color-stop(50%, white)) right;
+    background: linear-gradient(to left, #ffedf2 50%, white 50%) right;
+    background-size: 200%;
     border: 2px solid #f2879b;
+    -webkit-transition: .3s ease-out;
+    transition: .3s ease-out;
     filter: drop-shadow(3px 3px 0px rgba(242, 135, 155, 0.8));
+    &:hover {
+        background-position: left;
+    }
 }
 
 section {
@@ -262,10 +284,30 @@ section {
             right: 30px;
             top: 27px;
         }
+        &:hover {
+            color: #3d3d3d;
+        }
+        &.p-link {
+            &::before {
+                border-radius: unset;
+                opacity: 0;
+            }
+            &::after {
+                width: 16px;
+                height: 13px;
+                top: 25px;
+                -webkit-transform: unset;
+                transform: unset;
+                @include mq(smt) {
+                    right: 14px !important;
+                    top: 14px !important;
+                }
+            }
+        }
     }
     .guide-btn__link.long {
         @include mq(smt) {
-            padding: 10px 20px;
+            padding: 10px 30px;
             &::before {
                 right: 6px !important;
             }
