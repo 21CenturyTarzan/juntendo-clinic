@@ -5409,6 +5409,18 @@ body.fixed {
   padding: 10px 80px;
 }
 
+@media screen and (min-width: 768px) and (max-width: 949px) {
+  .clinic .note .d-flex .inquiry.long {
+    padding: 10px 50px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .clinic .note .d-flex .inquiry.long {
+    padding: 10px 50px;
+  }
+}
+
 .clinic .note .d-flex .h5.b-f {
   width: 100%;
   display: -webkit-box;
@@ -5461,6 +5473,122 @@ body.fixed {
   .clinic .note .d-flex div {
     width: 100%;
     margin: 15px auto;
+  }
+}
+
+.clinic .tabs {
+  margin-top: 50px;
+}
+
+.clinic .tabs section {
+  margin-top: 0px;
+}
+
+.clinic .tabs-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 700px;
+  margin: auto;
+}
+
+.clinic .tabs-nav li {
+  width: 50%;
+}
+
+.clinic .tabs-nav li:first-child a {
+  border-right: 0;
+  border-top-left-radius: 6px;
+}
+
+.clinic .tabs-nav li:last-child a {
+  border-top-right-radius: 6px;
+}
+
+.clinic .tabs-nav li a {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background: #DBDADD;
+  color: #6B6B6B;
+  display: block;
+  font-weight: 600;
+  padding: 10px 0;
+  text-align: center;
+  text-decoration: none;
+}
+
+.clinic .tabs-nav li a:hover {
+  color: #ff7b29;
+}
+
+.clinic .tabs-nav li a div {
+  width: 65%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.clinic .tabs-nav li a div img {
+  margin-right: 10px;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+
+@media screen and (max-width: 767px) {
+  .clinic .tabs-nav li a div img {
+    width: 28px;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .clinic .tabs-nav li a div img {
+    width: 22px;
+    height: auto;
+    margin-right: 5px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .clinic .tabs-nav li a div {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .clinic .tabs-nav li a {
+    font-size: 0.75rem;
+  }
+}
+
+.clinic .tabs-nav .tab-active a {
+  background: #fff;
+  border-bottom-color: transparent;
+  color: #F2879B;
+  cursor: default;
+}
+
+.clinic .tabs-nav .tab-active a img {
+  -webkit-filter: unset;
+          filter: unset;
+}
+
+@media screen and (max-width: 767px) {
+  .clinic .tabs-nav {
+    width: 400px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .clinic .tabs-nav {
+    width: 320px;
   }
 }
 
@@ -5775,28 +5903,28 @@ section .guide-btn__link {
   padding-right: 110px;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 767px) {
   section .guide-btn__link {
     padding-right: 40px;
   }
   section .guide-btn__link::before {
     right: 24px !important;
-    top: 14px !important;
   }
   section .guide-btn__link::after {
     right: 30px !important;
-    top: 19px !important;
   }
 }
 
 section .guide-btn__link::before {
   right: 24px;
-  top: 22px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 section .guide-btn__link::after {
   right: 30px;
-  top: 27px;
+  top: calc(50% - 2px);
 }
 
 section .guide-btn__link:hover {
@@ -5811,15 +5939,14 @@ section .guide-btn__link.p-link::before {
 section .guide-btn__link.p-link::after {
   width: 16px;
   height: 13px;
-  top: 25px;
-  -webkit-transform: unset;
-  transform: unset;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 @media screen and (max-width: 576px) {
   section .guide-btn__link.p-link::after {
     right: 14px !important;
-    top: 14px !important;
   }
 }
 
@@ -5839,7 +5966,7 @@ section .guide-btn__link.p-link::after {
     GUIDE
 --------------------*/
 .guide-btn__link {
-  font-size: 15px;
+  font-size: 0.875rem;
   position: relative;
   display: inline-block;
   padding-right: 20px;

@@ -54,6 +54,12 @@
             }
             .inquiry.long {
                 padding: 10px 80px;
+                @include mq(tb2) {
+                    padding: 10px 50px;
+                }
+                @include mq(sm2) {
+                    padding: 10px 50px;
+                }
             }
             .h5.b-f {
                 width: 100%;
@@ -88,6 +94,82 @@
                     width: 100%;
                     margin: 15px auto;
                 }
+            }
+        }
+    }
+    .tabs {
+        margin-top: 50px;
+        section {
+            margin-top: 0px;
+        }
+        &-nav {
+            display: flex;
+            align-items: center;
+            width: 700px;
+            margin: auto;
+            li {
+                width: 50%;
+                &:first-child a {
+                    border-right: 0;
+                    border-top-left-radius: 6px;
+                }
+                &:last-child a {
+                    border-top-right-radius: 6px;
+                }
+                a {
+                    border-top-left-radius: 10px;
+                    border-top-right-radius: 10px;
+                    background: #DBDADD;
+                    color: #6B6B6B;
+                    display: block;
+                    font-weight: 600;
+                    padding: 10px 0;
+                    text-align: center;
+                    text-decoration: none;
+                    &:hover {
+                        color: #ff7b29;
+                    }
+                    div {
+                        width: 65%;
+                        margin: auto;
+                        display: flex;
+                        align-items: center;
+                        img {
+                            margin-right: 10px;
+                            filter: grayscale(100%);
+                            @include mq(sm2) {
+                                width: 28px;
+                                height: auto;
+                            }
+                            @include mq(smt) {
+                                width: 22px;
+                                height: auto;
+                                margin-right: 5px;
+                            }
+                        }
+                        @include mq(sm2) {
+                            width: 100%;
+                        }
+                    }
+                    @include mq(sm2) {
+                        font-size: fs(12);
+                    }
+                }
+            }
+            .tab-active a {
+                background: #fff;
+                border-bottom-color: transparent;
+                color: #F2879B;
+                cursor: default;
+                img {
+                    filter: unset;
+                }
+            }
+            @include mq(sm2) {
+                width: 400px;
+            }
+            @include mq(smt) {
+                width: 320px;
             }
         }
     }

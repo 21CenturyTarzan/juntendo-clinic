@@ -265,24 +265,23 @@ section {
         margin-top: 20px;
         margin-bottom: 20px;
         padding-right: 110px;
-        @include mq(smt) {
+        @include mq(sm2) {
             padding-right: 40px;
             &::before {
                 right: 24px !important;
-                top: 14px !important;
             }
             &::after {
                 right: 30px !important;
-                top: 19px !important;
             }
         }
         &::before {
             right: 24px;
-            top: 22px;
+            top: 50%;
+            transform: translateY(-50%);
         }
         &::after {
             right: 30px;
-            top: 27px;
+            top: calc(50% - 2px);
         }
         &:hover {
             color: #3d3d3d;
@@ -295,12 +294,11 @@ section {
             &::after {
                 width: 16px;
                 height: 13px;
-                top: 25px;
-                -webkit-transform: unset;
-                transform: unset;
+                top: 50%;
+                -webkit-transform: translateY(-50%);
+                transform: translateY(-50%);
                 @include mq(smt) {
                     right: 14px !important;
-                    top: 14px !important;
                 }
             }
         }
