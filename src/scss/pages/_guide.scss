@@ -197,8 +197,7 @@
                 margin-right: 30px;
             }
             &:hover {
-                cursor: pointer;
-                filter: drop-shadow(-3px -3px 0px rgba(152, 157, 168, 0.5));
+                opacity: 0.8;
             }
             .img-wrap {
                 text-align: center;
@@ -239,6 +238,9 @@
         background-position: 50%;
         cursor: pointer;
         display: block;
+        &:hover {
+            opacity: .8;
+        }
     }
     .text1 {
         margin-top: 15px;
@@ -318,8 +320,7 @@
                 margin-right: 30px;
             }
             &:hover {
-                cursor: pointer;
-                filter: drop-shadow(-3px -3px 0px rgba(152, 157, 168, 0.5));
+                opacity: 0.9;
             }
             .img-wrap {
                 text-align: center;
