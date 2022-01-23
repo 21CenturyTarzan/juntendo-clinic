@@ -4901,12 +4901,14 @@ body.fixed {
 }
 
 .patients-menu__right a {
-  font-size: 0.75rem;
+  font-size: 0.9375rem;
   font-weight: 500;
 }
 
 .patients-menu__right a:hover {
   color: #4F157F;
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 .patients-menu.active {
@@ -5521,7 +5523,12 @@ body.fixed {
 }
 
 .clinic .tabs-nav li a:hover {
-  color: #ff7b29;
+  color: #6b6b6b;
+}
+
+.clinic .tabs-nav li a:hover img {
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
 }
 
 .clinic .tabs-nav li a div {
@@ -5602,6 +5609,11 @@ body.fixed {
   color: #775592;
 }
 
+td .p-link:hover {
+  color: #F2879B;
+  text-decoration: underline;
+}
+
 .h1 {
   font-family: "Yu Gothic";
   font-weight: bold;
@@ -5610,7 +5622,7 @@ body.fixed {
   color: #6b6b6b;
 }
 
-.h2 {
+h2 {
   margin: 20px auto;
   font-family: "Yu Gothic";
   font-weight: bold;
@@ -5844,6 +5856,10 @@ body.fixed {
     top: 27px;
     right: 10px;
   }
+}
+
+.plus:hover {
+  cursor: pointer;
 }
 
 .questions:checked ~ .plus {
@@ -6208,6 +6224,12 @@ section .guide-btn__link.p-link::after {
   margin-right: 30px;
 }
 
+.guide-research__list--item:hover {
+  cursor: pointer;
+  -webkit-filter: drop-shadow(-3px -3px 0px rgba(152, 157, 168, 0.5));
+          filter: drop-shadow(-3px -3px 0px rgba(152, 157, 168, 0.5));
+}
+
 .guide-research__list--item .img-wrap {
   text-align: center;
   border-top-left-radius: 30px;
@@ -6249,6 +6271,8 @@ section .guide-btn__link.p-link::after {
   background: url(../images/guide/p-virus__mv.png);
   background-size: cover;
   background-position: 50%;
+  cursor: pointer;
+  display: block;
 }
 
 .guide-research .text1 {
@@ -6351,6 +6375,12 @@ section .guide-btn__link.p-link::after {
 
 .guide-center__list--item:not(:last-child) {
   margin-right: 30px;
+}
+
+.guide-center__list--item:hover {
+  cursor: pointer;
+  -webkit-filter: drop-shadow(-3px -3px 0px rgba(152, 157, 168, 0.5));
+          filter: drop-shadow(-3px -3px 0px rgba(152, 157, 168, 0.5));
 }
 
 .guide-center__list--item .img-wrap {

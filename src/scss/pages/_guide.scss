@@ -196,6 +196,10 @@
             &:not(:last-child) {
                 margin-right: 30px;
             }
+            &:hover {
+                cursor: pointer;
+                filter: drop-shadow(-3px -3px 0px rgba(152, 157, 168, 0.5));
+            }
             .img-wrap {
                 text-align: center;
                 border-top-left-radius: 30px;
@@ -233,6 +237,8 @@
         background: url(../images/guide/p-virus__mv.png);
         background-size: cover;
         background-position: 50%;
+        cursor: pointer;
+        display: block;
     }
     .text1 {
         margin-top: 15px;
@@ -310,6 +316,10 @@
             filter: drop-shadow(6px 6px 0px rgba(152, 157, 168, 0.5));
             &:not(:last-child) {
                 margin-right: 30px;
+            }
+            &:hover {
+                cursor: pointer;
+                filter: drop-shadow(-3px -3px 0px rgba(152, 157, 168, 0.5));
             }
             .img-wrap {
                 text-align: center;

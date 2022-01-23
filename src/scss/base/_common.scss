@@ -1,134 +1,126 @@
 @charset "UTF-8";
+
 /* -------------------
   COMMON
 --------------------*/
 
 body {
-  font-family: $font-base;
-  font-weight: 500;
-  &.fixed {
-    height: 100vh;
-    overflow: hidden;
-    // display: flex;
-  }
+    font-family: $font-base;
+    font-weight: 500;
+    &.fixed {
+        height: 100vh;
+        overflow: hidden;
+        // display: flex;
+    }
 }
 
 // =========================================
 // CONTROL VIEW ELEMENT
 // =========================================
-
 .pc-only {
-  display: block;
-
-  @include mq() {
-    display: none !important;
-  }
+    display: block;
+    @include mq() {
+        display: none !important;
+    }
 }
 
 .pc-only2 {
-  display: block;
-
-  @include mq(sm2) {
-    display: none !important;
-  }
+    display: block;
+    @include mq(sm2) {
+        display: none !important;
+    }
 }
 
 .pc-onlyt {
-  display: block;
-
-  @include mq(smt) {
-    display: none !important;
-  }
+    display: block;
+    @include mq(smt) {
+        display: none !important;
+    }
 }
 
 .pc-only3 {
-  display: inline-block;
-
-  @include mq() {
-    display: none !important;
-  }
+    display: inline-block;
+    @include mq() {
+        display: none !important;
+    }
 }
 
 .sp-only {
-  display: none !important;
-
-  @include mq() {
-    display: block !important;
-  }
+    display: none !important;
+    @include mq() {
+        display: block !important;
+    }
 }
 
 .sp-only2 {
-  display: none !important;
-
-  @include mq(sm2) {
-    display: block !important;
-  }
+    display: none !important;
+    @include mq(sm2) {
+        display: block !important;
+    }
 }
 
 .sp-onlyt {
-  display: none !important;
-
-  @include mq(smt) {
-    display: block !important;
-  }
+    display: none !important;
+    @include mq(smt) {
+        display: block !important;
+    }
 }
 
 // =========================================
 // FONT FAMILY
 // =========================================
 .en {
-  font-family: $font-a;
+    font-family: $font-a;
 }
 
 // =========================================
 // WRAPPER
 // =========================================
 .wrapper {
-  // min-width: 1400px;
-  // padding-top: 90px;
-  overflow: hidden;
-  @include mq() {
-    // min-width: 100%;
-    // padding-top: 50px;
-  }
+    // min-width: 1400px;
+    // padding-top: 90px;
+    overflow: hidden;
+    @include mq() {
+        // min-width: 100%;
+        // padding-top: 50px;
+    }
 }
 
 // =========================================
 // MAIN
 // =========================================
 .main {
-  // padding-bottom: 80px;
-  // background-color: #F7F6ED;
+    // padding-bottom: 80px;
+    // background-color: #F7F6ED;
 }
 
 // =========================================
 // CONTAINER
 // =========================================
 .container {
-  position: relative;
-  width: 1040px;
-  margin: 0 auto;
-  @include mq() {
-    width: 100%;
-    padding: 0 15px;
-  }
+    position: relative;
+    width: 1040px;
+    margin: 0 auto;
+    @include mq() {
+        width: 100%;
+        padding: 0 15px;
+    }
 }
 
 .container2 {
-  position: relative;
-  width: 900px;
-  margin: 0 auto;
-  @include mq() {
-    width: 100%;
-    padding: 0 15px;
-  }
+    position: relative;
+    width: 900px;
+    margin: 0 auto;
+    @include mq() {
+        width: 100%;
+        padding: 0 15px;
+    }
 }
 
-.d-flex{
-  display: flex;
+.d-flex {
+    display: flex;
 }
 
-.position-relative{
-  position: relative;
+.position-relative {
+    position: relative;
 }
-
