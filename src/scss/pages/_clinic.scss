@@ -127,7 +127,10 @@
                     text-align: center;
                     text-decoration: none;
                     &:hover {
-                        color: #ff7b29;
+                        color: #6b6b6b;
+                        img {
+                            filter: grayscale(100%);
+                        }
                     }
                     div {
                         width: 65%;

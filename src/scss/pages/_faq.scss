@@ -6,7 +6,7 @@
     color: #6b6b6b;
 }
 
-.h2 {
+h2 {
     margin: 20px auto;
     font-family: "Yu Gothic";
     font-weight: bold;
@@ -208,6 +208,9 @@
     @include mq(smt) {
         top: 27px;
         right: 10px;
+    }
+    &:hover {
+        cursor: pointer;
     }
 }
 
