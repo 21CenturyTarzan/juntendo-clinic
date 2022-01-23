@@ -5622,7 +5622,12 @@ td .p-link:hover {
   color: #6b6b6b;
 }
 
-h2 {
+.center h2,
+.clinic h2,
+.contact h2,
+.faq h2,
+.participation h2,
+.ppi h2 {
   margin: 20px auto;
   font-family: "Yu Gothic";
   font-weight: bold;
@@ -6225,9 +6230,7 @@ section .guide-btn__link.p-link::after {
 }
 
 .guide-research__list--item:hover {
-  cursor: pointer;
-  -webkit-filter: drop-shadow(-3px -3px 0px rgba(152, 157, 168, 0.5));
-          filter: drop-shadow(-3px -3px 0px rgba(152, 157, 168, 0.5));
+  opacity: 0.8;
 }
 
 .guide-research__list--item .img-wrap {
@@ -6273,6 +6276,10 @@ section .guide-btn__link.p-link::after {
   background-position: 50%;
   cursor: pointer;
   display: block;
+}
+
+.guide-research .virus__img-wrap:hover {
+  opacity: .8;
 }
 
 .guide-research .text1 {
@@ -6378,9 +6385,7 @@ section .guide-btn__link.p-link::after {
 }
 
 .guide-center__list--item:hover {
-  cursor: pointer;
-  -webkit-filter: drop-shadow(-3px -3px 0px rgba(152, 157, 168, 0.5));
-          filter: drop-shadow(-3px -3px 0px rgba(152, 157, 168, 0.5));
+  opacity: 0.9;
 }
 
 .guide-center__list--item .img-wrap {
