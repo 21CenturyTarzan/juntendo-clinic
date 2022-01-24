@@ -6,11 +6,11 @@
     color: #6b6b6b;
 }
 
-.center,
-.clinic,
+.about,
+.introduction,
 .contact,
 .faq,
-.participation,
+.flow,
 .ppi {
     h2 {
         margin: 20px auto;
@@ -65,6 +65,10 @@
         padding-bottom: 55px;
     }
     &-title {
+        padding: 0 20px;
+        @include mq(smt){
+            br{display: none;}
+        }
         .h1 {
             margin-bottom: vw(30);
         }
@@ -151,176 +155,180 @@
             height: 70px;
         }
     }
-}
-
-
-/*Question*/
-
-.question {
-    position: relative;
-    margin: 0;
-    padding: 10px 20px;
-    display: block;
-    width: 100%;
-    cursor: pointer;
-    border-radius: 30px;
-    background: #ffedf2;
-    border: 2px solid #f2879b;
-    line-height: 30px;
-}
-
-
-/*Answer*/
-
-.answers {
-    padding: 0px vw(70) 0px vw(100);
-    margin: 5px 0;
-    width: 100%!important;
-    height: 0;
-    overflow: hidden;
-    position: relative;
-    opacity: 0;
-    -webkit-transition: .3s ease;
-    -moz-transition: .3s ease;
-    -o-transition: .3s ease;
-    transition: .3s ease;
-}
-
-.questions:checked~.answers {
-    padding: 10px vw(70) 10px vw(100);
-    height: auto;
-    opacity: 1;
-}
-
-
-/*FAQ Toggle*/
-
-.plus {
-    position: absolute;
-    top: 12px;
-    right: 20px;
-    z-index: 5;
-    font-size: 2em;
-    line-height: 100%;
-    color: #F2879B;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -o-user-select: none;
-    user-select: none;
-    -webkit-transition: .3s ease;
-    -moz-transition: .3s ease;
-    -o-transition: .3s ease;
-    transition: .3s ease;
-    @include mq(smt) {
-        top: 27px;
-        right: 10px;
-    }
-    &:hover {
+    
+    
+    /*Question*/
+    
+    .question {
+        position: relative;
+        margin: 0;
+        padding: 10px 20px;
+        display: block;
+        width: 100%;
         cursor: pointer;
-    }
-}
-
-.questions:checked~.plus {
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    transform: rotate(45deg);
-}
-
-.questions {
-    display: none;
-}
-
-.bottom-assist {
-    .h5 {
-        text-align: center;
-    }
-    .h5 span {
-        margin-bottom: vw(35);
-        font-size: fs(20);
-        font-weight: bold;
+        border-radius: 30px;
+        background: #ffedf2;
+        border: 2px solid #f2879b;
         line-height: 30px;
-        color: #3d3d3d;
-        background-image: url(../images/common/dashline-1.png);
-        background-repeat-y: no-repeat;
     }
-}
-
-.inquiry {
-    border-radius: 40px;
-    padding: 20px 110px;
-    @include mq(smt) {
-        padding: 10px 40px;
+    
+    
+    /*Answer*/
+    
+    .answers {
+        padding: 0px vw(70) 0px vw(100);
+        margin: 5px 0;
+        width: 100%!important;
+        height: 0;
+        overflow: hidden;
+        position: relative;
+        opacity: 0;
+        -webkit-transition: .3s ease;
+        -moz-transition: .3s ease;
+        -o-transition: .3s ease;
+        transition: .3s ease;
     }
-    font-family: "Yu Gothic";
-    font-weight: bold;
-    font-size: fs(15);
-    text-align: center;
-    color: #3d3d3d;
-    background: -webkit-gradient(linear, right top, left top, color-stop(50%, #ffedf2), color-stop(50%, white)) right;
-    background: linear-gradient(to left, #ffedf2 50%, white 50%) right;
-    background-size: 200%;
-    border: 2px solid #f2879b;
-    -webkit-transition: .3s ease-out;
-    transition: .3s ease-out;
-    filter: drop-shadow(3px 3px 0px rgba(242, 135, 155, 0.8));
-    &:hover {
-        background-position: left;
+    
+    .questions:checked~.answers {
+        padding: 10px vw(70) 10px vw(100);
+        height: auto;
+        opacity: 1;
     }
-}
-
-section {
-    .guide-btn__link {
-        margin-top: 20px;
-        margin-bottom: 20px;
-        padding-right: 110px;
-        @include mq(sm2) {
-            padding-right: 40px;
-            &::before {
-                right: 24px !important;
-            }
-            &::after {
-                right: 30px !important;
-            }
-        }
-        &::before {
-            right: 24px;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-        &::after {
-            right: 30px;
-            top: calc(50% - 2px);
+    
+    
+    /*FAQ Toggle*/
+    
+    .plus {
+        position: absolute;
+        top: 12px;
+        right: 20px;
+        z-index: 5;
+        font-size: 2em;
+        line-height: 100%;
+        color: #F2879B;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+        -webkit-transition: .3s ease;
+        -moz-transition: .3s ease;
+        -o-transition: .3s ease;
+        transition: .3s ease;
+        @include mq(smt) {
+            top: 27px;
+            right: 10px;
         }
         &:hover {
-            color: #3d3d3d;
+            cursor: pointer;
         }
-        &.p-link {
+    }
+    
+    .questions:checked~.plus {
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+    
+    .questions {
+        display: none;
+    }
+    
+    .bottom-assist {
+        padding: 0 20px;
+        @include mq(smt){
+            br{display: none;}
+        }
+        .h5 {
+            text-align: center;
+        }
+        .h5 span {
+            margin-bottom: vw(35);
+            font-size: fs(20);
+            font-weight: bold;
+            line-height: 30px;
+            color: #3d3d3d;
+            background-image: url(../images/common/dashline-1.png);
+            background-repeat-y: no-repeat;
+        }
+    }
+    
+    .inquiry {
+        border-radius: 40px;
+        padding: 20px 110px;
+        @include mq(smt) {
+            padding: 10px 40px;
+        }
+        font-family: "Yu Gothic";
+        font-weight: bold;
+        font-size: fs(15);
+        text-align: center;
+        color: #3d3d3d;
+        background: -webkit-gradient(linear, right top, left top, color-stop(50%, #ffedf2), color-stop(50%, white)) right;
+        background: linear-gradient(to left, #ffedf2 50%, white 50%) right;
+        background-size: 200%;
+        border: 2px solid #f2879b;
+        -webkit-transition: .3s ease-out;
+        transition: .3s ease-out;
+        filter: drop-shadow(3px 3px 0px rgba(242, 135, 155, 0.8));
+        &:hover {
+            background-position: left;
+        }
+    }
+    
+    section {
+        .guide-btn__link {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            padding-right: 110px;
+            @include mq(sm2) {
+                padding-right: 40px;
+                &::before {
+                    right: 24px !important;
+                }
+                &::after {
+                    right: 30px !important;
+                }
+            }
             &::before {
-                border-radius: unset;
-                opacity: 0;
+                right: 24px;
+                top: 50%;
+                transform: translateY(-50%);
             }
             &::after {
-                width: 16px;
-                height: 13px;
-                top: 50%;
-                -webkit-transform: translateY(-50%);
-                transform: translateY(-50%);
-                @include mq(smt) {
-                    right: 14px !important;
+                right: 30px;
+                top: calc(50% - 2px);
+            }
+            &:hover {
+                color: #3d3d3d;
+            }
+            &.p-link {
+                &::before {
+                    border-radius: unset;
+                    opacity: 0;
+                }
+                &::after {
+                    width: 16px;
+                    height: 13px;
+                    top: 50%;
+                    -webkit-transform: translateY(-50%);
+                    transform: translateY(-50%);
+                    @include mq(smt) {
+                        right: 14px !important;
+                    }
                 }
             }
         }
-    }
-    .guide-btn__link.long {
-        @include mq(smt) {
-            padding: 10px 30px;
-            &::before {
-                right: 6px !important;
-            }
-            &::after {
-                right: 12px !important;
+        .guide-btn__link.long {
+            @include mq(smt) {
+                padding: 10px 30px;
+                &::before {
+                    right: 6px !important;
+                }
+                &::after {
+                    right: 12px !important;
+                }
             }
         }
     }

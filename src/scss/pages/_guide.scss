@@ -193,11 +193,11 @@
             background-color: white;
             border-radius: 30px;
             filter: drop-shadow(6px 6px 0px rgba(152, 157, 168, 0.5));
+            &:hover{
+                filter: drop-shadow(-5px -5px 0px rgba(152, 157, 168, 0.5));
+            }
             &:not(:last-child) {
                 margin-right: 30px;
-            }
-            &:hover {
-                opacity: 0.8;
             }
             .img-wrap {
                 text-align: center;
@@ -239,6 +239,7 @@
         cursor: pointer;
         display: block;
         &:hover {
+            transition: all .3s;
             opacity: .8;
         }
     }
@@ -315,16 +316,16 @@
             width: 100%;
             background-color: white;
             border-radius: 30px;
+            position: relative;
             filter: drop-shadow(6px 6px 0px rgba(152, 157, 168, 0.5));
             &:not(:last-child) {
                 margin-right: 30px;
             }
-            &:hover {
-                opacity: 0.9;
+            &:hover{
+                filter: drop-shadow(-5px -5px 0px rgba(152, 157, 168, 0.5));
             }
             .img-wrap {
                 text-align: center;
-                margin-top: 30px;
                 height: 60px;
             }
             &:last-child .img-wrap {
@@ -351,6 +352,11 @@
                 position: absolute;
                 bottom: 30px;
                 right: 30px;
+            }
+            &__link{
+                display: block;
+                padding-top: 30px;
+                height: 100%;
             }
         }
     }

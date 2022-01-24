@@ -27,7 +27,7 @@
   <div class="wrapper">
     <header class="header js-header">
       <h1 class="header-logo">
-        <a href="/">
+        <a href="#">
           <img class="js-logo-pc h-logo-pc" src="<?php echo $PATH;?>/assets/images/common/h-logo.svg" alt="">
           <img class="js-logo-sp h-logo-sp" src="<?php echo $PATH;?>/assets/images/common/h-logo.svg" alt="">
         </a>
