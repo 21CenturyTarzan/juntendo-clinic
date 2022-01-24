@@ -13,7 +13,6 @@ $(document).ready(function () {
     $(this).addClass('active');
 
     var slideno = $(this).data('slide');
-    console.log(slideno)
     $('.slider-news').slick('slickGoTo', slideno - 1);
   })
 
