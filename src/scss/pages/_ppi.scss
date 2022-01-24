@@ -107,4 +107,10 @@ td {
         height: 11px;
         background: url(../images/faq/brank.svg);
     }
+
+    &:hover {
+        color: #F2879B;
+        text-decoration: underline;
+    }
+    
 }

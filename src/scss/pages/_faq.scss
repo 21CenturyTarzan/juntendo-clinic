@@ -299,22 +299,6 @@ section {
         &:hover {
             color: #3d3d3d;
         }
-        &.p-link {
-            &::before {
-                border-radius: unset;
-                opacity: 0;
-            }
-            &::after {
-                width: 16px;
-                height: 13px;
-                top: 50%;
-                -webkit-transform: translateY(-50%);
-                transform: translateY(-50%);
-                @include mq(smt) {
-                    right: 14px !important;
-                }
-            }
-        }
     }
 
 }

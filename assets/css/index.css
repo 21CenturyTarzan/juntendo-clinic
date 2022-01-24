@@ -5373,11 +5373,6 @@ body.fixed {
   color: #775592;
 }
 
-td .p-link:hover {
-  color: #F2879B;
-  text-decoration: underline;
-}
-
 .h1 {
   font-family: "Yu Gothic";
   font-weight: bold;
@@ -5733,25 +5728,6 @@ section .guide-btn__link::after {
 
 section .guide-btn__link:hover {
   color: #3d3d3d;
-}
-
-section .guide-btn__link.p-link::before {
-  border-radius: unset;
-  opacity: 0;
-}
-
-section .guide-btn__link.p-link::after {
-  width: 16px;
-  height: 13px;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-
-@media screen and (max-width: 576px) {
-  section .guide-btn__link.p-link::after {
-    right: 14px !important;
-  }
 }
 
 .flow {
@@ -6877,6 +6853,11 @@ td:nth-child(1) {
   width: 13px;
   height: 11px;
   background: url(../images/faq/brank.svg);
+}
+
+.p-link:hover {
+  color: #F2879B;
+  text-decoration: underline;
 }
 
 /* -------------------
