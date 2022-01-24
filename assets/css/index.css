@@ -7665,7 +7665,7 @@ td:nth-child(1) {
   max-width: 700px;
   width: 100%;
   margin: auto;
-  padding: 0 30px;
+  padding: 0 25px;
 }
 
 .search .tabs-nav li {
@@ -7745,6 +7745,12 @@ td:nth-child(1) {
 @media screen and (max-width: 767px) {
   .search .tabs-nav li a {
     font-size: 0.75rem;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .search .tabs-nav li a {
+    padding: 5px;
   }
 }
 
