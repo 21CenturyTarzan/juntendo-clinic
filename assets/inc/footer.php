@@ -1,3 +1,4 @@
+
     <footer class="footer">
       <div class="pagetop js-pageTop"><span>TO TOP</span></div>
       <div class="footer-top">
@@ -27,12 +28,15 @@
         </div>
     </footer>
 
-  <script src="<?php echo $PATH;?>/assets/js/libs/jquery-3.5.1.min.js"></script>
+
+  <script src="<?php echo $PATH;?>/assets/js/libs/jquery-3.6.0.min.js"></script>
   <script src="<?php echo $PATH;?>/assets/js/libs/wow.min.js"></script>
   <script src="<?php echo $PATH;?>/assets/js/libs/ofi.min.js"></script>
   <script src="<?php echo $PATH;?>/assets/js/libs/slick.min.js"></script>
   <script src="<?php echo $PATH;?>/assets/js/libs/jquery.matchHeight-min.js"></script>
+  <script src="<?php echo $PATH;?>/assets/js/slider.js"></script>
   <script src="<?php echo $PATH;?>/assets/js/common.js"></script>
+  <script src="<?php echo $PATH;?>/assets/js/faq.js"></script>
 </body>
 
 </html>
