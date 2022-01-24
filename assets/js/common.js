@@ -4,8 +4,6 @@ jQuery(function($) {
     /* --------------------
     GLOBAL VARIABLE
     --------------------- */
-    // Selector
-    // var $pageTop = $('.js-pageTop');
 
     // Init Value
     var breakpointSP = 767,

@@ -252,6 +252,8 @@
     }
 
     .r-content{
+      max-width: calc(100% - 20px);
+      width: 100%;
       padding-bottom: 20px;
       padding-right: 30px;
       margin-left: 0;
@@ -280,21 +282,20 @@
     margin: 13px 0;
     &-list{
       display: flex;
-      li{
-        &:not(:last-child){ margin-right: 1px; }
+      li a{
+        display: block;
+        margin: 0 2px;
         padding: 8px;
         color: $color-main;
         background-color: #EFEFEF;
         text-align: center;
+        font-size: fs(14);
         &:hover{
           background-color: #e5e2e2;
         }
         &.active{
           background-color: $color-main;
           color: white;
-        }
-        a{ 
-          font-size: 14px;
         }
 
         @include mq(smt){
