@@ -37,6 +37,13 @@
     }
 }
 
+.guide{
+    .guide-btn__link{
+        padding-right: 50px;
+    }
+}
+
+
 .arrow-right-link {
     width: 30px;
     height: 30px;
@@ -381,6 +388,10 @@
 .guide-banner {
     margin-top: 60px;
     margin-bottom: 100px;
+    a:hover{
+        opacity: .8;
+        transition: all .3s;
+    }
     &__content {
         max-width: 956px;
         margin: auto;

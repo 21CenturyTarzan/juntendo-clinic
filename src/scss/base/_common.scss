@@ -39,8 +39,8 @@ body {
 }
 
 .pc-only3 {
-    display: inline-block;
-    @include mq() {
+    display: block;
+    @include mq(sm3) {
         display: none !important;
     }
 }
@@ -62,6 +62,13 @@ body {
 .sp-onlyt {
     display: none !important;
     @include mq(smt) {
+        display: block !important;
+    }
+}
+
+.sp-only3 {
+    display: none !important;
+    @include mq(sm3) {
         display: block !important;
     }
 }
@@ -103,6 +110,9 @@ body {
     margin: 0 auto;
     @include mq() {
         width: 100%;
+        padding: 0 20px;
+    }
+    @include mq(sm3){
         padding: 0 15px;
     }
 }

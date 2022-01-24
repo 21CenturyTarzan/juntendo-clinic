@@ -183,7 +183,7 @@
             height: 100%;
             align-items: center;
             position: relative;
-            &.contact {
+            &.contact-link {
                 height: 100%;
                 padding-left: vw(25);
                 padding-right: vw(25);
@@ -213,7 +213,7 @@
                 padding: 15px 40px;
                 width: 100%;
                 color: #000;
-                &.contact {
+                &.contact-link {
                     margin: 0 40px;
                     width: auto;
                 }
