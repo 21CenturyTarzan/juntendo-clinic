@@ -262,9 +262,6 @@
 .inquiry {
     border-radius: 40px;
     padding: 20px 110px;
-    @include mq(smt) {
-        padding: 10px 40px;
-    }
     font-family: "Yu Gothic";
     font-weight: bold;
     font-size: fs(15);
@@ -287,14 +284,8 @@ section {
         margin-top: 20px;
         margin-bottom: 20px;
         padding-right: 110px;
-        @include mq(sm2) {
-            padding-right: 40px;
-            &::before {
-                right: 24px !important;
-            }
-            &::after {
-                right: 30px !important;
-            }
+        @include mq(smt) {
+            padding: 10px 60px;
         }
         &::before {
             right: 24px;

@@ -5703,12 +5703,6 @@ td .p-link:hover {
           filter: drop-shadow(3px 3px 0px rgba(242, 135, 155, 0.8));
 }
 
-@media screen and (max-width: 576px) {
-  .inquiry {
-    padding: 10px 40px;
-  }
-}
-
 .inquiry:hover {
   background-position: left;
 }
@@ -5719,15 +5713,9 @@ section .guide-btn__link {
   padding-right: 110px;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 576px) {
   section .guide-btn__link {
-    padding-right: 40px;
-  }
-  section .guide-btn__link::before {
-    right: 24px !important;
-  }
-  section .guide-btn__link::after {
-    right: 30px !important;
+    padding: 10px 60px;
   }
 }
 
@@ -5999,6 +5987,7 @@ section .guide-btn__link.p-link::after {
 }
 
 .guide .guide-btn__link {
+  padding-left: 0;
   padding-right: 50px;
 }
 
@@ -6652,7 +6641,7 @@ section .guide-btn__link.p-link::after {
   max-width: 700px;
   width: 100%;
   margin: auto;
-  padding: 0 10px;
+  padding: 0 30px;
 }
 
 .introduction .tabs-nav li {
@@ -6783,13 +6772,19 @@ section .guide-btn__link.p-link::after {
 }
 
 .block {
-  width: 100%;
   max-width: 1240px;
   margin: auto;
   margin-bottom: 20px;
   border-radius: 40px;
   padding: 3.57143vw 7.14286vw;
   background-color: white;
+}
+
+@media screen and (max-width: 1050px) {
+  .block {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
 }
 
 @media screen and (max-width: 576px) {
@@ -6834,7 +6829,7 @@ section .guide-btn__link.p-link::after {
 
 @media screen and (max-width: 576px) {
   .note {
-    padding: 15px;
+    padding: 30px 15px;
   }
 }
 
@@ -6845,6 +6840,12 @@ table {
 
 table p {
   margin: 5px auto !important;
+}
+
+@media screen and (max-width: 576px) {
+  table p br {
+    display: none;
+  }
 }
 
 table tr td {
