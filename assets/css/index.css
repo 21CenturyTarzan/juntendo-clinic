@@ -5492,7 +5492,6 @@ body.fixed {
 }
 
 .news-inner .r-content {
-  max-width: calc(100% - 20px);
   width: 100%;
   padding-bottom: 20px;
   padding-right: 30px;
@@ -5509,6 +5508,10 @@ body.fixed {
 
 .news-inner .r-content .section-ttl span {
   background-color: white;
+}
+
+.news-inner .r-content .slider-news {
+  overflow: hidden;
 }
 
 @media screen and (max-width: 576px) {

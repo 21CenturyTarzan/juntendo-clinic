@@ -3,7 +3,7 @@ $(document).ready(function () {
   $('.slider-news').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
-    dots: true,
+    dots: false,
     focusOnSelect: true
   });
 
