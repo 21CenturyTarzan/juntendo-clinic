@@ -254,7 +254,7 @@
     .r-content{
       width: 100%;
       padding-bottom: 20px;
-      padding-right: 30px;
+      padding-right: 25px;
       margin-left: 0;
       border-top: 1px solid #215498;
       .section-ttl{
@@ -281,12 +281,12 @@
   .category{
     display: flex;
     justify-content: flex-end;
-    margin: 13px 0;
+    margin: 15px 0;
     &-list{
       display: flex;
       li a{
         display: block;
-        margin: 0 2px;
+        margin: 0 3px;
         padding: 8px;
         color: $color-main;
         background-color: #EFEFEF;
@@ -301,13 +301,10 @@
         }
 
         @include mq(smt){
+          margin: 2px;
           padding: 5px 8px;
         }
       }
-    }
-    @include mq(smt){
-      margin-top: 42px;
-      margin-bottom: 10px;
     }
   }
 

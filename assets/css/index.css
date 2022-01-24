@@ -5747,7 +5747,7 @@ body.fixed {
 .news-inner .r-content {
   width: 100%;
   padding-bottom: 20px;
-  padding-right: 30px;
+  padding-right: 25px;
   margin-left: 0;
   border-top: 1px solid #215498;
 }
@@ -5785,7 +5785,7 @@ body.fixed {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  margin: 13px 0;
+  margin: 15px 0;
 }
 
 .news .category-list {
@@ -5796,7 +5796,7 @@ body.fixed {
 
 .news .category-list li a {
   display: block;
-  margin: 0 2px;
+  margin: 0 3px;
   padding: 8px;
   color: #4F157F;
   background-color: #EFEFEF;
@@ -5815,14 +5815,8 @@ body.fixed {
 
 @media screen and (max-width: 576px) {
   .news .category-list li a {
+    margin: 2px;
     padding: 5px 8px;
-  }
-}
-
-@media screen and (max-width: 576px) {
-  .news .category {
-    margin-top: 42px;
-    margin-bottom: 10px;
   }
 }
 
