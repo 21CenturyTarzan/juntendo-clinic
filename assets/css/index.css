@@ -6269,6 +6269,10 @@ body.fixed {
   }
 }
 
+.contact .guide-btn__link:hover {
+  text-decoration: none !important;
+}
+
 .number {
   font-family: Roboto;
   font-weight: bold;
@@ -6836,6 +6840,7 @@ section .guide-btn__link:hover {
   position: relative;
   display: inline-block;
   padding-right: 20px;
+  cursor: pointer;
 }
 
 .guide-btn__link::before {
