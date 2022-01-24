@@ -265,7 +265,7 @@
         }
       }
       .slider-news{
-        overflow: hidden;
+        margin-bottom: 0;
       }
       @include mq(smt){
         padding-right: 5px;
